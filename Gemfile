@@ -50,7 +50,6 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.0.0'
@@ -59,8 +58,8 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2'  
-  gem 'asset_sync'
+  #gem 'asset_sync'
+  gem 'mysql2'
   gem 'thin'
   gem 'connect'
   gem 'redis-rails'
