@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateProposes < ActiveRecord::Migration
   def change
     create_table :proposes do |t|

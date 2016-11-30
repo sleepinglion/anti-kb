@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateComplimentCategories < ActiveRecord::Migration
   def change
     create_table :compliment_categories do |t|

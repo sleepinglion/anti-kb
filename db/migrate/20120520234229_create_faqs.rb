@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateFaqs < ActiveRecord::Migration
   def change
     create_table :faqs do |t|

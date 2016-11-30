@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateFaqCategories < ActiveRecord::Migration
   def change
     create_table :faq_categories do |t|

@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateReportCategories < ActiveRecord::Migration
   def change
     create_table :report_categories do |t|

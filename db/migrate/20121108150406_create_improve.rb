@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateImprove < ActiveRecord::Migration
   def change
     create_table :improve do |t|   
