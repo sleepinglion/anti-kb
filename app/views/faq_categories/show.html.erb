@@ -1,0 +1,9 @@
+<section id="notice_show">
+	<% if notice %>
+	<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
+	<% end %>
+	
+<%= link_to 'Edit', edit_faq_category_path(@faq_category) %> |
+<%= link_to 'Back', faq_categories_path %>
+</section>
+

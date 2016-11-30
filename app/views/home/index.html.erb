@@ -1,0 +1,38 @@
+<section id="section_main">
+	<section id="section_main_top">
+		<ul class="nav nav-tabs">
+			<li <% if(!params[:tab]) %>class="active"<% end %>><%=link_to('KB망하게 하기 서명','/')%></li>
+			<li <% if(params[:tab]=='article') %>class="active"<% end %>><%=link_to('KB관련 기사',:controller=>'home',:tab=>'article')%></li>
+			<li <% if(params[:tab]=='notice') %>class="active"<% end %>><%=link_to('공지사항',:controller=>'home',:tab=>'notice')%></li>	
+		</ul>
+		<% if(params[:tab]) %>
+		<% if(params[:tab]=='article') %>
+		<%= render :partial => 'articles/index' %>
+		<% end %>
+		<% if(params[:tab]=='notice') %>
+		<%= render :partial => 'notices/index' %>
+		<% end %>		
+		<% else %>
+		<%= render :partial => 'users/index' %>
+		<% end %>
+	</section>
+	<hr />
+	<section id="section_main_bottom">
+		<article  class="col-xs-6">
+			<h3>KB임직원의 마음</h3>
+			<%=link_to 'KB임직원의 마음입니다.','/kbsmind?no_layout=true',:'data-toggle'=>"modal",:'data-target'=>"#myModal",:class=>"modal_link" %>
+			<p>엄마나~~ 역시 규모는 최고구만 직원이 2만 2천명이야??<br /> 그래서 능률은 다른은행에 비해 그 정도였구만=><%=link_to 'KB는 꼴찌','http://www.newspim.com/view.jsp?newsId=20131107000999',:target=>'_blank' %></p>
+		</article>
+		<article  class="col-xs-6">
+			<h3>KB가 망할날이 오는가보네요</h3>
+			<p>일본에서도 사고내고, 카자흐스탄에서는 최대부실 적자, 직원은 100억 횡령= 뭐 평상시에도 있던 일이지만 이번에 터지네요<br />
+			<%=link_to '불법대출,비리 사과문','https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:target=>'_blank' %>
+			<p>카드 정보유출에 우리가 빠지면 섭섭하지요?~  이놈들은  이제 사과문 올리는게 일이 되었구만<br />
+			<%=link_to '고객정보유출 사과문','https://otalk.kbstar.com/quics?page=C019391&bbsMode=view&articleId=6709',:target=>'_blank' %>
+			</p>			
+		</article>
+		<%= render :partial => 'models/index' %>
+		<%= render :partial => 'reports/index' %>
+		<%= render :partial => 'compliments/index' %>
+	</section>
+</section>

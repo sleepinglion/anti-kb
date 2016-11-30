@@ -1,0 +1,16 @@
+<section id="slboard_find_password" class="sub_main">
+	<div class="section_top">
+		<h2>비밀번호 재발급</h2>
+	</div>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class=>'slboard_form',:method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email,'이메일' %><br />
+  <%= f.email_field :email,:class=>'sl_input',:required=>'required' %></div>
+
+  <div><%= f.submit '비밀번호 재발급' %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+</section>
+

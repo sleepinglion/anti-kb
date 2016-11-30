@@ -1,0 +1,13 @@
+<article class="col-xs-6">
+	<h3>피해신고</h3>
+	<%=link_to t(:link_more),reports_path,:class=>'more' %>
+	<% unless @reports.empty? %>
+	<ul>
+		<% @reports.each do |report| %>
+		<li><%=report.user.name %> : <%=link_to report.title.truncate(17),report %> <span class="date"><%=report.created_at.to_date %></span></li>
+		<% end %>
+	</ul>
+	<% else %>
+	<p><%=t(:no_data) %></p>
+	<% end %>
+</article>

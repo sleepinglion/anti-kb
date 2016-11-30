@@ -1,0 +1,15 @@
+<div id="top_ad">
+<% if Rails.env.production? %>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5400903051441488";
+/* 728x90 */
+google_ad_slot = "7215435937";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+<% else %>
+<div style="width:728px;height:90px;background:red;">&nbsp;</div>
+<% end %>
+</div>

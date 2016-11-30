@@ -1,0 +1,12 @@
+<article>
+	<% unless @articles.empty? %>
+	<ul>
+		<% @articles.each do |article| %>
+		<li><%=link_to(article.title,article.url,{:target=>'_blank'}) %> <span class="date"><%=article.created_at.to_date %></span></li>
+		<% end %>
+	</ul>
+	<% else %>
+	<p><%=t(:no_data) %></p>
+	<% end %>
+	<%=link_to t(:link_more),articles_path,:class=>'more' %>
+</article>

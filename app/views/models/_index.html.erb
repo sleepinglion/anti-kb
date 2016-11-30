@@ -1,0 +1,29 @@
+<article class="col-xs-12">
+	<h3>KB에게 추천하는 새 KB모델</h3>			
+	<a class="prev browse left"></a>
+	<div class="scrollable">
+		<% unless @models.empty? %>
+		<div class="items">
+			<% @models.each do |model| %>
+			<div class="item">
+				<%=link_to model_path(model) do %>
+				<figure>
+					<%=image_tag model.photo.small_thumb,:alt=>model.title %>
+				</figure>
+				<% end %>
+				<div>
+					<h4><%=link_to model.title,model_path(model) %></h4>
+					<%=simple_format(model.recommend_description) %>
+				</div>
+			</div>
+			<% end %>
+		</div>
+		<% else %>
+		<ul>
+			<li><%=t(:no_data) %></li>
+		</ul>
+		<% end %>
+	</div>
+	<a class="next browse right"></a>
+	<%=link_to t(:link_more),models_path,:class=>'more' %>			
+</article>

@@ -1,0 +1,36 @@
+<section id="slboard_notice_show">
+	<% if notice %>
+		<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
+	<% end %>
+	<div class="slboard_content">
+		<div>
+			<h3><%= @model.title %></h3>
+			<p>작성자 :<%= @model.user.name %>&nbsp;&nbsp;&nbsp; 작성일 : <%= @model.created_at %></p>
+		</div>
+		<figure>
+			<%=image_tag @model.photo.medium_thumb,:alt=>@model.title %>
+		</figure>
+		<br />
+		<br />
+		<div class="sl_content_main">
+			<div>
+			<label>추천사</label>
+			<pre><%= simple_format(@model.recommend_description) %></pre>
+			</div>
+			<br />
+			<br />
+			<div>
+			<label>추천받은 모델의 소감</label>
+			<pre><%= simple_format(@model.models_comment) %></pre>
+			</div>			
+		</div>
+	</div>
+	<div id="sl_content_bottom_menu">
+		<%= link_to t(:link_list),models_path %>
+		<% if user_signed_in? %>
+		<% if current_user.admin? %>
+		&nbsp; | &nbsp; <%= link_to '수정', edit_model_path(@model) %> &nbsp; | &nbsp; <%= link_to '삭제', @model, method: :delete, data: { confirm: '정말로 삭제합니까?' } %>
+		<% end %>
+		<% end %>
+	</div>
+</section>

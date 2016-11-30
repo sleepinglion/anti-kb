@@ -1,0 +1,38 @@
+<aside class="visible-lg">
+	<fieldset>	
+	<% if user_signed_in? %>
+			<legend>로그아웃</legend>	
+	<div id="login_users">
+			<p><%=link_to(current_user.name, edit_user_registration_path) %>님 환영합니다.</p> 				
+			<p id="logout_submit"><%= link_to '로그아웃', destroy_user_session_path %></p>
+	</div>
+	<% else %>
+	<%=form_tag new_user_session_path,:role=>"form" do %>
+  <div class="form-group">
+    <%= label :email,'이메일' %>
+    <%= text_field_tag 'user[email]',nil, :class=>'form-control',:length=>15,:required=>'required' %>
+  </div>
+  <div class="form-group">
+  	<%= label :password,'비밀번호' %>
+  	<%= password_field_tag 'user[password]',nil, :class=>'form-control',:length=>15,:required=>'required' %>
+  </div>
+  <%= submit_tag '로그인',:class=>"btn btn-primary" %>
+	<% end %>
+	<% end %>
+	</fieldset>
+<div id="ad_main" class="main_content">
+<% if Rails.env.production? %>	
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 250정사각형 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-5400903051441488"
+     data-ad-slot="4189637134"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<% else %>
+<div style="width:250px;height:250px;background:red;">&nbsp;</div>
+<% end %>
+</div>
+</aside>

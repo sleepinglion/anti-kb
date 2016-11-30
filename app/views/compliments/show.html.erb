@@ -1,0 +1,23 @@
+<section id="compliment_show">
+	<% if notice %>
+		<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
+	<% end %>	
+	<div class="slboard_content" itemscope itemprop="article" itemtype="http://schema.org/Article">
+		<div class="sl_content_header">
+			<h3 itemprop="name"><%= @compliment.title %></h3>
+			<p><%=t(:label_name)%> : <span  itemprop="author"><%=@compliment.user.name %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @compliment.created_at %></span><span class="none" itemprop="dateModified"><%= @compliment.updated_at %></span></p>	
+		</div>
+		<div class="sl_content_main">
+			<div class="sl_content_text" itemprop="text"><%=simple_format(@compliment.compliment_content.content) %></div>
+		</div>
+	</div>
+	<div>
+		
+		
+	</div>
+	<div id="sl_content_bottom_menu">
+		<%= link_to t(:link_new), new_compliment_path %> &nbsp; | &nbsp; 
+		<%= link_to t(:link_list),compliments_path %> &nbsp; | &nbsp; 
+		<%= link_to t(:link_edit), edit_compliment_path(@compliment) %>
+	</div>
+</section>

@@ -1,0 +1,245 @@
+//= require fancybox
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* default */
+html, body { margin: 0; padding: 0; height: 100%}
+body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif;color:#333}
+fieldset { margin: 0; padding: 0; border: none}
+legend,caption {display:none}
+a img { border: none}
+label {cursor:pointer}
+hr {display:none}
+
+
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
+mark, rp, rt, ruby, summary, time {display:inline;}
+
+
+h1 {font-size :1.5em}
+h2 {font-size :1.3em}
+h3 {font-size :1.1em}
+h4,h5,h6 {font-size : 1em}
+
+/* common class */
+.none {display:none }
+.red { color: red; }
+.blue { color: blue; }
+.green { color:green; }
+.none { display: none; }
+.clear {clear:both}
+.arial {font-family:Arial}
+.wrapper {width:960px;margin:0 auto}
+.jumbotron {clear:both}
+
+/* layout */
+#mom {clear:both;float:left;width:100%;padding:0}
+header {width: 100%}
+footer {clear: both; position: relative; text-align: center}
+.page-header {width:100%}
+.page-header h1 {float:left;margin:0.7em 0 0;padding:0;font-weight:bold;color:#666}
+.page-header .breadcrumb  {margin:0}
+.alert-success {clear:both}
+
+#sl_ad {float:left;width:100%;position: relative;margin:0;padding:0;text-align: center;}
+.ad_test {background:red}
+
+/* header */ 
+header h1 { position: relative;float: left}
+header h1 a { display:block;width:150px;height:30px;color: #666;text-indent:-9999px;text-decoration: none;background:url('logo.png') no-repeat}
+header h1 a:hover { color: red; }
+#top_menu {position:absolute;top:10px;right:20px}
+#top_menu ul {float:left;margin:0;padding:0;list-style:none}
+#top_menu li {float:left;margin:0 10px 0 0;padding:0}
+
+
+/* nav */
+header nav { position: relative; z-index: 999}
+header nav li { float: left; list-style: none; margin: 0 20px; }
+header nav a { float: left; font-size:1.5em; color: #666; text-decoration: none; font-weight: bold; }
+
+/* FAQ Category*/
+#faqCategoryList {float:left;width:100%;margin:10px 0 0 0;padding:0;background:#666;list-style:none}
+#faqCategoryList li {position:relative;float:left;margin:0;padding:0;border-right:1px solid #999}
+#faqCategoryList li a.title {float:left;width:100px;text-align:center;display:block;padding:10px 0;color:#fff;text-decoration:none}
+#faqCategoryList li.on {background:#f3f3f3}
+#faqCategoryList li.on a.title {background:#f3f3f3;color:#333}
+#faqCategoryList li.on .sl_faq_category_menu {float:right;background:#f3f3f3;color:#333}
+
+/* FAQ List */
+#faqList { float:left;width:100%;margin:0;padding:15px 0;background:#f3f3f3}
+#faqList dt {position:relative;float:left;width:95%;display:inline;margin:2px 0 0 15px;padding:0;cursor:pointer;}
+#faqList dt.none {display:none}
+#faqList dt a.title {display:block;padding:11px 0 11px 40px;color:#666;border-bottom:1px solid #eee;background:#fff url("<%=asset_path('board/toggle_open.png')%>") no-repeat 10px 11px;text-decoration:none}
+#faqList dt a.title:hover {border-bottom:1px solid #ddd;}
+#faqList dt .sl_faq_menu {position:absolute;top:10px;right:10px}
+#faqList dt.on a {background-position:10px -46px;}
+#faqList dd {float:left;display:inline;width:650px;margin:5px 0 0 15px;padding:5px 0 10px;line-height:140%}
+#faqList dd p {float:left;clear:left;margin:0;padding:3px 10px 0 40px;letter-spacing:0;line-height:170%}
+#faqList dd span.wrap {float:left;font-family:Arial;border-radius: 0.2em 0.2em 0.2em 0.2em;color: #fff;display:inline;font-size: 11px;margin: 2px 10px 2px 40px;padding: 0 3px;background:#f90}
+
+
+#users_main {clear:both}
+#section_main {float:left;width:100%}
+#section_main_top {float:left;position:relative;width:100%}
+#section_main_top .nav {margin-bottom:20px}
+#section_main_top a.more {position:absolute;top:10px;right:0;color:#999;text-decoration:none}
+#section_main_top a.more:hover {color:#333;text-decoration:underline}
+#section_main_top article li .date {float:right;color:#999}
+#section_main_top .label {font-size:110%}
+#section_main_bottom article {margin-bottom:20px}
+#section_main_bottom {float:left;width:100%;margin:3em 0}
+#section_main_bottom article {position:relative;float:left}
+#section_main_bottom article h3 {float:left;width:100%;margin:0 0 0.7em;padding:0 0 0.7em;font-weight:bold;border-bottom:1px solid #ccc}
+#section_main_bottom article a.more {position:absolute;top:0;right:15px;text-decoration:none;color:#999}
+#section_main_bottom article a.more:hover {color:#333;text-decoration:underline}
+#section_main_bottom article ul {margin:0px 0 0 20px;padding:0}
+#section_main_bottom article li {margin:3px 0;padding:0}
+#section_main_bottom article span.date {float:right;color:#999}
+#section_main_bottom .article2 {float:right;} 
+#section_main .col-xs-12 {float:left;width:100%;margin:30px 0}
+#section_main .col-xs-12 figure {float:left;margin:0 20px 0 0;padding:0}
+#section_main .col-xs-12 div {float:left}
+#section_main .col-xs-12 div h4 {margin:0 0 1.5em;padding:0;font-weight:bold}
+.scrollable {float:left;position:relative;overflow:hidden;width:100%;margin:5px 0 0;height:120px}
+.scrollable .items {width:20000em;position:absolute;clear:both}
+.scrollable .items .item {float:left;margin:0;padding:0;list-style:none}
+.scrollable .items .item li {float:left;margin:0 25px 0 0;padding:0;width:100px}
+
+.user_info {float:left;width:100%;border:1px dotted #ccc;margin-bottom:5px;padding:10px}
+.user_info img {float:left;display:block;margin:0 10px 0 0}
+.user_info dl {float:left;margin:0;padding:0}
+.user_info dt {margin:0 0 5px 0;padding:0}
+.user_info dd {margin:0;padding:0}
+#sign_up {float:left;width:100%;margin:10px 0 0}
+
+
+/* propose */
+#propose_main .content_list {float:left;background: none repeat scroll 0 0 #FAFAFA;border: 1px solid #CCCCCC;margin: 20px 0;padding:2%;width:100%}
+#propose_main .content_list_head {border-bottom: 1px dotted #CCCCCC;padding: 5px 0;position: relative}
+#propose_main .content_list_title {padding: 10px 0;position: relative;}
+#propose_main .content_list_date {color: #999;float: right;}
+#propose_main .content_list_content {padding: 20px;}
+#propose_main #propose_new {padding: 40px;}
+#propose_main #propose_form label {color: #333;}
+
+
+#slboard_model_main ul.media-list {clear:both;float:left;width:100%;margin:20px 0}
+#main_img {float:left;width:100%;padding: 20px;text-align: center;}
+#main_page #user_new {float:none;background:#fff;width:400px;margin:0 auto;border-radius:5px;padding:30px}
+#users_main .content_list {padding:20px 30px;border:1px solid #ccc;margin:0 0 20px}
+
+/* footer */
+footer ul {margin: 10px 0;padding: 0;list-style: none}
+footer ul li {margin: 10px 30px 5px;color: #333;display: inline}
+footer a {font-weight: bold;color: #666;text-decoration: none;}
+footer a:hover {color: #000;text-decoration: underline}
+
+/* default */
+.slboard_main a {outline:none}
+.slboard_main {float:left;width:100%}
+.slboard_main fieldset {border:none;margin:0;padding:0}
+.slboard_main legend,#slboard_main caption {display:none}
+.slboard_main .none {display:none}
+.slboard_main .sl_input {	border:1px solid #ccc;border-top-color:#999;border-left-color:#999;padding:4px 2px;font-size:12px}
+.slboard_main .sl_input:focus { background-color:#ffffdd}
+.slboard_overlay {position:relative;z-index:9999;display:none;width:400px;padding:35px;font-size:12px}
+.slboard_main a:focus {outline:none}
+.sl_left {text-align:left}
+.sl_center {text-align:center}
+.sl_right {text-align:right}
+
+/* main_list */
+.slboard_list {float:left;width:100%;margin:0;border-bottom:1px solid #ccc;border-collapse:collapse; }
+.slboard_list p {margin:0;padding:0;line-height:100%}
+.slboard_list th {padding:10px 0;background:#ccc}
+.slboard_list td {padding:10px 0;border-bottom:1px solid #f0f0f0;}
+.slboard_list tr.nb td{border-bottom:none}
+.slboard_list td a {color:#666;text-decoration:none}
+.slboard_list td a:hover {color:#333;text-decoration:underline}
+.slboard_list td .sl_photo {margin:0;padding:0}
+.slboard_list th p.registered_date{display:inline;padding-left:40px}
+.slboard_list th p.sl_name,.slboard_list td p.sl_name{text-align:left;text-indent:10px}
+.slboard_list th p.sl_registered_date {margin-right:10px}
+.slboard_list td p.sl_registered_date{font-family:Arial;margin-right:10px;letter-spacing:0;color:#999}
+.slboard_list td p.sl_count,.slboard_list td p.comment  {font-family:Arial;letter-spacing:0;color:#999}
+.slboard_list td .file_link {margin-left:10px}
+
+
+/* content */
+.slboard_content {margin-bottom:10px;padding-bottom:10px}
+.sl_content_header  {position:relative;float:left;width:100%;margin:5px 0 0;padding:10px 0;background:#ccc}
+.sl_content_header h3 {float:left;margin:0 0 0 20px;padding:0}
+.sl_content_header p {float:right;margin:0 20px 0 0;padding:0;color:#999;}
+.sl_content_main {clear:both}
+.sl_content_text {padding:40px 0;margin:0;line-height:150%;}
+#sl_content {width:730px;height:300px}
+
+
+/* buttoms */
+#sl_bottom_menu {float:left;width:100%;padding:10px 0;}
+#sl_content_bottom_menu {float:left;width:100%;border-top:1px solid #ccc;margin:20px 0;padding:10px 0}
+
+
+@media all and (max-width: 768px) {
+	html,body {background:#ccc}
+	header {background:none;border-bottom:0;margin:1% 0}
+	header h1 {margin:2%;padding:0;font-size:1.6em}
+	header h1 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
+	header h1 a:hover {text-decoration:none}  
+	header h1 a:active {color:red}
+	header nav.container {width:100%;margin:0;padding:0}
+	header nav ul {width:100%;margin:2% 0 0;padding:0;background:#fff;border-radius:5px}
+	header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
+	header nav ul.nav-pills > li + li {margin-left:0}
+	header nav ul li {margin:0;padding:0;background:#fff}
+	header nav ul li a {display:block;border-bottom:1px solid #f3f3f3;text-indent:1em;padding:10px;border-radius:5px}
+	header nav ul li a:hover {text-decoration:none;background:#eee}
+	header nav ul li a:active {color:red}
+	header nav ul li a .glyphicon {margin-right:1em}
+	.nav-pills > li + li {margin:0}
+	#mom {float:left;clear:both;width:100%;margin:0}
+	#main {float:left;margin:0;padding:0;width:100%;padding:3%;border-radius:5px;background:#fff;}	
+	.sub_main {clear:both;width:100%}	
+	aside {float:left;width:100%}
+	aside form {float:left}
+	#ad_main {float:right}
+	#section_main_top { width:100% }
+	#section_main_top .nav li {float:left;width:100%;margin:0;padding:0}
+	#section_main_top .nav li a {border:none}
+	#section_main article,#section_main .article3 {width:100%;margin:10px 0}
+	#section_main article ul {margin:0;padding:0;list-style:none}
+	#section_main_top {clear:both;float:left}
+	#section_main_bottom {margin-bottom:0}
+	footer {float:left;background:#fff;border-radius:5px;width:100%;margin:1% 0 0}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	.container {padding-left: 11px;padding-right: 11px}		
+	#mom {margin: -91px 0 -51px;min-height:100%;}
+	#main {padding-top:91px;padding-bottom:51px}
+	header { height: 90px; background: url('header.png') repeat-x; border-bottom: 1px solid #ccc;}
+	header nav ul { clear:both;float: left;width:100%;margin:0;padding:0}	
+	.sub_main {width:728px;margin:0 auto;padding:20px 0 40px}
+	.scrollable .items .item {width:760px}		
+	footer {clear: both; position: relative;width:96%; height: 50px; margin: 0px 2%; text-align: center; border-top: 1px solid #ccc; }	
+}
+
+@media all and (min-width: 1025px) {
+	#mom {margin: -71px 0 -51px;min-height:100%;}
+	#main {padding-top:71px;padding-bottom:51px}
+	#main_main {float:right;width:850px}
+	header { height: 70px; background: url('header.png') repeat-x; border-bottom: 1px solid #ccc;}
+	header h1 { position: relative;float: left; margin: 15px 0 0 0; padding:0}
+	header nav { position: relative; z-index: 999}
+	header nav ul {float:right;margin:20px 0 0 0;padding:0}
+	.sub_main {float:left;width:728px;margin:0 auto;padding:0 0 40px}
+	footer {clear: both; position: relative;width:96%; height: 50px; margin: 0px 2%; text-align: center; border-top: 1px solid #ccc; }	
+	.scrollable .items .item {width:850px}	
+	/* aside */
+	aside {clear:both;float:left;width:250px;margin:0;position:relative;}
+	aside fieldset {margin:0 0 30px;padding:10px;border:1px solid #ccc;border-radius:5px}
+	
+	#ad_main {clear:both}
+}
