@@ -24,6 +24,7 @@
 /config/database.yml
 /db/schema.rb
 .env
+.project
 #Gemfile.lock
 *.sql
 
