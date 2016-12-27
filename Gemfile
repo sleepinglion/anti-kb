@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -23,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
 gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
@@ -34,7 +36,7 @@ gem 'devise'
 gem 'impressionist'
 gem 'mini_magick'
 gem 'cancan'
-gem 'ckeditor', :path=>"vendor/gems/ckeditor"
+gem 'ckeditor'
 gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
 gem 'fog'
 gem 'unf'
@@ -53,7 +55,6 @@ group :development do
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'sqlite3'  
   gem 'web-console'
 end
 

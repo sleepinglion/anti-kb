@@ -1,7 +1,5 @@
 //= require jquery_ujs
 
-window['CKEDITOR_BASEPATH']='/ckeditor/';
-
 $(document).ready(function() {
     $('#myModal').on('hidden.bs.modal', function () {
         $(this).removeData('bs.modal');
