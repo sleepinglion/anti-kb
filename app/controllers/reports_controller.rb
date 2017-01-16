@@ -26,12 +26,7 @@ class ReportsController < BoardController
   # GET /reports/1
   # GET /reports/1.json
   def show
-    @report = Report.find(params[:id])
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @notice }
-    end
   end
 
   # GET /reports/new
