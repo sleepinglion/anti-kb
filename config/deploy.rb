@@ -1,7 +1,7 @@
 set :application, 'antikb'
-set :repo_url, 'git@github.com:sleepinglion/antikb.git'
+set :repo_url, 'git@github.com:sleepinglion/anti-kb.git'
 set :branch, 'master'
-set :deploy_to, '/home/deploy/antikb'
+set :deploy_to, '/home/web/antikb'
 # set :scm, :git
 
 # set :format, :pretty
@@ -22,7 +22,7 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-  
+
   desc 'Refresh sitemap'
   task :refresh_sitemap do
     on roles(:app), in: :sequence, wait: 1 do
