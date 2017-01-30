@@ -1,5 +1,6 @@
-//= require application
+//= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require jquery.easing
 //= require fancybox
 
@@ -10,7 +11,7 @@ $(document).ready(function() {
         mousewheel: true
     }).navigator().autoscroll({
         interval: 3000
-        });
+	});
     
 
 

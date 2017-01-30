@@ -1,3 +1,5 @@
+if ActiveRecord::Base.connection.adapter_name == 'MySQL'
+
 ActiveSupport.on_load :active_record do
   module ActiveRecord::ConnectionAdapters
     class AbstractMysqlAdapter
@@ -11,4 +13,6 @@ ActiveSupport.on_load :active_record do
       alias_method_chain :create_table, :innodb_row_format
     end
   end
+end
+
 end
