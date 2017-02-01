@@ -1,20 +1,9 @@
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap-sprockets
+//= require application
 //= require jquery.easing
 //= require fancybox
 
 
 $(document).ready(function() {
-    $(".scrollable").scrollable({
-        circular: true,
-        mousewheel: true
-    }).navigator().autoscroll({
-        interval: 3000
-	});
-    
-
-
     $("a.simple_image").fancybox({
         'opacity'   : true,
         'overlayShow'        : true,
