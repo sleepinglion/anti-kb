@@ -28,23 +28,22 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
 gem 'bootstrap-sass'
-gem 'jquery-ui-rails'
-gem 'ui_datepicker-rails3'
+gem 'devise'
+gem 'cancan'
 gem 'kaminari'
 gem 'carrierwave'
-gem 'devise'
-gem 'impressionist'
 gem 'mini_magick'
-gem 'cancan'
+gem 'impressionist'
+gem 'acts-as-taggable-on'
 gem 'ckeditor'
 gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
-gem 'fog'
-gem 'unf'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'meta-tags'
+gem 'gretel'
+
 gem 'email_validator'
-gem 'listen'
+gem 'unf'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
