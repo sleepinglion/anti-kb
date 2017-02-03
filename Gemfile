@@ -57,20 +57,22 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # capistrano
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails'  
+  gem 'capistrano-rails'
 end
 
 group :production do
   #gem 'asset_sync'
   gem 'mysql2'
   gem 'dotenv-rails'
-  gem 'recaptcha', :require => 'recaptcha/rails'  
-  
+  gem 'recaptcha', :require => 'recaptcha/rails'
+
   #Redis Cache
   gem 'redis-rails'
-  gem 'redis-rack-cache'  
+  gem 'redis-rack-cache'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
