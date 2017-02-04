@@ -1,54 +1,49 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<%=I18n.locale %>">
 <head>
-<title><%=@title %></title>
-<meta charset="utf-8">
-<meta name="robots" content="<%=@meta_robot %>" />
-<meta name="application-name" content="<%=@application_name %>" />
-<meta name="keywords" content="<%=@meta_keyword %>" />
-<meta name="description" content="<%=@meta_description %>" />
-<meta name="author" content="Sleeping-Lion" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="<%=asset_path('favicon.ico') %>" />
-<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css", :media => "all" %>
-<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
-<!--[if IE]>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-<![endif]-->
+	<meta charset="utf-8" />
+	<%=display_meta_tags :site => t(:application_name),
+	:title=>@title,
+	:description => @meta_description,
+	:keywords => @meta_keywords,
+	:separator => t(:title_separator),
+	:viewport => "width=device-width, initial-scale=1.0, user-scalable=no",
+	:reverse => true %>
+	<%=display_meta_tags og: {
+  	title:   @title,
+  	description: @meta_description,
+  	url:      @meta_url,
+  	image:    @meta_image
+	}
+	%>
+	<meta name="author" content="Sleeping-Lion" />
+	<link rel="shortcut icon" href="<%=asset_path('favicon.ico') %>" />
+	<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<![endif]-->
 </head>
 <body>
-<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<%= render :partial => 'layouts/header' %>
-<section id="mom">
-	<section id="main" class="container">
+	<%= render :partial => 'layouts/header' %>
+	<div id="mom">
+		<section id="main" class="container">
 		<% if current_page?(root_path) %>
 		<figure id="main_img" class="hidden-xs">
 			<%=image_tag "main_back.png",:alt=>"좃같은 세상 KB가 만들어 갑니다." %>
 		</figure>		
 		<%= render :partial => 'layouts/aside' %>			
 		<% else %>
-		<div class="page-header pull-left">
-			<h1 class="pull-left"><%=@controller_name %></h1>
-			<ul class="breadcrumb pull-right">
-				<li><%=link_to t(:link_home),root_path %></li>
-				<% if @page_category %>
-				<li><%=link_to @page_category %></li>
-				<% end %>
-				<li class="active"><%=@controller_name %></li>
-			</ul>
-		</div>
+		<%= render :partial => 'layouts/page_header' %>
 		<% end %>		
 		<section <% if current_page?(root_path) %>id="main_main"<% else %>class="sub_main"<% end %>>
 			<%=yield %>
 			<div class="clearfix">&nbsp;</div>		
 		</section>			
 	</section>
-</section>
-<%= render :partial => 'layouts/footer' %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-<%= javascript_include_tag @script, "data-turbolinks-track" => true %>
-</body>
+	</div>
+	<%= render :partial => 'layouts/footer' %>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<%= javascript_include_tag @script, "data-turbolinks-track" => true %>
+	</body>
 </html>

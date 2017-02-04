@@ -1,25 +1,29 @@
 <header>
-  <% unless current_page? root_path %>
-  <div id="top_menu">
-    <ul>
-      <% if user_signed_in? %>
-      <li><%=link_to(current_user.name,edit_user_registration_path) %>님 환영합니다.</li>
-      <li><%= link_to t(:logout),destroy_user_session_path %></li>
-      <% else %>
-      <li><%= link_to t(:login),new_user_session_path %></li>
-      <li><%= link_to t(:sign),new_user_registration_path %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <nav class="container">
-    <h1><%= link_to '국민을 죽이는 KB',root_path %></h1>
-    <ul>
-      <li <% if params[:controller]=='reports' %>class="active"<% end %>><%= link_to reports_path do %>피해 신고<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-      <li <% if params[:controller]=='compliments' %>class="active"<% end %>><%= link_to compliments_path do %>경쟁사 칭찬<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-      <li <% if params[:controller]=='proposes' %>class="active"<% end %>><%= link_to proposes_path do %>망하게할 방법 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-      <li <% if params[:controller]=='models' %>class="active"<% end %>><%= link_to models_path do %>광고모델 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-      <li <% if params[:controller]=='faqs' %>class="active"<% end %>><%= link_to faqs_path do %>KB FAQ<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-    </ul>
-  </nav>
+	<div class="container">
+		<div class="row">
+			<h1><%= link_to t(:home_title),root_path %></h1>
+			<% unless current_page? root_path %>
+			<div id="top_menu">
+				<ul>
+					<% if user_signed_in? %>
+					<li><%=link_to(current_user.name,edit_user_registration_path) %>님 환영합니다.</li>
+					<li><%= link_to t(:logout),destroy_user_session_path %></li>
+					<% else %>
+					<li><%= link_to t(:login),new_user_session_path %></li>
+					<li><%= link_to t(:sign),new_user_registration_path %></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>
+			<nav>
+				<ul class="nav nav-pills">
+					<li <% if params[:controller]=='reports' %>class="active"<% end %>><%= link_to reports_path do %>피해 신고<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='compliments' %>class="active"<% end %>><%= link_to compliments_path do %>경쟁사 칭찬<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='proposes' %>class="active"<% end %>><%= link_to proposes_path do %>망하게할 방법 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='models' %>class="active"<% end %>><%= link_to models_path do %>광고모델 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='faqs' %>class="active"<% end %>><%= link_to faqs_path do %>KB FAQ<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </header>
