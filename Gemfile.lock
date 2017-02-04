@@ -98,8 +98,6 @@ GEM
       activemodel
     erubis (2.7.0)
     execjs (2.7.0)
-    fancybox2-rails (0.2.7)
-      railties (>= 3.1.0)
     ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -284,7 +282,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   email_validator
-  fancybox2-rails
   gretel
   impressionist
   jbuilder (~> 2.5)
