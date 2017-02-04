@@ -36,7 +36,7 @@ gem 'mini_magick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'ckeditor'
-gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
+gem 'fancybox2-rails'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'meta-tags'
@@ -58,7 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  # capistrano
+  # Capistrano
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -70,7 +70,7 @@ group :production do
   gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'
 
-  #Redis Cache
+  # Redis Cache
   gem 'redis-rails'
   gem 'redis-rack-cache'
 end
