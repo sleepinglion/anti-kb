@@ -20,45 +20,45 @@ User.create!(:name=>'닭잡자',:email => 'toughjjh9@gmail.com',:password => 'jj
 #,:created_at=>'2016-12-01 16:22:32'
 User.create!(:name=>'KB망해라',:email => 'toughjjh10@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'빨리 망했으면 좋겠습니다.')
 #,:created_at=>'2017-02-04 22:01:12'
-User.create!(:name=>'폭탄테러',:email => 'toughjjh1@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'폭파하고 싶다!!')
+User.create!(:name=>'폭탄테러',:email => 'toughjjh11@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'폭파하고 싶다!!')
 #,:created_at=>'2016-12-09 15:22:36'
-User.create!(:name=>'욕나옴',:email => 'toughjjh2@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'18진 짜 욕밖에 안옴')
+User.create!(:name=>'욕나옴',:email => 'toughjjh12@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'18진 짜 욕밖에 안옴')
 #,:created_at=>'2016-12-10 22:22:56'
-User.create!(:name=>'김진',:email => 'toughjjh3@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'저도 힘을 보태고 싶어요')
+User.create!(:name=>'김진',:email => 'toughjjh13@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'저도 힘을 보태고 싶어요')
 #,:created_at=>'2016-12-14 21:22:23'
-User.create!(:name=>'나영수',:email => 'toughjjh4@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주는 은행')
+User.create!(:name=>'나영수',:email => 'toughjjh14@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주는 은행')
 #,:created_at=>'2016-12-14 00:22:44'
-User.create!(:name=>'예은',:email => 'toughjjh5@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'불친절의 대명서')
+User.create!(:name=>'예은',:email => 'toughjjh15@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'불친절의 대명서')
 #,:created_at=>'2016-12-15 20:22:25'
-User.create!(:name=>'홍이',:email => 'toughjjh6@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'18,망해라')
+User.create!(:name=>'홍이',:email => 'toughjjh16@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'18,망해라')
 #,:created_at=>'2016-12-20 16:32:12'
-User.create!(:name=>'오영민',:email => 'toughjjh7@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주네요')
+User.create!(:name=>'오영민',:email => 'toughjjh17@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주네요')
 #,:created_at=>'2016-12-21 00:01:03'
-User.create!(:name=>'지영이',:email => 'toughjjh8@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'사실 망한곳인데 세금으로 살린데지요')
+User.create!(:name=>'지영이',:email => 'toughjjh18@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'사실 망한곳인데 세금으로 살린데지요')
 #,:created_at=>'2016-12-22 23:12:35'
-User.create!(:name=>'저도가입',:email => 'toughjjh9@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'대출 안되면 안된다하지 사람 기다리게는 왜 하는거야??')
+User.create!(:name=>'저도가입',:email => 'toughjjh19@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'대출 안되면 안된다하지 사람 기다리게는 왜 하는거야??')
 #,:created_at=>'2016-12-26 22:21:11'
-User.create!(:name=>'망해라',:email => 'toughjjh10@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'망하기만을 기도합니다.')
+User.create!(:name=>'망해라',:email => 'toughjjh20@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'망하기만을 기도합니다.')
 #,:created_at=>'2017-01-01 22:12:04'
-User.create!(:name=>'정유한',:email => 'toughjjh1@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'하...  할 말을 잊었습니다....')
+User.create!(:name=>'정유한',:email => 'toughjjh21@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'하...  할 말을 잊었습니다....')
 # ,:created_at=>'2017-01-04 20:11:51'
-User.create!(:name=>'현이',:email => 'toughjjh2@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'진짜 불친절 하더라고요')
+User.create!(:name=>'현이',:email => 'toughjjh22@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'진짜 불친절 하더라고요')
 #,:created_at=>'2017-06-01 19:23:41'
-User.create!(:name=>'저도 동참',:email => 'toughjjh3@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'망해라')
+User.create!(:name=>'저도 동참',:email => 'toughjjh23@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'망해라')
 #,:created_at=>'2017-01-08 16:55:29'
-User.create!(:name=>'몰라요',:email => 'toughjjh4@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주는 은행')
+User.create!(:name=>'몰라요',:email => 'toughjjh24@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주는 은행')
 #,:created_at=>'2017-01-15 11:53:21'
-User.create!(:name=>'정길수',:email => 'toughjjh5@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'내 개인정보 털린곳')
+User.create!(:name=>'정길수',:email => 'toughjjh25@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'내 개인정보 털린곳')
 #,:created_at=>'2017-01-18 16:40:12'
-User.create!(:name=>'정나리',:email => 'toughjjh6@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'정말 욕도 지치는 곳입니다.')
+User.create!(:name=>'정나리',:email => 'toughjjh26@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'정말 욕도 지치는 곳입니다.')
 #,:created_at=>'2017-22-01 00:22:32'
-User.create!(:name=>'이하윤',:email => 'toughjjh7@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'국민은행 거래안한지 오래 됬지만 지금도 꼴보기도 싫네요')
+User.create!(:name=>'이하윤',:email => 'toughjjh27@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'국민은행 거래안한지 오래 됬지만 지금도 꼴보기도 싫네요')
 #,:created_at=>'2017-01-23 20:55:45'
-User.create!(:name=>'김이현',:email => 'toughjjh8@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'개새끼들')
+User.create!(:name=>'김이현',:email => 'toughjjh28@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'개새끼들')
 #,:created_at=>'2017-01-26 23:11:15'
-User.create!(:name=>'조성운',:email => 'toughjjh9@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'짜증, 욕밖에 안나오는 곳')
+User.create!(:name=>'조성운',:email => 'toughjjh29@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'짜증, 욕밖에 안나오는 곳')
 #,:created_at=>'2017-01-28 15:31:42'
-User.create!(:name=>'정윤성',:email => 'toughjjh10@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'진짜 고객을 뭘로 보는곳인지 모르겠네요')
+User.create!(:name=>'정윤성',:email => 'toughjjh30@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'진짜 고객을 뭘로 보는곳인지 모르겠네요')
 #,:created_at=>'2017-02-01 00:22:32'
 
 
