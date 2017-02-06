@@ -36,7 +36,7 @@ User.create!(:name=>'오영민',:email => 'toughjjh17@gmail.com',:password => 'j
 #,:created_at=>'2016-12-21 00:01:03'
 User.create!(:name=>'지영이',:email => 'toughjjh18@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'사실 망한곳인데 세금으로 살린데지요')
 #,:created_at=>'2016-12-22 23:12:35'
-User.create!(:name=>'저도가입',:email => 'toughjjh19@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'대출 안되면 안된다하지 사람 기다리게는 왜 하는거야??')
+User.create!(:name=>'저도가입',:email => 'toughjjh19@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'대출 안되면 안된다하지, 왜 사람 기다리게 하는거야??')
 #,:created_at=>'2016-12-26 22:21:11'
 User.create!(:name=>'망해라',:email => 'toughjjh20@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'망하기만을 기도합니다.')
 #,:created_at=>'2017-01-01 22:12:04'
@@ -52,7 +52,7 @@ User.create!(:name=>'정길수',:email => 'toughjjh25@gmail.com',:password => 'j
 #,:created_at=>'2017-01-18 16:40:12'
 User.create!(:name=>'정나리',:email => 'toughjjh26@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'정말 욕도 지치는 곳입니다.')
 #,:created_at=>'2017-22-01 00:22:32'
-User.create!(:name=>'이하윤',:email => 'toughjjh27@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'국민은행 거래안한지 오래 됬지만 지금도 꼴보기도 싫네요')
+User.create!(:name=>'이하윤',:email => 'toughjjh27@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'국민은행 거래안한지 오래 됐지만 지금도 꼴보기도 싫네요')
 #,:created_at=>'2017-01-23 20:55:45'
 User.create!(:name=>'김이현',:email => 'toughjjh28@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'개새끼들')
 #,:created_at=>'2017-01-26 23:11:15'
@@ -205,7 +205,12 @@ Model.create!(:user_id=>2,:title=>'前 대통령님',:recommend_description=>'�
 KB모델 하면 뭐 떨어지는거 있나요? 저의 <code>혐오스럽지</code> 않은 얼굴로 KB를 알리는데 노력하겠습니다.',:photo=>File.open(Rails.root.join("app", "assets", "images", "mrpre.jpg")))
 
 
-Notice.create!(:id=>1,:user_id=>1,:title=>'anti-kb.kr이 새롭게 태어났습니다.')
+Notice.create!(:id=>1,:user_id=>1,:title=>'www.anti-kb.kr이 새롭게 태어났습니다.')
 NoticeContent.create!(:id=>1, :content=>'그 동안 관리되지 못했던 anti-kb가 새롭게 리뉴얼 되어서 오픈하였습니다.
 기존과 크게 다른점은 없지만 몇몇 메뉴를 보강하고 서버와 언어를 바꿨습니다.
 변함없이 살인자-은행이 망할때까지 운영해나가겠습니다.')
+Notice.create!(:id=>2,:user_id=>1,:title=>'www.antikb.site로 도메인 변경')
+NoticeContent.create!(:id=>2, :content=>'또다시 얼마동안 서비스되지 못하고 폐쇄되었던점 사과드립니다.
+기존 데이터는 그대로 보존하고서 업데이트후에 오픈하였습니다.
+도메인이 변경되어 이제 www.antikb.site로 접속하시면 됩니다.
+이제 살인자-은행 망하는 그날까지 중단없이 서비스 하겠습니다.')
