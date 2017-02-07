@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     
     @meta_robot='all, index, follow'
     @meta_description=t(:meta_description)
-    @meta_keyword=t(:meta_keyword)
+    @meta_keyword=t(:meta_keywords)
            
     @style='application'
     @script='application'
