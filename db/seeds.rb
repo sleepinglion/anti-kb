@@ -28,7 +28,7 @@ User.create!(:name=>'김진',:email => 'toughjjh13@gmail.com',:password => 'jjh1
 #,:created_at=>'2016-12-14 21:22:23'
 User.create!(:name=>'나영수',:email => 'toughjjh14@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민한테는 대출 안해주는 은행')
 #,:created_at=>'2016-12-14 00:22:44'
-User.create!(:name=>'예은',:email => 'toughjjh15@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'불친절의 대명서')
+User.create!(:name=>'예은',:email => 'toughjjh15@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'불친절의 대명사')
 #,:created_at=>'2016-12-15 20:22:25'
 User.create!(:name=>'홍이',:email => 'toughjjh16@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'18,망해라')
 #,:created_at=>'2016-12-20 16:32:12'
