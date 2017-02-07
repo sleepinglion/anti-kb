@@ -6,8 +6,8 @@ crumb :reports do
    link t('activerecord.models.report'), reports_path
 end
 
-crumb :report do |faq|
-   link :report.title, report_path(report)
+crumb :report do |report|
+   link report.title, report_path(report)
    parent :faqs
 end
 
@@ -15,7 +15,7 @@ crumb :compliments do
    link t('activerecord.models.compliment'), compliments_path
 end
 
-crumb :compliment do |faq|
+crumb :compliment do |compliment|
    link compliment.title, compliment_path(compliment)
    parent :compliments
 end

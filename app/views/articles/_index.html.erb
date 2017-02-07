@@ -1,4 +1,5 @@
-<article class="panel panel-default">>
+<article class="panel panel-default">
+	<div class="panel-body">
 	<% unless @articles.empty? %>
 	<ul>
 		<% @articles.each do |article| %>
@@ -9,4 +10,5 @@
 	<p><%=t(:no_data) %></p>
 	<% end %>
 	<%=link_to t(:link_more),articles_path,:class=>'more' %>
+	</div>
 </article>

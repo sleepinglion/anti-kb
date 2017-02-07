@@ -78,12 +78,12 @@ ReportCategory.create!(:id=>4,:title=>'비리,횡령')
 ReportCategory.create!(:id=>5,:title=>'횡포')
 ReportCategory.create!(:id=>6,:title=>'기타')
 
-Report.create!(:id=>1,:user_id=>1,:report_category_id=>1,:title=>'진짜 이놈들은 고객을 뭘로 보는건지?')
+Report.create!(:id=>1,:user_id=>1,:report_category_id=>1,:title=>'진짜 이놈들은 고객을 뭘로 보는건지?',:created_at=>'2013-08-02 18:49:49',:updated_at=>'2013-08-02 18:49:49')
 ReportContent.create!(:id=>1,:content=>'짜증 가득한 표정보면 정말 주먹이 우네요
 그냥 얼굴 때리고 싶은거 참느냐고 혼났어요
 인내심을 길러주는 우리의 살인자-은행')
 
-Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ')
+Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ',:created_at=>'2013-08-04 18:51:23',:updated_at=>'2013-08-04 18:51:23')
 ReportContent.create!(:id=>2,:content=>'국민은행 홈페이지에 사과문 떳네요
 니들은 개과천선 할 수없어
 그냥 지금 해체가 답이야!!!')
@@ -154,7 +154,7 @@ ComplimentCategory.create!(:id=>5,:title=>'고객감동')
 ComplimentCategory.create!(:id=>6,:title=>'기타')
 
 
-Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:created_at=>'2013-08-02 18:49:49',:updated_at=>'2013-08-02 18:49:49')
+Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:created_at=>'2015-08-02 18:49:49',:updated_at=>'2015-08-02 18:49:49')
 ComplimentContent.create!(:id=>1,:content=>'역시 망할 살인자-은행에 대적할 은행은 우리은행이지요~
 홈페이지 진짜 잘만들었네
 ㅂㅅ같은 살인자 은행놈들은 언제 플래시 버릴려나?')
