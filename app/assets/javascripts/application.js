@@ -7,7 +7,11 @@ $(document).ready(function() {
         $(this).removeData('bs.modal');
     });
     
-    $('.modal_link').click(function(event){
-        $('#myModal').modal({'remote':$(this).attr('href')+'?no_layout=true'});
+	$('.modal_link').click(function(event){
+  	event.preventDefault();
+  	$('#myModal').removeData("modal");
+  	$('#myModal').load($(this).attr('href')+'?no_layout=true',function(){
+  		$('#myModal').modal();
+  		});
 	});
 });

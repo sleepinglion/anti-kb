@@ -65,9 +65,9 @@ User.create!(:name=>'정윤성',:email => 'toughjjh30@gmail.com',:password => 'j
 Article.create!(:title=>'국부유출의 최고가 되겠습니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131127034103604',:description=>'국민의 돈을 모아서
 국부유출의 최고의 은행이 되겠습니다.~~
 뭐 망해도 다시 세금으로 살려줄꺼지요?')
-Article.create!(:title=>'횡령 직원을 우리의 자랑입니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131128033706474',:description=>'횡령의 최고의 직원들을 키우는것으 우리의 목표입니다,
+Article.create!(:title=>'횡령 직원은 우리의 자랑입니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131128033706474',:description=>'횡령의 최고의 직원들을 키우는것으 우리의 목표입니다,
 세금은 먼저 먹는게 임자~ 망하면 세금 투입해줘요~~')
-Article.create!(:title=>'이새끼들 또 돈풀었나?',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131202062504190',:description=>'머니 투데이? 개세들 살인자-은행에 돈 받았나보네')
+Article.create!(:title=>'이새끼들 또 돈풀었나?, 듣보잡 언론에도 돈 많이 푸나보네요',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131202062504190',:description=>'머니 투데이? 개세들 살인자-은행에 돈 받았나보네')
 Article.create!(:title=>'횡령과 비리는 KB전문분야',:url=>'http://media.daum.net/economic/others/newsview?newsid=20131202150206737',:description=>'ㅋㅋㅋ 이번엔 걸렸네?')
 Article.create!(:title=>'ㅋㅋㅋ 미친놈들 이게 사과로 될일이냐?',:url=>'https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:description=>'니들이 그렇지 뭐')
 
@@ -99,8 +99,12 @@ ReportContent.create!(:id=>3,:content=>'이전 회사에서 월급통장 농협�
 그래 고객 기분 더럽게 해서 보안 강화 되었습니까? 이 개같은 NH놈들아!!!!')
 
 Propose.create!(:id=>1,:user_id=>1,:title=>'ㅎㅎㅎ 뭐 제안안해도 알아서 망할듯 ㅋㅋㅋㅋㅋ',:content=>'이놈들 동시다발적으로 사고 친거 걸렸네요
-요즘 돈이 딸리나? 예전부터 쭉 있던일인데 이제야 터지네요~~')
-
+요즘은 언론사에 먹일 돈이 딸리나? 예전부터 쭉 있던일인데 이제야 터지네요~~',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')
+Propose.create!(:id=>2,:user_id=>1,:title=>'당연한 이야기이지만 있는 계좌와 카드를 해지 하세요',:content=>'카드는 해지시켰었는데 
+계좌해지를 안하고 있었네요
+주변에는 계속 KB의 악독함을 알리고 카드와 계좌해지를 역설하고 있었는데 막상 저는 폐기를 못하고 있었네요
+당장 카드와 계좌를 폐기하고 주변에도 그리하게 권고해주세요
+',:created_at=>'2017-01-04 15:21:54',:updated_at=>'2017-01-04 15:21:54')
 
 
 Bank.create!(:id=>1,:title=>'우리은행',:photo=>File.open(Rails.root.join("app", "assets", "images", "lovely_dog.jpg")))
@@ -211,16 +215,17 @@ Model.create!(:user_id=>1,:title=>'미친개',:recommend_description=>'역시 �
 
 Model.create!(:user_id=>2,:title=>'前 대통령님',:recommend_description=>'사대강 살리기로 대한민국의 역사를 다시 쓴 샐러리맨의 신화인 前 대통령님
 음.. 이렇게 말하니 좀 안 어울리네??
-하여간 왠지 KB와 너무나 잘 어울리는 얼굴과 행동들이 웬지 KB의 CEO같은 이명박 前 대통령님',:models_comment=>'네 제가 모델이라고요? 제가 모델 해봐서 아는데 이거 영광입니다.
+하여간 왠지 KB와 너무나 잘 어울리는 얼굴과 행동들이 KB의 CEO같은 이명박 前 대통령님',:models_comment=>'네 제가 모델이라고요? 제가 모델 해봐서 아는데 이거 영광입니다.
 KB모델 하면 뭐 떨어지는거 있나요? 저의 <code>혐오스럽지</code> 않은 얼굴로 KB를 알리는데 노력하겠습니다.',:photo=>File.open(Rails.root.join("app", "assets", "images", "mrpre.jpg")))
 
 
-Notice.create!(:id=>1,:user_id=>1,:title=>'www.anti-kb.kr이 새롭게 태어났습니다.')
+Notice.create!(:id=>1,:user_id=>1,:title=>'www.anti-kb.kr이 새롭게 태어났습니다.',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')
 NoticeContent.create!(:id=>1, :content=>'그 동안 관리되지 못했던 anti-kb가 새롭게 리뉴얼 되어서 오픈하였습니다.
 기존과 크게 다른점은 없지만 몇몇 메뉴를 보강하고 서버와 언어를 바꿨습니다.
 변함없이 살인자-은행이 망할때까지 운영해나가겠습니다.')
-Notice.create!(:id=>2,:user_id=>1,:title=>'www.antikb.site로 도메인 변경')
-NoticeContent.create!(:id=>2, :content=>'또다시 얼마동안 서비스되지 못하고 폐쇄되었던점 사과드립니다.
+Notice.create!(:id=>2,:user_id=>1,:title=>'www.antikb.site로 도메인 변경',:created_at=>'2017-01-04 18:51:23',:updated_at=>'2017-01-04 18:51:23')
+NoticeContent.create!(:id=>2, :content=>'개인적인 운영비용 충당의 어려움으로 인해 또다시 얼마동안 서비스되지 못하고 폐쇄되었던점 사과드립니다.
 기존 데이터는 그대로 보존하고서 업데이트후에 오픈하였습니다.
+몇몇 날짜 데이터와 방문자 데이터가 상실되었지만 복구중입니다.
 도메인이 변경되어 이제 www.antikb.site로 접속하시면 됩니다.
 이제 살인자-은행 망하는 그날까지 중단없이 서비스 하겠습니다.')
