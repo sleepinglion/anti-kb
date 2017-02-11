@@ -173,7 +173,7 @@ ComplimentContent.create!(:id=>1,:content=>'역시 망할 살인자-은행에 �
 홈페이지 진짜 잘만들었네
 ㅂㅅ같은 살인자 은행놈들은 언제 플래시 버릴려나?')
 
-Compliment.create!(:id=>2,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'신한은행도 좋음',:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10')
+Compliment.create!(:id=>2,:user_id=>1,:bank_id=>17,:compliment_category_id=>1,:title=>'신한은행도 좋음',:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10')
 ComplimentContent.create!(:id=>2,:content=>'신한은행에 계좌 만들러 갔을때의 친절함은 감동으로 다가왔습니다.
 KB,NH같은 썩은 공기업,공무원 마인드와는 차원이 다름이 몸소 느껴졌습니다.
 신한은행 인터넷뱅킹 서비스도 역시 썩은은행들과는 차원이 다르네요
