@@ -198,6 +198,7 @@ footer a:hover {color: #000;text-decoration: underline}
 #sl_bottom_menu {float:left;width:100%;padding:10px 0;}
 #sl_content_bottom_menu {float:left;width:100%;border-top:1px solid #ccc;margin:20px 0;padding:10px 0}
 
+.adsbygoogle {width:100%}
 
 @media all and (max-width: 768px) {
 	html,body {background:#ccc}
@@ -267,17 +268,18 @@ footer a:hover {color: #000;text-decoration: underline}
 @media all and (min-width: 1200px) {
   html,body {font-size:16px}
 	.sub_main {padding-bottom:50px}
+	.adsbygoogle {height: 100px}
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
-
+  .adsbygoogle {height: 110px}
 }
 
 @media (min-width: 1500px) {
   html,body {font-size:18px}
   .container {width:1500px}
   .jumbotron {text-align: center}
-
+  .adsbygoogle {height: 140px}
 
   .hidden-lg {
       display: none !important;
