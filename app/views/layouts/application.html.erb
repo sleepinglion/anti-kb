@@ -28,18 +28,17 @@
 	<%= render :partial => 'layouts/header' %>
 	<div id="mom">
 		<section id="main" class="container">
+			<div class="row">
 		<% if current_page?(root_path) %>
-		<figure id="main_img" class="hidden-xs">
-			<%=image_tag "main_back.png",:alt=>"좃같은 세상 KB가 만들어 갑니다." %>
-		</figure>		
-		<%= render :partial => 'layouts/aside' %>			
+		<%= render :partial => 'layouts/aside' %>
 		<% else %>
 		<%= render :partial => 'layouts/page_header' %>
-		<% end %>		
-		<section <% if current_page?(root_path) %>id="main_main"<% else %>class="sub_main"<% end %>>
+		<% end %>
+		<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
 			<%=yield %>
-			<div class="clearfix">&nbsp;</div>		
-		</section>			
+			<div class="clearfix">&nbsp;</div>
+		</section>
+	</div>
 	</section>
 	</div>
 	<%= render :partial => 'layouts/footer' %>

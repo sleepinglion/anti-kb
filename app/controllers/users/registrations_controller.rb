@@ -1,29 +1,29 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   layout :layout
-    
+
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.user')
   end
-  
+
   def index
     @users = User.order('id desc').page(params[:page]).per(10)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @notices }
     end
   end
-  
+
   def show
     @users = User.order('id desc').page(params[:page]).per(10)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @notices }
     end
   end
-    
+
  # GET /resource/sign_up
 #  def new
 #    resource = build_resource({})
@@ -33,13 +33,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(resource_params)
-    
-    if Rails.env.production? 
+
+    if Rails.env.production?
       result=verify_recaptcha(:model => resource) && resource.save
-    else 
+    else
       result=resource.save
     end
-    
+
     if result
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
@@ -55,7 +55,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
-  
+
    def after_sign_up_path_for(resource)
     after_sign_in_path_for(resource)
   end
@@ -71,21 +71,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     signed_in_root_path(resource)
   end
-  
+
   def layout
     if(params[:no_layout])
-      return false
+      return nil
     else
-      return 'application'
+      return 'special'
     end
-  end
-  
+  end  
+
   protected
-  
+
   def account_update_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password, :description, :photo, :photo_cache)
   end
-  
+
   private
 
   def resource_params

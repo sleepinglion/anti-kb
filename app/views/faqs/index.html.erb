@@ -1,16 +1,12 @@
 <% breadcrumb :faqs %>
 <section id="faq_main">
-	<% if notice %>
-		<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-	<% end %>
-	<%= render :partial => 'layouts/ad' %>
 	<article>
 		<ol id="faqCategoryList">
-			<% unless @faq_categories.empty? %>			
-			<% @faq_categories.each do |faq_category| %>			
+			<% unless @faq_categories.empty? %>
+			<% @faq_categories.each do |faq_category| %>
 			<li <% if(@categoryId==faq_category.id) %>class="on"<% end %>>
 				<%= link_to truncate(faq_category.title,:length => 20),faqs_path(:faq_category_id=>faq_category.id),{:class=>'title'} %>
-				<% if(@categoryId==faq_category.id) %>				
+				<% if(@categoryId==faq_category.id) %>
 				<% if user_signed_in? %>
 				<% if current_user.admin? %>
 				<div class="sl_faq_category_menu">
@@ -19,17 +15,17 @@
 				</div>
 				<% end %>
 				<% end %>
-				<% end %>				
+				<% end %>
 			</li>
 			<% end %>
   			<% else %>
 			<li><%=t(:no_data) %></li>
 			<% end %>
-		</ol>		
+		</ol>
 	</article>
 	<article>
 		<dl id="faqList">
-			<% unless @faqs.empty? %>			
+			<% unless @faqs.empty? %>
 			<% @faqs.each do |faq| %>
 			<dt <% if @faq %><% if @faq.id==faq.id %>class="on"<% end %><% end %>>
 				<%= link_to truncate(faq.title,:length => 80), faqs_path(:faq_category_id=>params[:faq_category_id],:id=>faq),{:class=>'title'} %>
@@ -46,16 +42,16 @@
 					<dd><%=simple_format(@faq.faq_content.content) %></dd>
 			<% end %>
 			<% end %>
-			
-			<% end %>	
-  			<% else %>	
+
+			<% end %>
+  			<% else %>
   			<dt><%=t(:no_data)%></dt>
 			<% end %>
 		</dl>
 	</article>
 	<div class="flickr_pagination">
 		<%= paginate @faqs %>
-  	</div>	
+  	</div>
 	<div id="sl_bottom_menu">
 		<% if user_signed_in? %>
 		<% if current_user.admin? %>

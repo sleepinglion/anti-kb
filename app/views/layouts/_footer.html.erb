@@ -1,8 +1,12 @@
-<footer class="container">
-	<ul class="row">
-		<li class="col-xs-4 col-md-3"><%= link_to('사이트 소개',intro_index_path) %></li>
-		<li class="col-xs-4 col-md-3"><%= link_to('개선사항 제안',new_improve_path) %></li>
-		<li class="hidden-xs col-md-3">email:<%=mail_to 'admin@antikb.site' %></li>
-		<li class="col-xs-4 col-md-3"><%= link_to('사이트맵',sitemap_index_path) %></li>
-	</ul>
+<footer>
+	<div class="container">
+		<div class="row">
+			<ul class="row">
+				<li class="col-xs-4 col-md-3"><%= link_to('사이트 소개',intro_index_path) %></li>
+				<li class="hidden-xs col-md-3">email:<%=mail_to 'admin@antikb.site' %></li>
+				<li class="col-xs-4 col-md-3"><%= link_to('사이트맵',sitemap_index_path) %></li>
+			</ul>
+			<address>CopyLeft. 2012, SL. All wrongs reserved.</address>
+		</div>
+	</div>
 </footer>

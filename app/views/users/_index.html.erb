@@ -4,7 +4,7 @@
 	<article class="users media" itemscope itemtype="http://schema.org/Person">
 		<div class="media-left">
 		<% if user.photo? %>
-		<%=link_to image_tag(user.photo.small_thumb,:alt=>user.name),user.photo.large_thumb.url,:class=>'simple_image media-object',:title=>user.name,:itemprop=>"image" %>		
+		<%=link_to image_tag(user.photo.small_thumb,:alt=>user.name),user.photo.large_thumb.url,:class=>'simple_image media-object',:title=>user.name,:itemprop=>"image" %>
 		<% else %>
 		<%=image_tag 'anon.png',:alt=>user.name,:itemprop=>"image",:class=>"media-object" %>
 		<% end %>
@@ -14,20 +14,20 @@
 			<p itemprop="description"><%=user.description %></p>
 		</div>
 	</article>
-	<% end %>	
+	<% end %>
 	<% else %>
 	<p><%=t(:no_data) %></p>
 	<% end %>
 	<div class="row">
 	<div id="sign_up" class="col-xs-12">
-		<span class="label label-info"><%=@user_count %></span> 명이 서명하였습니다.	
+		<span class="label label-info"><%=@user_count %></span> 명이 서명하였습니다.
 		<% unless user_signed_in? %> &nbsp;&nbsp;
 		<%=link_to new_user_registration_path do %>
-		<b>서명하기</b>
+		<b><%=t(:sign) %></b>
 		<% end %>
 		<% end %>
 	</div>
 	<%= paginate @users %>
 	</div>
-	<%=link_to t(:link_more),users_path,:class=>'more' %>	
+	<%=link_to t(:link_more),users_path,:class=>'more' %>
 </section>

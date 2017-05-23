@@ -1,7 +1,4 @@
 <section id="notice_show">
-	<% if notice %>
-	<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-	<% end %>
 	<article class="slboard_content" itemscope itemprop="article" itemtype="http://schema.org/Article">
 		<div class="sl_content_header">
 			<h3 itemprop="name"><%= @notice.title %></h3>

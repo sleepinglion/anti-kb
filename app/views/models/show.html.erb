@@ -1,7 +1,4 @@
 <section id="slboard_notice_show">
-	<% if notice %>
-		<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-	<% end %>
 	<div class="slboard_content">
 		<div>
 			<h3><%= @model.title %></h3>
@@ -22,7 +19,7 @@
 			<div>
 			<label>추천받은 모델의 소감</label>
 			<pre><%= simple_format(@model.models_comment) %></pre>
-			</div>			
+			</div>
 		</div>
 	</div>
 	<div id="sl_content_bottom_menu">

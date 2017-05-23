@@ -1,10 +1,8 @@
 class Users::SessionsController < Devise::SessionsController
-  def initialize(*params)
-    super(*params)   
-    @controller_name=t(:login)
-  end
+  layout 'special'
 
-  def index
-  
+  def initialize(*params)
+    super(*params)
+    @controller_name=t(:login)
   end
 end
