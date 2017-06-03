@@ -1,16 +1,16 @@
 en:
   service_name : '잠자는 사자의 집'
   home : '홈'
-  search : '검색' 
+  search : '검색'
   ad : '광고'
   image : '이미지'
   status : '상태'
   status_use : '사용중'
   status_stop : '중지'
-  
+
   message_success_insert : '이(가) 성공적으로  등록되었습니다.'
-  message_success_update : '이(가) 성공적으로  수정되었습니다.'    
-    
+  message_success_update : '이(가) 성공적으로  수정되었습니다.'
+
   menu_home : "SL's Home"
   menu_sl : 'Sleeping-Lion'
   submenu_sl : 'Intro'
@@ -28,20 +28,20 @@ en:
   submenu_javascript : 'Javascript'
   menu_portfolio : 'Portfolio'
   menu_guestbook : 'Guest Book'
-  
+
   go_edit : 'edit'
   go_list : 'list'
   go_show : 'show'
-  go_new : 'new'  
-      
+  go_new : 'new'
+
   views :
     pagination :
       truncate : '&nbsp;...&nbsp;'
-      previous : 'pre' 
+      previous : 'pre'
       last : 'last'
       next : 'next'
       first : 'first'
-      
+
   devise:
     failure:
       already_authenticated: 'You are already signed in.'
@@ -86,8 +86,8 @@ en:
       reset_password_instructions:
         subject: 'Reset password instructions'
       unlock_instructions:
-        subject: 'Unlock Instructions'     
-      
+        subject: 'Unlock Instructions'
+
   date:
     abbr_day_names:
     - Sun
@@ -290,5 +290,62 @@ en:
     errors:
       <<: *errors
   activerecord:
+    models:
+      article : '관련기사'
+      notice : '공지사항'
+      report : '피해신고'
+      compliment : '경쟁사 칭찬'
+      propose : '망하게할 방법 제안'
+      faq : 'KB FAQ'
+      model : '광고모델 제안'
+      intro : '사이트 소개'
+      improve : '개선사항 제안'
+      user : 'KB가 망하게하기 서명'
+      sitemap : '사이트맵'
+    attributes :
+      article :
+        title : '제목'
+        url : '기사 주소'
+      report :
+        report_category_id : '피해유형'
+        title : '제목'
+      report_content :
+        content : '내용'
+      compliment :
+        bank_id : '은행'
+        compliment_category_id : '칭찬유형'
+        title : '제목'
+      compliment_content :
+        content : '내용'
+      propose :
+        title : '제목'
+        content : '내용'
+      faq_category :
+        title : '제목'
+      faq :
+        title : '제목'
+      faq_content :
+        content : '내용'
+      notice :
+        title : '제목'
+      notice_content :
+        content : '내용'
+      model :
+        title : '제목'
+        photo : '사진'
+        recommend_description : '추천사'
+        models_comment : '추천받은 모델의 소감'
+      improve :
+        title : '제목'
+        content : '내용'
+      user :
+        name : '이름'
+        email : '이메일'
+        photo : '사진'
+        description : 'KB에 한마디'
+        password : '비밀번호'
+        password_confirmation : '비밀번호 확인'
+        current_password : '현재 비밀번호'
+  recaptcha:
     errors:
-      <<: *errors
+      incorrect-captcha-sol: '자동작성방지 문자열이 맞지 않습니다. 두개의 단어를 공백으로 구분해서 입력해주세요'

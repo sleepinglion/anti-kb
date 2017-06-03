@@ -100,7 +100,7 @@ ReportContent.create!(:id=>3,:content=>'이전 회사에서 월급통장 농협�
 
 Propose.create!(:id=>1,:user_id=>1,:title=>'ㅎㅎㅎ 뭐 제안안해도 알아서 망할듯 ㅋㅋㅋㅋㅋ',:content=>'이놈들 동시다발적으로 사고 친거 걸렸네요
 요즘은 언론사에 먹일 돈이 딸리나? 예전부터 쭉 있던일인데 이제야 터지네요~~',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')
-Propose.create!(:id=>2,:user_id=>1,:title=>'당연한 이야기이지만 있는 계좌와 카드를 해지 하세요',:content=>'카드는 해지시켰었는데 
+Propose.create!(:id=>2,:user_id=>1,:title=>'당연한 이야기이지만 있는 계좌와 카드를 해지 하세요',:content=>'카드는 해지시켰었는데
 계좌해지를 안하고 있었네요
 주변에는 계속 KB의 악독함을 알리고 카드와 계좌해지를 역설하고 있었는데 막상 저는 폐기를 못하고 있었네요
 당장 카드와 계좌를 폐기하고 주변에도 그리하게 권고해주세요
@@ -220,10 +220,16 @@ Model.create!(:user_id=>1,:title=>'미친개',:recommend_description=>'역시 �
 돈에 미치면 개만도 못한다더니 이승기,김연아는 바로 모델하더구만
 에이 퉤퉤~~!!!',:photo=>File.open(Rails.root.join("app", "assets", "images", "lovely_dog.jpg")))
 
-Model.create!(:user_id=>2,:title=>'前 대통령님',:recommend_description=>'사대강 살리기로 대한민국의 역사를 다시 쓴 샐러리맨의 신화인 前 대통령님
+Model.create!(:user_id=>1,:title=>'前 대통령님',:recommend_description=>'사대강 살리기로 대한민국의 역사를 다시 쓴 샐러리맨의 신화인 前 대통령님
 음.. 이렇게 말하니 좀 안 어울리네??
 하여간 왠지 KB와 너무나 잘 어울리는 얼굴과 행동들이 KB의 CEO같은 이명박 前 대통령님',:models_comment=>'네 제가 모델이라고요? 제가 모델 해봐서 아는데 이거 영광입니다.
 KB모델 하면 뭐 떨어지는거 있나요? 저의 <code>혐오스럽지</code> 않은 얼굴로 KB를 알리는데 노력하겠습니다.',:photo=>File.open(Rails.root.join("app", "assets", "images", "mrpre.jpg")))
+
+Model.create!(:user_id=>1,:title=>'순실이',:recommend_description=>'국민은행하면 횡령,횡포
+횡령,횡포하면 바로 순시리지요?
+우리가 찾던 완벽히 어울리는 모델입니다!!!',:models_comment=>'내가 이런거나 하게 생겼어!!
+나 이대 짤린 딸 가진 엄마야~
+하긴 국민은행의 횡령 횡포는 나와 우열을 가릴 수 없긴 하지',:photo=>File.open(Rails.root.join("app", "assets", "images", "sunsiry.jpg")))
 
 
 Notice.create!(:id=>1,:user_id=>1,:title=>'www.anti-kb.kr이 새롭게 태어났습니다.',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')

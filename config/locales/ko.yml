@@ -376,8 +376,9 @@ ko:
         content : '내용'
       model :
         title : '제목'
-        content : '내용'
         photo : '사진'
+        recommend_description : '추천사'
+        models_comment : '추천받은 모델의 소감'
       improve :
         title : '제목'
         content : '내용'
