@@ -1,12 +1,12 @@
 <header>
+
 	<div class="container">
-		<div class="row">
-			<h1 class="col-xs-12 col-md-3"><%= link_to t(:home_title),root_path %></h1>
-			<% unless current_page? root_path %>
-			<div id="top_menu">
+
+		<% unless current_page? root_path %>
+			<div  id="top_menu" class="col-xs-12">
 				<ul>
 					<% if user_signed_in? %>
-					<li><%=link_to(current_user.name,edit_user_registration_path) %>님 환영합니다.</li>
+					<li><%=link_to(current_user.name, edit_user_registration_path) %>님 환영합니다.</li>
 					<li><%= link_to t(:logout),destroy_user_session_path %></li>
 					<% else %>
 					<li><%= link_to t(:login),new_user_session_path %></li>
@@ -14,13 +14,16 @@
 					<% end %>
 				</ul>
 			</div>
-			<% end %>
-			<nav class="col-xs-12 col-md-9">
+		<% end %>
+
+		<div class="row">
+			<h1 class="col-xs-12 col-sm-3"><%= link_to t(:home_title),root_path %></h1>
+			<nav>
 				<ul class="nav nav-pills">
 					<li <% if params[:controller]=='reports' %>class="active"<% end %>><%= link_to reports_path do %>피해 신고<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
 					<li <% if params[:controller]=='compliments' %>class="active"<% end %>><%= link_to compliments_path do %>경쟁사 칭찬<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
 					<li <% if params[:controller]=='faqs' %>class="active"<% end %>><%= link_to faqs_path do %>KB FAQ<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-					<li class="dropdown">
+					<li class="dropdown<% if params[:controller]=='proposes' || params[:controller]=='models' || params[:controller]=='improve' %> active<% end %>">
 						<%=link_to '#',{:class=>"dropdown-toggle dropmenu",:'data-toggle'=>"dropdown"} do %>
 						<%=t(:menu_propose) %>
 						<span class="caret"></span>
