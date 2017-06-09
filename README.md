@@ -6,14 +6,14 @@
 
 This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com) + Something(config,base-data,capistrano)
 
-# Server Requirements
+## Server Requirements
 
 [Rails](http://rubyonrails.org/) version 5 or newer is recommended.
 
-# License
+## License
 
 MIT, All Free
 
-# Author
+## Author
 
 [SleepingLion](http://www.sleepinglion.pe.kr)
