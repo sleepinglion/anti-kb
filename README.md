@@ -1,24 +1,17 @@
-# README
+# What is Anti-kb(kookmin bank)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Anti-kb](http://www.anti-kb.site) Source
 
-Things you may want to cover:
+[Anti-kb](http://www.anti-kb.site) is a site to ruin corrupt and fallen [kookmin bank](https://www.kbstar.com/)
 
-* Ruby version
+# Installation
 
-* System dependencies
+Just Prepare Rails5 Environment
 
-* Configuration
+# License
 
-* Database creation
+MIT, All Free
 
-* Database initialization
+# Author
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[SleepingLion](http://www.sleepinglion.pe.kr)
