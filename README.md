@@ -4,7 +4,7 @@
 
 [www.antikb.site](http://www.antikb.site) is a site to ruin corrupt and fallen [kookmin bank](https://www.kbstar.com/)
 
-This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com) + Something(config,base-data,capistrano)
+This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com)
 
 ## Server Requirements
 
