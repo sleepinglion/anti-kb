@@ -4,9 +4,11 @@
 
 [Anti-kb](http://www.anti-kb.site) is a site to ruin corrupt and fallen [kookmin bank](https://www.kbstar.com/)
 
-# Installation
+This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com) + Something(config,base-data,capistrano)
 
-Just Prepare Rails5 Environment
+# Server Requirements
+
+[Rails](http://rubyonrails.org/) version 5 or newer is recommended.
 
 # License
 
