@@ -1,8 +1,10 @@
+<% unless user_signed_in? %>
 <div class="jumbotron hero-unit">
 	<h2><%=raw t(:home_main_title) %></h2>
 	<p class="lead"><%=raw t(:home_main_description) %></p>
 	<%=link_to t(:sign),new_user_registration_path,:class=>'btn btn-large btn-primary' %>
 </div>
+<% end %>
 <section id="section_main_top">
 		<ul class="nav nav-tabs">
 			<li <% if(!params[:tab]) %>class="active"<% end %>><%=link_to('KB망하게 하기 서명','/')%></li>

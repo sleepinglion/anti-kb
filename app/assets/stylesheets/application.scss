@@ -69,15 +69,17 @@ footer {clear: both; position: relative; text-align: center}
 header h1 { position: relative;float: left}
 header h1 a {float:left;display:block;width:150px;height:30px;color: #666;text-indent:-9999px;text-decoration: none;background:asset-url('logo.png') no-repeat}
 header h1 a:hover { color: red; }
-header nav { position: relative; z-index: 999}
+header nav { position: relative;float:right;z-index:8}
 header nav li { float: left; list-style: none}
 header nav ul.nav-pills > li + li {margin-left:20px}
 header nav a { float: left; font-size:1.3em; color: #666; text-decoration: none}
 header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
-#top_menu {position:absolute;top:10px;right:20px}
-#top_menu ul {float:left;margin:0;padding:0;list-style:none}
+#top_menu {position:absolute;top:0;left:0;float:left;width:100%;z-index:9}
+#top_menu ul {float:right;margin:0;padding:0;list-style:none}
 #top_menu li {float:left;margin:0 10px 0 0;padding:0}
 
+
+footer address {margin:0;line-height: 100%}
 
 /* FAQ Category*/
 #faqCategoryList {float:left;width:100%;margin:10px 0 0 0;padding:0;background:#666;list-style:none}
@@ -109,7 +111,7 @@ header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
 #section_main_top article li .date {float:right;color:#999}
 #section_main_top .label {font-size:110%}
 #section_main_bottom article {margin-bottom:20px}
-#section_main_bottom {clear:both;padding-top:3em;padding-bottom:3em}
+#section_main_bottom {clear:both;padding-top:1em;padding-bottom:1em}
 #section_main_bottom article {position:relative;float:left}
 #section_main_bottom article h3 {float:left;width:100%;margin:0 0 0.7em;padding:0 0 0.7em;font-weight:bold;border-bottom:1px solid #ccc}
 #section_main_bottom article a.more {position:absolute;top:0;right:15px;text-decoration:none;color:#999}
@@ -207,7 +209,7 @@ footer a:hover {color: #000;text-decoration: underline}
 	header h1 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
 	header h1 a:hover {text-decoration:none}
 	header h1 a:active {color:red}
-	header nav.col-xs-12 {float:left;width:100%;margin:0;padding:0}
+	header nav {float:left;width:100%;margin:0;padding:0}
 	header nav ul {float:left;width:100%;margin:0;padding:0;background:#fff;border-radius:5px}
 	header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
 	header nav ul.nav-pills > li + li {margin-left:0}
@@ -237,28 +239,31 @@ footer a:hover {color: #000;text-decoration: underline}
 	#mom {margin: -91px 0 -51px;min-height:100%;}
 	#main {padding-top:91px;padding-bottom:51px}
 	header { height: 90px;background:#fff; border-bottom: 1px solid #ccc;}
-	header nav ul { clear:both;float: left;width:100%;margin:0;padding:0}
+	header h1 {margin-top:35px}
+	header nav ul { clear:both;float: left;width:100%;margin:30px 0 0;padding:0}
 	.sub_main {padding:20px 0 40px}
 	footer {clear: both; position: relative;width:96%; height: 50px; margin: 0px 2%; text-align: center; border-top: 1px solid #ccc; }
 }
 
 @media all and (min-width: 992px) {
   html,body {font-size:14px}
-	#mom {margin: -4em 0 -6em;min-height:100%;}
-	#main {position:relative;padding-top:4em;padding-bottom:6em}
-	#main_main {float:right;width:100%;padding-left:310px;padding-top:30px}
-	header {height: 4em; background:#fff;border-bottom: 1px solid #ccc;}
-	header h1 { position: relative; z-index:9; float: left; margin: 15px 0 0 0; padding:0}
-	header nav {float:right;z-index: 999}
+	#mom {margin: -5em 0 -4em;min-height:100%;}
+	#main {position:relative;padding-top:5em;padding-bottom:4em}
+	#main_main {float:right;width:100%;padding-top:30px}
+	header {height: 5em; background:#fff;border-bottom: 1px solid #ccc;}
+	header h1 { position: relative; z-index:9; float: left; margin: 30px 0 0 0; padding:0}
+	header nav {float:right;z-index: 9;margin:20px 0 0}
 	header nav ul {margin:10px 0 0 0;padding:0}
 	.sub_main {padding-bottom:40px}
   .jumbotron,.media {background:#fff}
-	footer {clear: both; position: relative;width:100%;height: 6em; margin:0;text-align: center;background:#e3e3e3 }
+	footer {clear: both; position: relative;width:100%;height: 4em; margin:0;text-align: center;background:#e3e3e3 }
 	/* aside */
-	aside {position:fixed;top:150px;left:25px;width:250px;margin:0}
+	aside {position:absolute;top:120px;left:15px;width:250px;margin:0}
 	aside fieldset {margin:0 0 30px;padding:10px;border:1px solid #ccc;border-radius:5px}
 
 	#ad_main {clear:both}
+
+  footer ul li a,footer address {font-size:12px;font-weight:normal}
 }
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
@@ -269,6 +274,8 @@ footer a:hover {color: #000;text-decoration: underline}
   html,body {font-size:16px}
 	.sub_main {padding-bottom:50px}
 	.adsbygoogle {height: 100px}
+  #main_main {padding-left:310px}
+  footer ul li a,footer address {font-size:14px}
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {

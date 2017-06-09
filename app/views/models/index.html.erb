@@ -3,14 +3,14 @@
 	<ul class="media-list">
 	<% unless @models.empty? %>
 	<% @models.each do |model| %>
-  	<li class="media">
+  	<li class="media" itemscope itemtype="http://schema.org/Person">
   	<%=link_to model_path(model),:class=>"pull-left" do %>
-    	<%=image_tag model.photo.small_thumb %>
+    	<%=image_tag model.photo.small_thumb,:itemprop=>"image" %>
     <% end %>
     <div class="media-body">
-      <h4 class="media-heading"><%=link_to model.title,model_path(model) %></h4>
+      <h4 class="media-heading" itemprop="name"><%=link_to model.title,model_path(model) %></h4>
 			<%=link_to model_path(model) do %>
-     	<div><%= simple_format(model.models_comment) %></div>
+     	<p itemprop="description"><%= simple_format(model.models_comment) %></p>
 			<% end %>
     </div>
   	</li>

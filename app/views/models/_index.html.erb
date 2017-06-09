@@ -5,17 +5,19 @@
 		<% @models.each_with_index do |model,index| %>
 
 			<div class="item<% if index.zero? %> active<% end %>">
-				<div class="media">
+				<div class="media" itemscope itemtype="http://schema.org/Person">
 				<%=link_to model_path(model),:class=>"pull-left" do %>
-				<figure>
+				<figure itemprop="image">
 					<%=image_tag model.photo.small_thumb,:alt=>model.title %>
 				</figure>
 				<% end %>
 				<div class="media-body">
-					<h4 class="media-heading"><%=link_to model.title,model_path(model) %></h4>
+					<h4 class="media-heading" itemprop="name"><%=link_to model.title,model_path(model) %></h4>
+					<p itemprop="description">
 					<%=link_to model_path(model) do %>
 					<%=simple_format(model.recommend_description) %>
 					<% end %>
+					</p>
 				</div>
 			</div>
 			</div>
