@@ -24,7 +24,14 @@ ko:
   flag_true : '사용'
   flag_false : '중지'
   no_data : '글이 없습니다.'
+  all_category : '전체'
 
+  login_page : '로그인 페이지'
+  login_title : '관리자 로그인'
+  login_p_id : '아이디를 입력하세요'
+  login_p_email : '이메일을 입력하세요'
+  login_p_password : '비밀번호를 입력하세요'
+  login_remember : '기억해줘'
 
   home_main_title : '살인은행이 망하는 그날까지!!'
   home_main_description : '서명에 참여해주세요. 작은움직임이 살인은행이 망하게하는 힘이됩니다.'
