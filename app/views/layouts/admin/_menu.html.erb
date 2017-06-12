@@ -1,0 +1,19 @@
+<ul class="nav main-menu">
+	<% if can? :read, User %>
+	<li class="dropdown">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/operators' || params[:controller]=='admin/users' || params[:controller]=='admin/groups' || params[:controller]=='admin/kits' %> active<% end %>" data-toggle="dropdown" href="#">
+			<i class="glyphicon glyphicon-user glyphicon-white"></i>
+			<%=t(:menu_user)%>
+			<span class="caret"></span>
+		</a>
+		<ul	class="dropdown-menu<% if params[:controller]=='admin/operators' || params[:controller]=='admin/users' || params[:controller]=='admin/groups' || params[:controller]=='admin/kits' %> current<% end %>">
+			<% if can? :read, User %>
+			<li<% if params[:controller]=='admin/users' %> class="active"<% end %>><%=link_to admin_users_path do %>
+				<i class="glyphicon glyphicon-user glyphicon-white"></i>
+				<%=t(:user,scope:[:activerecord,:models])%><% end %></li>
+			<% end %>
+		</ul>
+	</li>
+	<% end %>
+
+</ul>
