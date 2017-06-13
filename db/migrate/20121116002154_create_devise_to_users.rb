@@ -36,10 +36,11 @@ class CreateDeviseToUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
+      t.boolean  :enable, :null=> false, :default=> true
       t.boolean  :admin, :null=>false, :default => false
 
       # Uncomment below if timestamps were not included in your original model.
-      # t.timestamps
+      t.timestamps
     end
 
     add_index :users, :email,                :unique => true

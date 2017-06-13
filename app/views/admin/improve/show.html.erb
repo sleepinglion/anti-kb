@@ -1,0 +1,22 @@
+<div class="sl_show">
+	<p>
+		<b><%=t(:title,scope:[:activerecord,:attributes,:propose]) %></b>
+		<%= @propose.title %>
+	</p>
+	<p>
+		<b><%=t(:enable,scope:[:activerecord,:attributes,:propose]) %></b>
+		<%=raw flagToString(@propose.enable) %>
+	</p>
+	<p>
+  	<b><%=t(:label_created_at) %></b>
+  	<%= @propose.created_at %>
+  </p>
+  <p>
+  	<b><%=t(:label_updated_at) %></b>
+  	<%= @propose.created_at %>
+  </p>
+</div>
+<% if can? :update, Report %>
+<%= link_to t(:link_edit), edit_admin_propose_path(@propose) %> |
+<% end %>
+<%= link_to t(:link_list), admin_proposes_path %>

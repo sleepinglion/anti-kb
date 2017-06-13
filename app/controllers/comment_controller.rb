@@ -1,7 +1,5 @@
-# encoding: utf-8
-
 class CommentController < ApplicationController
- 
+
   def initialize(*params)
     super(*params)
     @style="board/index"

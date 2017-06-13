@@ -1,16 +1,18 @@
-# encoding: utf-8
-
 class Admin::NoticesController < Admin::AdminController
+  before_action :set_admin_notice, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
     super(*params)
-    @controller_name='공지사항'
+
+    @category = t(:menu_board,scope:[:admin_menu])
+    @controller_name = t('activerecord.models.notice')
   end
- 
+
   # GET /admin/notices
   # GET /admin/notices.json
   def index
     @admin_notices = Notice.order('id desc').page(params[:page]).per(10)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @admin_notices }
@@ -20,8 +22,6 @@ class Admin::NoticesController < Admin::AdminController
   # GET /admin/notices/1
   # GET /admin/notices/1.json
   def show
-    @admin_notice = Notice.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @admin_notice }
@@ -33,7 +33,7 @@ class Admin::NoticesController < Admin::AdminController
   def new
     @admin_notice = Notice.new
     @admin_notice.build_notice_content
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @admin_notice }
@@ -42,14 +42,12 @@ class Admin::NoticesController < Admin::AdminController
 
   # GET /notices/1/edit
   def edit
-    @admin_notice = Notice.find(params[:id])
   end
 
   # POST /admin/notices
   # POST /admin/notices.json
   def create
-    @admin_notice = Notice.new(params[:notice])
-    @admin_notice.user_id=current_user.id
+    @admin_notice = Notice.new(admin_notice_params)
 
     respond_to do |format|
       if @admin_notice.save
@@ -65,10 +63,8 @@ class Admin::NoticesController < Admin::AdminController
   # PUT /admin/notices/1
   # PUT /admin/notices/1.json
   def update
-    @admin_notice = Notice.find(params[:id])
-
     respond_to do |format|
-      if @admin_notice.update_attributes(params[:notice])
+      if @admin_notice.update_attributes(admin_notice_params)
         format.html { redirect_to admin_notices_url, notice: '공지사항이 수정되었습니다.' }
         format.json { head :no_content }
       else
@@ -81,12 +77,22 @@ class Admin::NoticesController < Admin::AdminController
   # DELETE /admin/notices/1
   # DELETE /admin/notices/1.json
   def destroy
-    @admin_notice = Notice.find(params[:id])
     @admin_notice.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_notices_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_notice
+    @admin_notice = Notice.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_notice_params
+    params.require(:notice).permit(:title, :enable)
   end
 end

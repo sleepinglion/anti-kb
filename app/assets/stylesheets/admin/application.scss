@@ -571,7 +571,11 @@ footer {
 }
 
 footer a {
-    color: #fff;
+    color: #ccc;
+}
+
+footer a:hover {
+  color :#fff
 }
 
 footer address {

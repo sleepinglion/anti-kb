@@ -1,15 +1,13 @@
-# encoding: utf-8
-
 class ComplimentsController < BoardController
   impressionist :actions=>[:show]
   before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'
-  before_action :set_compliment, only: [:show, :edit, :update, :destroy]  
-  
+  before_action :set_compliment, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.compliment')
     @style="board"
-    @script="board/index"  
+    @script="board/index"
   end
 
   # GET /notices
@@ -26,7 +24,7 @@ class ComplimentsController < BoardController
   # GET /notices/new
   def new
     @compliment = Compliment.new
-    @compliment.build_compliment_content    
+    @compliment.build_compliment_content
   end
 
   # GET /notices/1/edit
@@ -73,7 +71,7 @@ class ComplimentsController < BoardController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_compliment

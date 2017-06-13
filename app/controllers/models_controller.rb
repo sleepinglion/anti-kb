@@ -1,21 +1,19 @@
-# encoding: utf-8
-
 class ModelsController < BoardController
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_model, only: [:show, :edit, :update, :destroy]    
+  before_action :set_model, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.model')
     @style="board"
-    @script="board/index"  
+    @script="board/index"
   end
-  
+
   # GET /notices
   # GET /notices.json
   def index
     @models = Model.order('id desc').page(params[:page]).per(5)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @models }
@@ -35,7 +33,7 @@ class ModelsController < BoardController
   # GET /notices/new.json
   def new
     @model = Model.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @model }
@@ -86,7 +84,7 @@ class ModelsController < BoardController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_model
@@ -96,5 +94,5 @@ class ModelsController < BoardController
     # Never trust parameters from the scary internet, only allow the white list through.
     def model_params
       params.require(:model).permit(:id, :title, :recommend_description, :models_comment , :photo, :photo_cache)
-    end  
+    end
 end

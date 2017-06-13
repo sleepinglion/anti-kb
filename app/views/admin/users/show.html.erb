@@ -1,0 +1,22 @@
+<div class="sl_show">
+	<p>
+		<b><%=t(:title,scope:[:activerecord,:attributes,:report]) %></b>
+		<%= @report.title %>
+	</p>
+	<p>
+		<b><%=t(:enable,scope:[:activerecord,:attributes,:report]) %></b>
+		<%=raw flagToString(@report.enable) %>
+	</p>
+	<p>
+  	<b><%=t(:label_created_at) %></b>
+  	<%= @report.created_at %>
+  </p>
+  <p>
+  	<b><%=t(:label_updated_at) %></b>
+  	<%= @report.created_at %>
+  </p>
+</div>
+<% if can? :update, Report %>
+<%= link_to t(:link_edit), edit_admin_report_path(@report) %> |
+<% end %>
+<%= link_to t(:link_list), admin_reports_path %>

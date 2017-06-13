@@ -1,15 +1,13 @@
-# encoding: utf-8
-
 class NoticesController < ApplicationController
   impressionist :actions=>[:show]
-  before_action :authenticate_user!, :except => [:index,:show]  
+  before_action :authenticate_user!, :except => [:index,:show]
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
 
   def initialize
     super
-    @controller_name=t('activerecord.models.notice') 
+    @controller_name=t('activerecord.models.notice')
     @style="board"
-    @script="board/index"    
+    @script="board/index"
   end
 
   # GET /notices
@@ -27,20 +25,20 @@ class NoticesController < ApplicationController
   def new
     @notice = Notice.new
     @notice.build_notice_content
-    
+
     @script="notices/new"
   end
 
   # GET /notices/1/edit
   def edit
-    @script="notices/new"    
+    @script="notices/new"
   end
 
   # POST /notices
   # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
-    @notice.user_id=current_user.id    
+    @notice.user_id=current_user.id
 
     respond_to do |format|
       if @notice.save

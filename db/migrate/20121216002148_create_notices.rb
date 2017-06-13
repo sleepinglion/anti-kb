@@ -3,14 +3,14 @@ class CreateNotices < ActiveRecord::Migration
     create_table :notices do |t|
       t.references :user,:null=>false
       t.string :title,:limit=>60,:null=>false
-      t.boolean :enabled, :null=>false, :default=>true      
+      t.boolean :enable, :null=>false, :default=>true      
       t.timestamps
     end
-    
+
     create_table :notice_contents do |t|
       t.text :content,:null=>false
     end
-    
+
     add_index :notices, :user_id
   end
 end

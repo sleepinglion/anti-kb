@@ -1,14 +1,12 @@
-# encoding: utf-8
-
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]  
-    
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.article')
   end
-  
+
   # GET /articles
   # GET /articles.json
   def index
@@ -48,7 +46,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    @article.user_id=current_user.id    
+    @article.user_id=current_user.id
 
     respond_to do |format|
       if @article.save
@@ -85,7 +83,7 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -95,5 +93,5 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:id, :title, :url)
-    end  
+    end
 end

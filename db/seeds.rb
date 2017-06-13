@@ -60,7 +60,7 @@ User.create!(:name=>'조성운',:email => 'toughjjh29@gmail.com',:password => 'j
 #,:created_at=>'2017-01-28 15:31:42'
 User.create!(:name=>'정윤성',:email => 'toughjjh30@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'진짜 고객을 뭘로 보는곳인지 모르겠네요')
 #,:created_at=>'2017-02-01 00:22:32'
-
+User.create!(:name=>'죽일놈들',:email => 'toughjjh31@gmail.com',:password => 'jjh123456', :password_confirmation => 'jjh123456',:description=>'서민들에게 대출해주긴 하는건지 모를 개같은 은행')
 
 Article.create!(:title=>'국부유출의 최고가 되겠습니다.',:url=>'http://media.daum.net/economic/finance/newsview?newsid=20131127034103604',:description=>'국민의 돈을 모아서
 국부유출의 최고의 은행이 되겠습니다.~~
@@ -89,7 +89,7 @@ ReportContent.create!(:id=>2,:content=>'연거푸 사고치더니 살인은행 �
 니들은 개과천선 할 수없어
 그냥 지금 해체가 답이야!!!')
 
-Report.create!(:id=>3,:user_id=>1,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:created_at=>'2015-05-04 18:51:23',:updated_at=>'2015-05-04 18:51:23')
+Report.create!(:id=>3,:user_id=>31,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:created_at=>'2015-05-04 18:51:23',:updated_at=>'2015-05-04 18:51:23')
 ReportContent.create!(:id=>3,:content=>'이전 회사에서 월급통장 농협에서 만들라고 해서 만들러 갔는데
 이 미친놈들이 고객은 무슨 보이스 피싱 하수인(대포통장 만들러온 사람) 취급하네요?
 보안 개떡같아서 털린것은 지네면서 보안 강화한다고 하는 짓이 이런거... 참 답안나오네

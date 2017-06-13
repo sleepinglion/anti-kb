@@ -1,13 +1,11 @@
-# encoding: utf-8
-
 class ImproveController < ApplicationController
-  before_action :set_improve, only: [:show, :edit, :update, :destroy]  
+  before_action :set_improve, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
-    
-    @controller_name=t('activerecord.models.improve')    
-  end  
+
+    @controller_name=t('activerecord.models.improve')
+  end
   # GET /improve
   # GET /improve.json
   def index
@@ -47,14 +45,14 @@ class ImproveController < ApplicationController
   # POST /improve.json
   def create
     @improve = Improve.new(improve_params)
-    
+
     respond_to do |format|
-      if Rails.env.production? 
+      if Rails.env.production?
         result=verify_recaptcha(:model => @improve, :message => "Oh! It's error with reCAPTCHA!") && @improve.save
-      else 
+      else
         result=@improve.save
       end
-      
+
       if result
         format.html { redirect_to @improve, :notice=> @controller_name +t(:message_success_insert)}
         format.json { render :json => @improve, :status => :created, :location => @guest_book }
@@ -88,7 +86,7 @@ class ImproveController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_improve

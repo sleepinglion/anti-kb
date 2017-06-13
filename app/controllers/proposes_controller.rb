@@ -1,16 +1,14 @@
-# encoding: utf-8
-
 class ProposesController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'
-  before_action :set_propose, only: [:show, :edit, :update, :destroy]    
-    
+  before_action :set_propose, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.propose')
     @style="board"
-    @script="board/index"  
+    @script="board/index"
   end
-  
+
   # GET /proposes
   # GET /proposes.json
   def index
@@ -50,7 +48,7 @@ class ProposesController < ApplicationController
   # POST /proposes.json
   def create
     @propose=Propose.new(propose_params)
-    @propose.user_id=current_user.id    
+    @propose.user_id=current_user.id
 
     respond_to do |format|
       if @propose.save
@@ -86,7 +84,7 @@ class ProposesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_compliment
@@ -96,5 +94,5 @@ class ProposesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def propose_params
       params.require(:propose).permit(:id,:title,:content)
-    end  
+    end
 end

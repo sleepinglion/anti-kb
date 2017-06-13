@@ -42,8 +42,8 @@ gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
+gem 'i18n-js'
 gem 'non-stupid-digest-assets'
-
 gem 'email_validator'
 gem 'unf'
 

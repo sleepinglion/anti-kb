@@ -1,21 +1,19 @@
-# encoding: utf-8
-
 class FaqCategoriesController < BoardController
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_faq_category, only: [:show, :edit, :update, :destroy]  
-  
+  before_action :set_faq_category, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
     super(*params)
     @style="board"
     @controller_name='수정이 FAQ 분류'
   end
-    
+
   # GET /faq_categories
   # GET /faq_categories.json
   def index
     @faq_categories = FaqCategory.order('id desc').page(params[:page]).per(10)
     @script='board/faqs/index'
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @faq_categories }
@@ -86,7 +84,7 @@ class FaqCategoriesController < BoardController
       format.json { head :ok }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_faq_category
@@ -96,5 +94,5 @@ class FaqCategoriesController < BoardController
     # Never trust parameters from the scary internet, only allow the white list through.
     def faq_category_params
       params.require(:faq_category).permit(:id,:title)
-    end  
+    end
 end

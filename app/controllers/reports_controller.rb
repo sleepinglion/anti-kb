@@ -1,17 +1,15 @@
-# encoding: utf-8
-
 class ReportsController < BoardController
   impressionist :actions=>[:show]
-  before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'  
+  before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'
   before_action :set_report, only: [:show, :edit, :update, :destroy]
-    
+
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.report')
     @style="board"
-    @script="board/index"    
+    @script="board/index"
   end
-  
+
   # GET /reports
   # GET /reports.json
   def index
@@ -26,7 +24,7 @@ class ReportsController < BoardController
   # GET /reports/1
   # GET /reports/1.json
   def show
-    
+
   end
 
   # GET /reports/new
@@ -34,7 +32,7 @@ class ReportsController < BoardController
   def new
     @report = Report.new
     @report.build_report_content
-        
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @report }
@@ -50,7 +48,7 @@ class ReportsController < BoardController
   def create
     @report = Report.new(report_params)
     @report.user_id=current_user.id
-        
+
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, :notice=> @controller_name +t(:message_success_insert)}
@@ -85,7 +83,7 @@ class ReportsController < BoardController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_report
