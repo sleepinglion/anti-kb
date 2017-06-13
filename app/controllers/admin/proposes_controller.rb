@@ -95,6 +95,6 @@ class Admin::ProposesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_propose_params
-    params.require(:propose).permit(:title, :enable)
+    params.require(:propose).permit(:title, :enable).merge(user_id: current_user.id)
   end
 end

@@ -1,5 +1,5 @@
 <%= form_for [:admin,model] do |f| %>
-<% if propose.errors.any? %>
+<% if model.errors.any? %>
 <div id="error_explanation" class="alert alert-danger">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
 	<h2><%= pluralize(model.errors.count, "error") %> prohibited this request from being saved:</h2>

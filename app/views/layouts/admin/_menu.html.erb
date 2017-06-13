@@ -65,6 +65,11 @@
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:article,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
+			<% if can? :read, Notice %>
+			<li<% if params[:controller]=='admin/notices' %> class="active"<% end %>><%=link_to admin_notices_path do %>
+				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
+				<%=t(:notice,scope:[:activerecord,:models])%><% end %></li>
+			<% end %>
 		</ul>
 	</li>
 	<% end %>

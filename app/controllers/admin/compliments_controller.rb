@@ -32,7 +32,7 @@ class Admin::ComplimentsController < Admin::AdminController
   # GET /admin/compliments/new.json
   def new
     @admin_compliment = Compliment.new
-    @admin_compliment.build_notice_content
+    @admin_compliment.build_compliment_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -93,6 +93,6 @@ class Admin::ComplimentsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_compliment_params
-    params.require(:compliment).permit(:title, :enable)
+    params.require(:compliment).permit(:bank_id, :compliment_category_id, :title, :enable, compliment_content_attributes: [:content]).merge(user_id: current_user.id)
   end
 end

@@ -1,10 +1,10 @@
-<%= form_for [:admin,propose] do |f| %>
-<% if propose.errors.any? %>
+<%= form_for [:admin,improve] do |f| %>
+<% if improve.errors.any? %>
 <div id="error_explanation" class="alert alert-danger">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
-	<h2><%= pluralize(propose.errors.count, "error") %> prohibited this request from being saved:</h2>
+	<h2><%= pluralize(improve.errors.count, "error") %> prohibited this request from being saved:</h2>
 	<ul>
-		<% propose.errors.full_messages.each do |msg| %>
+		<% improve.errors.full_messages.each do |msg| %>
 		<li>
 			<%= msg %>
 		</li>
