@@ -11,7 +11,9 @@ class Admin::ImproveController < Admin::AdminController
   # GET /admin/improve
   # GET /admin/improve.json
   def index
-    @admin_improves = Improve.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_improves = Improve.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb

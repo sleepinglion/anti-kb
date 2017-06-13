@@ -11,7 +11,9 @@ class Admin::ArticlesController < Admin::AdminController
   # GET /admin/articles
   # GET /admin/articles.json
   def index
-    @admin_articles = Article.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_articles = Article.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb

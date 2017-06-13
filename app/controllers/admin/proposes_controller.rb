@@ -11,7 +11,9 @@ class Admin::ProposesController < Admin::AdminController
   # GET /admin/proposes
   # GET /admin/proposes.json
   def index
-    @admin_proposes = Propose.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_proposes = Propose.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb

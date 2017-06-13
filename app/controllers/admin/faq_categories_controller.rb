@@ -11,7 +11,9 @@ class Admin::FaqCategoriesController < Admin::AdminController
   # GET /admin/faq_categories
   # GET /admin/faq_categories.json
   def index
-    @admin_faq_categories = FaqCategory.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_faq_categories = FaqCategory.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -11,7 +11,9 @@ class Admin::UsersController < Admin::AdminController
   # GET /admin_users
   # GET /admin_users.json
   def index
-    @admin_users = User.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_users = User.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb

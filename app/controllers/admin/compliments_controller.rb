@@ -11,7 +11,9 @@ class Admin::ComplimentsController < Admin::AdminController
   # GET /admin/compliments
   # GET /admin/compliments.json
   def index
-    @admin_compliments = Compliment.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_compliments = Compliment.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -93,6 +95,6 @@ class Admin::ComplimentsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_compliment_params
-    params.require(:compliment).permit(:bank_id, :compliment_category_id, :title, :enable, compliment_content_attributes: [:content]).merge(user_id: current_user.id)
+    params.require(:compliment).permit(:bank_id, :compliment_category_id, :title, :enable, compliment_content_attributes: [:id, :content]).merge(user_id: current_user.id)
   end
 end

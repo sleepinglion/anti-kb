@@ -11,7 +11,9 @@ class Admin::NoticesController < Admin::AdminController
   # GET /admin/notices
   # GET /admin/notices.json
   def index
-    @admin_notices = Notice.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_notices = Notice.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb

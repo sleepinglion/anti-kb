@@ -11,6 +11,8 @@ class Admin::FaqsController < Admin::AdminController
   # GET /admin/faqs
   # GET /admin/faqs.json
   def index
+    params[:per_page] = 10 unless params[:per_page].present?
+
     @admin_faq_categories = FaqCategory.all
 
     if(params[:faq_category_id])
@@ -23,7 +25,7 @@ class Admin::FaqsController < Admin::AdminController
       end
     end
 
-    @admin_faqs = Faq.where(:faq_category_id=>@categoryId).order('id desc').page(params[:page]).per(10)
+    @admin_faqs = Faq.where(:faq_category_id=>@categoryId).order('id desc').page(params[:page]).per(params[:per_page])
 
     if(params[:id])
       @admin_faq = Faq.find(params[:id])

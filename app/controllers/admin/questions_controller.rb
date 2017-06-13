@@ -9,7 +9,9 @@ class Admin::QuestionsController < Admin::AdminController
   # GET /admin/questions
   # GET /admin/questions.json
   def index
-    @admin_questions = Question.order('id desc').page(params[:page]).per(10)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_questions = Question.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb
