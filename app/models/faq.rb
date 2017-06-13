@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Faq < ActiveRecord::Base
   validates_presence_of :title
   belongs_to :faq_category, :autosave=>true

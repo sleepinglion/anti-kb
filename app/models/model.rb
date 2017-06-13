@@ -1,7 +1,3 @@
-# encoding: utf-8
-
-require 'carrierwave/orm/activerecord'
-
 class Model < ActiveRecord::Base
   validates_presence_of :title, :recommend_description, :models_comment
   belongs_to :user, :autosave=>true

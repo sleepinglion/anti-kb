@@ -93,6 +93,6 @@ class Admin::NoticesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_notice_params
-    params.require(:notice).permit(:title, :enable)
+    params.require(:notice).permit(:id, :title, :enable, compliment_content_attributes: [:id,:content]).merge(user_id: current_user.id)
   end
 end
