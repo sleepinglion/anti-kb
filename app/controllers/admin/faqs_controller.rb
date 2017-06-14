@@ -4,7 +4,7 @@ class Admin::FaqsController < Admin::AdminController
   def initialize(*params)
     super(*params)
 
-    @category = t(:menu_board,scope:[:admin_menu])
+    @category = t(:menu_main_board,scope:[:admin_menu])
     @controller_name = t('activerecord.models.faq')
   end
 

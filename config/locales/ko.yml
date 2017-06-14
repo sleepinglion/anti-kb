@@ -78,10 +78,8 @@ ko:
 
   admin_menu :
     menu_user : '사용자 관리'
-    menu_report : '피해신고 관리'
-    menu_compliment : '칭찬하기 관리'
-    menu_faq : 'FAQ 관리'
-    menu_board : '게시판 관리'
+    menu_main_board : '메인메뉴 관리'
+    menu_etc_board : '기타메뉴 관리'
 
   ckeditor:
     page_title: "CKEditor Files Manager"
@@ -374,12 +372,20 @@ ko:
         title : '제목'
         url : '기사 주소'
         enable : '사용여부'
+      report_category :
+        title : '제목'
+        reports_count : '피해신고 갯수'
+        enable : '사용여부'
       report :
         report_category_id : '피해유형'
         title : '제목'
         enable : '사용여부'
       report_content :
         content : '내용'
+      compliment_category :
+        title : '제목'
+        compliments_count : '칭찬하기 갯수'
+        enable : '사용여부'
       compliment :
         bank_id : '은행'
         compliment_category_id : '칭찬유형'
