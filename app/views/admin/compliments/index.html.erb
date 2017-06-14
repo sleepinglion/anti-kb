@@ -11,6 +11,7 @@
 			<col />
 			<col />
 			<col style="width:80px;" />
+			<col style="width:80px;" />
 			<col style="width:100px;" />
 			<% if can?(:update, Compliment) || can?(:delete, Compliment) %>
 			<col <%= raw manage_width(Compliment) %> />
@@ -19,8 +20,9 @@
 		<thead>
 			<tr>
 				<th><%= t(:label_number) %></th>
+				<th><%=t(:compliment_category_id,scope:[:activerecord,:attributes,:compliment]) %></th>
 				<th><%=t(:title,scope:[:activerecord,:attributes,:compliment]) %></th>
-				<th><%=t(:orders_count,scope:[:activerecord,:attributes,:compliment]) %></th>
+				<th><%=t(:label_count) %></th>
 				<th><%=t(:enable,scope:[:activerecord,:attributes,:compliment]) %></th>
 				<th><%= t(:label_created_at) %></th>
 				<% if can?(:update, Compliment) || can?(:delete, Compliment) %>
@@ -33,7 +35,8 @@
 			<% @admin_compliments.each do |compliment| %>
 			<tr>
 				<td><%= link_to compliment.id,admin_compliment_path(compliment) %></td>
-				<td class="mw"><%= link_to compliment.title,admin_compliment_path(compliment) %></td>
+				<td><%= link_to compliment.compliment_category.title,admin_compliment_path(compliment) %></td>
+				<td><%= link_to compliment.title,admin_compliment_path(compliment) %></td>
 				<td><%= compliment.impressionist_count(:filter=>:ip_address) %></td>
 				<td><%= raw flagToString(compliment.enable) %></td>
 				<td><%= compliment.created_at.to_date %></td>

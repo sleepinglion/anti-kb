@@ -1,4 +1,8 @@
 <div class="sl_show">
+  <p>
+		<b><%=t(:compliment_category_id,scope:[:activerecord,:attributes,:compliment]) %></b>
+		<%= @compliment.compliment_category.title %>
+	</p>
 	<p>
 		<b><%=t(:title,scope:[:activerecord,:attributes,:compliment]) %></b>
 		<%= @compliment.title %>

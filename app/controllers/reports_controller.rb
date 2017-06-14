@@ -6,8 +6,6 @@ class ReportsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.report')
-    @style="board"
-    @script="board/index"
   end
 
   # GET /reports
@@ -47,7 +45,6 @@ class ReportsController < BoardController
   # POST /reports.json
   def create
     @report = Report.new(report_params)
-    @report.user_id=current_user.id
 
     respond_to do |format|
       if @report.save
@@ -92,6 +89,6 @@ class ReportsController < BoardController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:id, :report_category_id, :title, report_content_attributes: [:id,:content])
+      params.require(:report).permit(:id, :report_category_id, :title, report_content_attributes: [:id,:content]).merge(user_id: current_user.id)
     end
 end

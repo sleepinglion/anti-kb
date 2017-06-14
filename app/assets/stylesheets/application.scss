@@ -91,7 +91,7 @@ footer address {margin:0;line-height: 100%}
 
 /* FAQ List */
 #faqList { float:left;width:100%;margin:0;padding:15px 0;background:#f3f3f3}
-#faqList dt {position:relative;float:left;width:95%;display:inline;margin:2px 0 0 15px;padding:0;cursor:pointer;}
+#faqList dt {position:relative;float:left;width:98%;display:inline;margin:2px 1% 0;padding:0;cursor:pointer;}
 #faqList dt.none {display:none}
 #faqList dt a.title {display:block;padding:11px 0 11px 40px;color:#666;border-bottom:1px solid #eee;background:#fff asset-url('board/toggle_open.png') no-repeat 10px 11px;text-decoration:none}
 #faqList dt a.title:hover {border-bottom:1px solid #ddd;}

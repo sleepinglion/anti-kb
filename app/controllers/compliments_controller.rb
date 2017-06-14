@@ -6,8 +6,6 @@ class ComplimentsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.compliment')
-    @style="board"
-    @script="board/index"
   end
 
   # GET /notices
@@ -35,7 +33,6 @@ class ComplimentsController < BoardController
   # POST /compliments.json
   def create
     @compliment = Compliment.new(compliment_params)
-    @compliment.user_id=current_user.id
 
     respond_to do |format|
       if @compliment.save
@@ -80,6 +77,6 @@ class ComplimentsController < BoardController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compliment_params
-      params.require(:compliment).permit(:id, :compliment_category_id, :bank_id, :title, compliment_content_attributes: [:id,:content])
+      params.require(:compliment).permit(:id, :compliment_category_id, :bank_id, :title, compliment_content_attributes: [:id,:content]).merge(user_id: current_user.id)
     end
 end

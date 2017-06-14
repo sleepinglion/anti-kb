@@ -32,7 +32,7 @@ class Admin::ReportsController < Admin::AdminController
   # GET /admin/reports/new.json
   def new
     @admin_report = Report.new
-    @admin_report.build_notice_content
+    @admin_report.build_report_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -93,6 +93,6 @@ class Admin::ReportsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_report_params
-    params.require(:report).permit(:title, :enable, report_content_attributes: [:id, :content]).merge(user_id: current_user.id)
+    params.require(:report).permit(:report_category_id, :title, :enable, report_content_attributes: [:id, :content]).merge(user_id: current_admin.id)
   end
 end

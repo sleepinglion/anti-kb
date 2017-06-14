@@ -423,6 +423,7 @@ ko:
         enable : '사용여부'
       user :
         name : '이름'
+        sign_in_count : '로그인 횟수'        
         email : '이메일'
         photo : '사진'
         description : 'KB에 한마디'

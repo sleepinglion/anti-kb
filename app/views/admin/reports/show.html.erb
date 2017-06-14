@@ -1,5 +1,9 @@
 <div class="sl_show">
 	<p>
+		<b><%=t(:report_category_id,scope:[:activerecord,:attributes,:report]) %></b>
+		<%= @report.report_category.title %>
+	</p>
+	<p>
 		<b><%=t(:title,scope:[:activerecord,:attributes,:report]) %></b>
 		<%= @report.title %>
 	</p>
