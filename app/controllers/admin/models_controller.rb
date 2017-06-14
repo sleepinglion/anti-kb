@@ -53,7 +53,7 @@ class Admin::ModelsController < Admin::AdminController
 
     respond_to do |format|
       if @admin_model.save
-        format.html { redirect_to admin_models_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_model_path(@admin_model), notice: @controller_name + t(:message_success_create)}
         format.json { render json: @admin_model, status: :created, location: @admin_model }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class Admin::ModelsController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_model.update_attributes(admin_model_params)
-        format.html { redirect_to admin_models_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_model_path(@admin_model), notice: @controller_name + t(:message_success_update)}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

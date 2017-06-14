@@ -78,6 +78,9 @@ ko:
 
   admin_menu :
     menu_user : '사용자 관리'
+    menu_report : '피해신고 관리'
+    menu_compliment : '칭찬하기 관리'
+    menu_faq : 'FAQ 관리'
     menu_board : '게시판 관리'
 
   ckeditor:
@@ -350,7 +353,9 @@ ko:
     models:
       article : '관련기사'
       notice : '공지사항'
+      report_category : '피해신고 분류'
       report : '피해신고'
+      compliment_category : '경쟁사 칭찬 분류'
       compliment : '경쟁사 칭찬'
       propose : '망하게할 방법 제안'
       faq_category : 'FAQ 분류'
@@ -364,7 +369,7 @@ ko:
       admin :
         email : '이메일'
         password : '비밀번호'
-        enable : '사용여부'        
+        enable : '사용여부'
       article :
         title : '제목'
         url : '기사 주소'

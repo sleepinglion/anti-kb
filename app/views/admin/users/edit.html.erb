@@ -1,3 +1,5 @@
-<%= render 'form',:report=>@report %>
-<%= link_to t(:link_show), admin_report_path(@report) %> |
-<%= link_to t(:link_list), admin_report_path %>
+<section id="admin_user_edit">
+  <%= render 'form' %>
+  <%= link_to t(:link_show), admin_user_path(@admin_user) %> |
+  <%= link_to t(:link_list), admin_users_path %>
+</section>

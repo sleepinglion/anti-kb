@@ -17,7 +17,7 @@ class Admin::FaqCategoriesController < Admin::AdminController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @admin_faq_categories }
+      format.json { render :json => @admin_blog_categories }
     end
   end
 
@@ -52,7 +52,7 @@ class Admin::FaqCategoriesController < Admin::AdminController
 
     respond_to do |format|
       if @admin_faq_category.save
-        format.html { redirect_to admin_faq_category_path(@admin_faq_category), notice: @controller_name + t(:message_success_insert) }
+        format.html { redirect_to admin_faqs_url(:faq_category_id=>@admin_faq_category), notice: 'Faq category was successfully created.' }
         format.json { render json: @admin_faq_category, status: :created, location: @admin_faq_category }
       else
         format.html { render action: "new" }
@@ -66,7 +66,7 @@ class Admin::FaqCategoriesController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_faq_category.update_attributes(admin_faq_category_params)
-        format.html { redirect_to admin_faq_category_path(@admin_faq_category), notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_faqs_url(:faq_category_id=>@admin_faq_category), notice: 'Faq category was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -81,13 +81,12 @@ class Admin::FaqCategoriesController < Admin::AdminController
     @admin_faq_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_faq_categories_url }
-      format.json { head :no_content }
+      format.html { redirect_to admin_faqs_url }
+      format.json { head :ok }
     end
   end
 
-  private
-
+    private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_faq_category
       @admin_faq_category = FaqCategory.find(params[:id])
@@ -95,6 +94,6 @@ class Admin::FaqCategoriesController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_faq_category_params
-      params.require(:faq_category).permit(:title, :enable)
+      params.require(:faq).permit(:id,:faq_category_id,:title)
     end
 end

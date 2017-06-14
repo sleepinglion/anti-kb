@@ -9,7 +9,7 @@
 		<colgroup>
 			<col style="width:80px;" />
 			<col />
-			<col style="width:80px;" />
+			<col style="width:90px;" />
 			<col style="width:100px;" />
 			<% if can?(:update, Faq) || can?(:delete, Faq) %>
 			<col <%= raw manage_width(Faq) %> />
@@ -34,7 +34,7 @@
 				<td class="mw"><%= link_to faq.title,admin_faq_path(faq) %></td>
 				<td><%= raw flagToString(faq.enable) %></td>
 				<td><%= faq.created_at.to_date %></td>
-				<% if can?(:update, Faq) || can?(:delete, Faq) %>
+				<% if can?(:update, faq) || can?(:delete, faq) %>
 				<td> <% if can? :update, faq %>
 				<%= link_to edit_admin_faq_path(faq),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
@@ -48,19 +48,21 @@
 			<% end %>
 			<% else %>
 			<tr>
-				<td colspan="6"><%= t(:no_data)%></td>
+				<td colspan="5"><%= t(:no_data)%></td>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
 </div>
 <div class="row">
-	<div class="col-xs-6 col-sm-3 col-md2">
+	<div class="col-xs-6 col-sm-3 col-md-2">
 		<% if can? :create, Faq %>
 		<%= link_to new_admin_faq_path,:class=>"btn btn-primary" do %>
 		<i class="glyphicon glyphicon-plus"></i> <%= t(:link_new) %>
 		<% end %>
 		<% end %>
 	</div>
-	<%= paginate @admin_faqs %>
+	<nav class="col-xs-12 col-sm-9 col-md-10">
+		<%= paginate @admin_faqs %>
+	</nav>
 </div>

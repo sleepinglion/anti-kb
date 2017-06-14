@@ -8,53 +8,39 @@ class Admin::FaqsController < Admin::AdminController
     @controller_name = t('activerecord.models.faq')
   end
 
-  # GET /admin/faqs
-  # GET /admin/faqs.json
+  # GET /faqs
+  # GET /faqs.json
   def index
-    params[:per_page] = 10 unless params[:per_page].present?
+      params[:per_page] = 10 unless params[:per_page].present?
 
-    @admin_faq_categories = FaqCategory.all
+      @admin_faq_categories=FaqCategory.where(:enable=>true)
 
-    if(params[:faq_category_id])
-      @categoryId=params[:faq_category_id].to_i
-    else
-      if @admin_faq_categories[0]
-        @categoryId=@admin_faq_categories[0].id.to_i
+      if(params[:blog_category_id])
+        @admin_faq_category_id=params[:faq_category_id].to_i
+        @admin_faqs = Faq.where(:faq_category_id=>@admin_faq_category_id).order(id:'desc').page(params[:page]).per(params[:per_page])
       else
-        @categoryId=nil
+        @admin_faqs = Faq.order('id desc').page(params[:page]).per(params[:per_page])
       end
-    end
-
-    @admin_faqs = Faq.where(:faq_category_id=>@categoryId).order('id desc').page(params[:page]).per(params[:per_page])
-
-    if(params[:id])
-      @admin_faq = Faq.find(params[:id])
-    end
-
-    admin=false
-    if(current_user)
-      if(current_user.admin)
-        admin=true
-      end
-    end
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: {:faqs=>@admin_faqs,:admin=>admin} }
+      format.html
+      format.json { render json: @admin_faqs }
     end
   end
 
-  # GET /admin/faqs/1
-  # GET /admin/faqs/1.json
+  # GET /faqs/1
+  # GET /faqs/1.json
   def show
+    @admin_faq_content=FaqContent.find(params[:id])
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @admin_faqContent }
     end
   end
 
-  # GET /admin/faqs/new
-  # GET /admin/faqs/new.json
+  # GET /faqs/new
+  # GET /faqs/new.json
   def new
     @admin_faq = Faq.new
     @admin_faq.build_faq_content
@@ -67,20 +53,20 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # GET /admin/faqs/1/edit
+  # GET /faqs/1/edit
   def edit
     @admin_faq_categories = FaqCategory.all
     @admin_faq_category_id=@admin_faq.faq_category.id
   end
 
-  # POST /admin/faqs
-  # POST /admin/faqs.json
+  # POST /faqs
+  # POST /faqs.json
   def create
     @admin_faq = Faq.new(admin_faq_params)
 
     respond_to do |format|
       if @admin_faq.save
-        format.html { redirect_to faqs_url(:faq_category_id=>@admin_faq.faq_category.id), notice: 'Faq was successfully created.' }
+        format.html { redirect_to admin_faqs_url, :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @admin_faq, status: :created, location: @admin_faq }
       else
         format.html { render action: "new" }
@@ -89,12 +75,14 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # PUT /admin/faqs/1
-  # PUT /admin/faqs/1.json
+  # PUT /faqs/1
+  # PUT /faqs/1.json
   def update
+    @admin_faq = Faq.find(params[:id])
+
     respond_to do |format|
       if @admin_faq.update_attributes(admin_faq_params)
-        format.html { redirect_to faqs_url(:faq_category_id=>@admin_faq.faq_category.id), notice: 'Faq was successfully updated.' }
+        format.html { redirect_to admin_faqs_url, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -103,14 +91,14 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # DELETE /admin/faqs/1
-  # DELETE /admin/faqs/1.json
+  # DELETE /faqs/1
+  # DELETE /faqs/1.json
   def destroy
     @admin_faq.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_faqs_url }
-      format.json { head :no_content }
+      format.html { redirect_to admin_faqs_url}
+      format.json { head :ok }
     end
   end
 
@@ -122,6 +110,6 @@ class Admin::FaqsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_faq_params
-    params.require(:faq).permit(:title, :enable)
+    params.require(:faq).permit(:id,:faq_category_id,:title)
   end
 end

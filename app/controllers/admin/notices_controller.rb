@@ -42,7 +42,7 @@ class Admin::NoticesController < Admin::AdminController
     end
   end
 
-  # GET /notices/1/edit
+  # GET /admin/notices/1/edit
   def edit
   end
 
@@ -53,7 +53,7 @@ class Admin::NoticesController < Admin::AdminController
 
     respond_to do |format|
       if @admin_notice.save
-        format.html { redirect_to admin_notices_url, notice: '공지사항이 작성되었습니다.' }
+        format.html { redirect_to admin_notice_path(@admin_notice), notice: '공지사항이 작성되었습니다.' }
         format.json { render json: @admin_notice, status: :created, location: @admin_notice }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class Admin::NoticesController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_notice.update_attributes(admin_notice_params)
-        format.html { redirect_to admin_notices_url, notice: '공지사항이 수정되었습니다.' }
+        format.html { redirect_to admin_notice_path(@admin_notice), notice: '공지사항이 수정되었습니다.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -95,6 +95,6 @@ class Admin::NoticesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_notice_params
-    params.require(:notice).permit(:id, :title, :enable, compliment_content_attributes: [:id,:content]).merge(user_id: current_user.id)
+    params.require(:notice).permit(:id, :title, :enable, compliment_content_attributes: [:id,:content]).merge(user_id: current_admin.id)
   end
 end

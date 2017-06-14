@@ -33,7 +33,7 @@
 			<% @admin_models.each do |model| %>
 			<tr>
 				<td><%= link_to model.id,admin_model_path(model) %></td>
-				<td><%= link_to admin_model_path(model) do %><%=image_tag model.photo.small_thumb %><% end %></td>				
+				<td><%= link_to admin_model_path(model) do %><%=image_tag model.photo.small_thumb %><% end %></td>
 				<td><%= link_to model.title,admin_model_path(model) %></td>
 				<td><%= raw flagToString(model.enable) %></td>
 				<td><%= model.created_at.to_date %></td>
@@ -58,12 +58,14 @@
 	</table>
 </div>
 <div class="row">
-	<div class="col-xs-6 col-sm-3 col-md2">
+	<div class="col-xs-6 col-sm-3 col-md-2">
 		<% if can? :create, Model %>
 		<%= link_to new_admin_model_path,:class=>"btn btn-primary" do %>
 		<i class="glyphicon glyphicon-plus"></i> <%= t(:link_new) %>
 		<% end %>
 		<% end %>
 	</div>
-	<%= paginate @admin_models %>
+	<nav class="col-xs-12 col-sm-9 col-md-10">
+		<%= paginate @admin_models %>
+	</nav>
 </div>

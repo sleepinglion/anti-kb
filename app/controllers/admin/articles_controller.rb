@@ -34,7 +34,6 @@ class Admin::ArticlesController < Admin::AdminController
   # GET /admin/articles/new.json
   def new
     @admin_article = Article.new
-    @admin_article.build_notice_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,11 +48,11 @@ class Admin::ArticlesController < Admin::AdminController
   # POST /admin/articles
   # POST /admin/articles.json
   def create
-    @admin_article = Article.new(article_params)
+    @admin_article = Article.new(admin_article_params)
 
     respond_to do |format|
       if @admin_article.save
-        format.html { redirect_to admin_articles_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_article_path(@admin_article), notice: @controller_name + t(:message_success_update) }
         format.json { render json: @admin_article, status: :created, location: @admin_article }
       else
         format.html { render action: "new" }
@@ -66,8 +65,8 @@ class Admin::ArticlesController < Admin::AdminController
   # PUT /admin/articles/1.json
   def update
     respond_to do |format|
-      if @admin_article.update_attributes(article_params)
-        format.html { redirect_to admin_articles_url, notice: @controller_name + t(:message_success_update) }
+      if @admin_article.update_attributes(admin_article_params)
+        format.html { redirect_to admin_article_path(@admin_article), notice: @controller_name + t(:message_success_update) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -96,6 +95,6 @@ class Admin::ArticlesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_article_params
-    params.require(:article).permit(:title, :enable)
+    params.require(:article).permit(:title, :description, :url, :enable)
   end
 end

@@ -19,6 +19,6 @@ Antikb::Application.routes.draw do
 
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'
-    resources :users, :articles, :improve, :faqs, :faq_categories, :proposes, :compliments, :reports, :notices, :models, :galleries
+    resources :users, :articles, :improve, :faq_categories, :faqs , :proposes, :compliment_categories, :compliments, :report_categories, :reports, :notices, :models, :galleries
   end
 end

@@ -53,7 +53,7 @@ class Admin::ComplimentsController < Admin::AdminController
 
     respond_to do |format|
       if @admin_compliment.save
-        format.html { redirect_to admin_compliments_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_compliment_path(@admin_compliment), notice: @controller_name + t(:message_success_update) }
         format.json { render json: @admin_compliment, status: :created, location: @admin_compliment }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class Admin::ComplimentsController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_compliment.update_attributes(admin_compliment_params)
-        format.html { redirect_to admin_compliments_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_compliment_path(@admin_compliment), notice: @controller_name + t(:message_success_update) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -95,6 +95,6 @@ class Admin::ComplimentsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_compliment_params
-    params.require(:compliment).permit(:bank_id, :compliment_category_id, :title, :enable, compliment_content_attributes: [:id, :content]).merge(user_id: current_user.id)
+    params.require(:compliment).permit(:bank_id, :compliment_category_id, :title, :enable, compliment_content_attributes: [:id, :content]).merge(user_id: current_admin.id)
   end
 end

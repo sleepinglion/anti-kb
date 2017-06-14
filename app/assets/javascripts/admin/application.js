@@ -16,7 +16,12 @@
 //= require bootstrap/dropdown
 //= require bootstrap/alert
 //= require plugin/jquery.pagination
+//= require ckeditor/init
 
+CKEDITOR.replace("sl_content", {
+  fullPage: false,
+  allowedContent: true
+});
 
 var sms_clone_count=1;
 var multimedia_clone_count=1;

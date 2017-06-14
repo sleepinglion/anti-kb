@@ -1,26 +1,19 @@
-<%= form_for [:admin,report] do |f| %>
-<% if report.errors.any? %>
-<div id="error_explanation" class="alert alert-danger">
-	<a href="#" class="close" data-dismiss="alert">&times;</a>
-	<h2><%= pluralize(report.errors.count, "error") %> prohibited this request from being saved:</h2>
-	<ul>
-		<% report.errors.full_messages.each do |msg| %>
-		<li>
-			<%= msg %>
-		</li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
-<div class="form-group">
-	<%= f.label :title %>
-	<%= f.text_field :title,:class=>"form-control",:required=>"required" %>
-</div>
-<div class="form-group">
-	<%= f.label :enable %>
-	<%= f.check_box :enable %>
-</div>
-<div class="form-group actions">
-	<%= f.submit :class=>"btn btn-primary" %>
-</div>
+<%= form_for [:admin, @admin_user],:html => {:multipart => true,:class=>'slboard_form'} do |f| %>
+	<% if @admin_user.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@admin_user.errors.count, "error") %> prohibited this notice from being saved:</h2>
+		<ul>
+			<% @admin_user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name,{'class'=>'sl_input','required'=>'required'} %>
+	</div>
+	<div class="actions">
+	  <%= f.submit :class=>'btn btn-primary' %>
+	</div>
 <% end %>

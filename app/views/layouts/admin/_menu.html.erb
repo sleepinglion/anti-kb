@@ -16,27 +16,60 @@
 	</li>
 	<% end %>
 
-
-	<% if can?(:read, Report) || can?(:read, Compliment) || can?(:read, FaqCategory) || can?(:read, Faq) || can?(:read, Propose) || can?(:read, Model) || can?(:read, Improve) %>
+	<% if can?(:read, ReportCategory) || can?(:read, Report) %>
 	<li class="dropdown">
-		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/reports' || params[:controller]=='admin/compliments' || params[:controller]=='admin/faq_categories' || params[:controller]=='admin/faqs' || params[:controller]=='admin/proposes' || params[:controller]=='admin/models' || params[:controller]=='admin/improve' %> active<% end %>" data-toggle="dropdown" href="#">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/report_categories' || params[:controller]=='admin/reports' %> active<% end %>" data-toggle="dropdown" href="#">
 			<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
-			<%=t(:menu_board,scope:[:admin_menu]) %>
+			<%=t(:menu_report,scope:[:admin_menu]) %>
 			<span class="caret"></span>
 		</a>
-		<ul	class="dropdown-menu<% if params[:controller]=='admin/reports' || params[:controller]=='admin/compliments' || params[:controller]=='admin/faq_categories' || params[:controller]=='admin/faqs' || params[:controller]=='admin/proposes' || params[:controller]=='admin/models' || params[:controller]=='admin/improve' %> current<% end %>">
+		<ul	class="dropdown-menu<% if params[:controller]=='admin/report_categories' || params[:controller]=='admin/reports' %> current<% end %>">
+			<% if can? :read, ReportCategory %>
+			<li<% if params[:controller]=='admin/report_categories' %> class="active"<% end %>><%=link_to admin_report_categories_path do %>
+				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
+				<%=t(:report_category,scope:[:activerecord,:models])%><% end %></li>
+			<% end %>
 			<% if can? :read, Report %>
 			<li<% if params[:controller]=='admin/reports' %> class="active"<% end %>><%=link_to admin_reports_path do %>
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:report,scope:[:activerecord,:models])%><% end %></li>
+			<% end %>
+		</ul>
+	</li>
+	<% end %>
+
+	<% if can?(:read, ComplimentCategory) || can?(:read, Compliment) %>
+	<li class="dropdown">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/compliment_categories' || params[:controller]=='admin/compliments' %> active<% end %>" data-toggle="dropdown" href="#">
+			<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
+			<%=t(:menu_compliment,scope:[:admin_menu]) %>
+			<span class="caret"></span>
+		</a>
+		<ul	class="dropdown-menu<% if params[:controller]=='admin/compliment_categories' || params[:controller]=='admin/compliments' %> current<% end %>">
+			<% if can? :read, ComplimentCategory %>
+			<li<% if params[:controller]=='admin/compliment_category' %> class="active"<% end %>><%=link_to admin_compliment_categories_path do %>
+				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
+				<%=t(:compliment_category,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
 			<% if can? :read, Compliment %>
 			<li<% if params[:controller]=='admin/compliments' %> class="active"<% end %>><%=link_to admin_compliments_path do %>
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:compliment,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
+		</ul>
+	</li>
+	<% end %>
+
+	<% if can?(:read, FaqCategory) || can?(:read, Faq) %>
+	<li class="dropdown">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/faq_categories' || params[:controller]=='admin/faqs' %> active<% end %>" data-toggle="dropdown" href="#">
+			<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
+			<%=t(:menu_faq,scope:[:admin_menu]) %>
+			<span class="caret"></span>
+		</a>
+		<ul	class="dropdown-menu<% if params[:controller]=='admin/faq_categories' || params[:controller]=='admin/faqs' %> current<% end %>">
 			<% if can? :read, FaqCategory %>
-			<li<% if params[:controller]=='admin/faq_categories' %> class="active"<% end %>><%=link_to admin_faq_categories_path do %>
+			<li<% if params[:controller]=='admin/faq_category' %> class="active"<% end %>><%=link_to admin_faq_categories_path do %>
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:faq_category,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
@@ -45,6 +78,18 @@
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:faq,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
+		</ul>
+	</li>
+	<% end %>
+
+	<% if can?(:read, Propose) || can?(:read, Model) || can?(:read, Improve) %>
+	<li class="dropdown">
+		<a class="dropdown-toggle dropmenu<% if params[:controller]=='admin/proposes' || params[:controller]=='admin/models' || params[:controller]=='admin/improve' %> active<% end %>" data-toggle="dropdown" href="#">
+			<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
+			<%=t(:menu_board,scope:[:admin_menu]) %>
+			<span class="caret"></span>
+		</a>
+		<ul	class="dropdown-menu<% if params[:controller]=='admin/proposes' || params[:controller]=='admin/models' || params[:controller]=='admin/improve' %> current<% end %>">
 			<% if can? :read, Propose %>
 			<li<% if params[:controller]=='admin/proposes' %> class="active"<% end %>><%=link_to admin_proposes_path do %>
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>

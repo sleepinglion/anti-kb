@@ -16,7 +16,7 @@
 	<%= f.label :title %>
 	<%= f.text_field :title,:class=>"form-control",:required=>"required" %>
 </div>
-<%= f.fields_for :compliment_content do |c| %>
+<%= f.fields_for :notice_content do |c| %>
 <div class="form-group">
 	<%= c.label :content %><br />
 	<%= c.text_area :content, :id => "sl_content" %>
