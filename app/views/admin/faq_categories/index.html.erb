@@ -7,15 +7,15 @@
 <div class="table-responsive">
 	<table class="table table-bordered table-striped">
 		<colgroup>
-			<col style="width:80px;" />
-			<col />
-			<col />
-			<col style="width:90px;" />
-			<col style="width:100px;" />
-			<% if can?(:update, FaqCategory) || can?(:delete, FaqCategory) %>
-			<col <%= raw manage_width(FaqCategory) %> />
-			<% end %>
-		</colgroup>
+      <col style="width:100px" />
+      <col />
+      <col style="width:130px" />
+      <col style="width:100px" />
+      <col style="width:130px" />
+      <% if can?(:update, FaqCategory) || can?(:delete, FaqCategory) %>
+      <col <%=raw manage_width(FaqCategory) %> />
+      <% end %>
+    </colgroup>
 		<thead>
 			<tr>
 				<th><%= t(:label_number) %></th>

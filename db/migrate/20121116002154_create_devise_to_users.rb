@@ -36,6 +36,9 @@ class CreateDeviseToUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
+      t.integer :reports_count, null: false, default: 0
+      t.integer :compliments_count, null: false, default: 0
+
       t.boolean  :enable, :null=> false, :default=> true
       t.boolean  :admin, :null=>false, :default => false
 

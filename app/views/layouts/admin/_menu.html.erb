@@ -36,7 +36,7 @@
 			<% end %>
 
 			<% if can? :read, ComplimentCategory %>
-			<li<% if params[:controller]=='admin/compliment_category' %> class="active"<% end %>><%=link_to admin_compliment_categories_path do %>
+			<li<% if params[:controller]=='admin/compliment_categories' %> class="active"<% end %>><%=link_to admin_compliment_categories_path do %>
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:compliment_category,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
@@ -47,7 +47,7 @@
 			<% end %>
 
 				<% if can? :read, FaqCategory %>
-				<li<% if params[:controller]=='admin/faq_category' %> class="active"<% end %>><%=link_to admin_faq_categories_path do %>
+				<li<% if params[:controller]=='admin/faq_categories' %> class="active"<% end %>><%=link_to admin_faq_categories_path do %>
 					<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 					<%=t(:faq_category,scope:[:activerecord,:models])%><% end %></li>
 				<% end %>
@@ -85,7 +85,7 @@
 				<%=t(:improve,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>
 			<% if can? :read, Article %>
-			<li<% if params[:controller]=='admin/article' %> class="active"<% end %>><%=link_to admin_articles_path do %>
+			<li<% if params[:controller]=='admin/articles' %> class="active"<% end %>><%=link_to admin_articles_path do %>
 				<i class="glyphicon glyphicon-list-alt glyphicon-white"></i>
 				<%=t(:article,scope:[:activerecord,:models])%><% end %></li>
 			<% end %>

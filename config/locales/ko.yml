@@ -399,6 +399,7 @@ ko:
         enable : '사용여부'
       faq_category :
         title : '제목'
+        faqs_count : 'FAQ 갯수'
         enable : '사용여부'
       faq :
         title : '제목'

@@ -81,7 +81,7 @@ class Admin::FaqCategoriesController < Admin::AdminController
     @admin_faq_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_faqs_url }
+      format.html { redirect_to admin_faq_categories_url }
       format.json { head :ok }
     end
   end

@@ -1,5 +1,5 @@
 class Admin::ReportsController < Admin::AdminController
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_report, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
@@ -88,7 +88,7 @@ class Admin::ReportsController < Admin::AdminController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_admin_report
-    @admin_report = Faq.find(params[:id])
+    @admin_report = Report.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
