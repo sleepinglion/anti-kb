@@ -38,7 +38,7 @@ ko:
   menu_propose : '제안하기'
 
   success_title : '축하합니다!!'
-  message_success_insert : '이(가) 성공적으로  등록되었습니다.'
+  message_success_create : '이(가) 성공적으로  등록되었습니다.'
   message_success_update : '이(가) 성공적으로  수정되었습니다.'
 
   label_number : '번호'
@@ -350,6 +350,7 @@ ko:
   activerecord:
     models:
       article : '관련기사'
+      bank : '칭찬은행'
       notice : '공지사항'
       report_category : '피해신고 분류'
       report : '피해신고'
@@ -372,6 +373,9 @@ ko:
         title : '제목'
         url : '기사 주소'
         enable : '사용여부'
+      bank :
+        title : '제목'
+        enable : '사용여부'
       report_category :
         title : '제목'
         reports_count : '피해신고 갯수'
@@ -387,7 +391,7 @@ ko:
         compliments_count : '칭찬하기 갯수'
         enable : '사용여부'
       compliment :
-        bank_id : '은행'
+        bank_id : '칭찬은행'
         compliment_category_id : '칭찬유형'
         title : '제목'
         enable : '사용여부'
@@ -423,13 +427,15 @@ ko:
         enable : '사용여부'
       user :
         name : '이름'
-        sign_in_count : '로그인 횟수'        
+        sign_in_count : '로그인 횟수'
         email : '이메일'
         photo : '사진'
         description : 'KB에 한마디'
         password : '비밀번호'
         password_confirmation : '비밀번호 확인'
         current_password : '현재 비밀번호'
+        reports_count : '피해신고 갯수'
+        compliments_count : '경쟁사칭찬 갯수'
         enable : '사용여부'
   recaptcha:
     errors:

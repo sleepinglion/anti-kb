@@ -4,6 +4,10 @@
 		<%= @admin_notice.title %>
 	</p>
 	<p>
+		<b><%=t(:content,scope:[:activerecord,:attributes,:propose]) %></b>
+		<%= simple_format(@admin_notice.notice_content.content) %>
+	</p>
+	<p>
 		<b><%=t(:enable,scope:[:activerecord,:attributes,:notice]) %></b>
 		<%=raw flagToString(@admin_notice.enable) %>
 	</p>

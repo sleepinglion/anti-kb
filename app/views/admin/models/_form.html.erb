@@ -1,4 +1,4 @@
-<%= form_for [:admin,model] do |f| %>
+<%= form_for [:admin,model],:html => {:multipart => true} do |f| %>
 <% if model.errors.any? %>
 <div id="error_explanation" class="alert alert-danger">
 	<a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -15,6 +15,24 @@
 <div class="form-group">
 	<%= f.label :title %>
 	<%= f.text_field :title,:class=>"form-control",:required=>"required" %>
+</div>
+<div class="form-group">
+	<%= f.label :photo,:class=>'control-label' %>
+	<div>
+		<% if model.photo? %>
+		<%= image_tag(model.photo.small_thumb) %>
+		<% end %>
+		<%= f.file_field :photo %>
+		<%= f.hidden_field :photo_cache %>
+	</div>
+</div>
+<div class="form-group">
+	<%= f.label :recommend_description %><br />
+	<%= f.text_area :recommend_description, :class=>'form-control', :rows=>5, :required=>'required' %>
+</div>
+<div class="form-group">
+	<%= f.label :models_comment %><br />
+	<%= f.text_area :models_comment, :class=>'form-control', :rows=>5, :required=>'required' %>
 </div>
 <div class="form-group">
 	<%= f.label :enable %>

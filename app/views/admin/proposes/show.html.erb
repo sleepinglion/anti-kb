@@ -3,6 +3,10 @@
 		<b><%=t(:title,scope:[:activerecord,:attributes,:propose]) %></b>
 		<%= @admin_propose.title %>
 	</p>
+  <p>
+		<b><%=t(:content,scope:[:activerecord,:attributes,:propose]) %></b>
+		<%= simple_format(@admin_propose.content) %>
+	</p>
 	<p>
 		<b><%=t(:enable,scope:[:activerecord,:attributes,:propose]) %></b>
 		<%=raw flagToString(@admin_propose.enable) %>

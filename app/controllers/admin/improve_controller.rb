@@ -34,7 +34,6 @@ class Admin::ImproveController < Admin::AdminController
   # GET /admin/improve/new.json
   def new
     @admin_improve = Improve.new
-    @admin_improve.build_notice_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -95,6 +94,6 @@ class Admin::ImproveController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_improve_params
-    params.require(:improve).permit(:title, :enable)
+    params.require(:improve).permit(:title, :content, :enable)
   end
 end

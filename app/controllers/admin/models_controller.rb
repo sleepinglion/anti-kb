@@ -34,7 +34,6 @@ class Admin::ModelsController < Admin::AdminController
   # GET /admin/models/new.json
   def new
     @admin_model = Model.new
-    @admin_model.build_notice_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +48,7 @@ class Admin::ModelsController < Admin::AdminController
   # POST /admin/models
   # POST /admin/models.json
   def create
-    @admin_model = Model.new(admin_model_param)
+    @admin_model = Model.new(admin_model_params)
 
     respond_to do |format|
       if @admin_model.save
@@ -95,6 +94,6 @@ class Admin::ModelsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_model_params
-    params.require(:model).permit(:title, :enable)
+    params.require(:model).permit(:title,:photo,:recommend_description, :models_comment, :enable).merge(user_id: current_admin.id)
   end
 end

@@ -36,7 +36,6 @@ class Admin::ProposesController < Admin::AdminController
   # GET /admin/proposes/new.json
   def new
     @admin_propose = Propose.new
-    @admin_propose.build_notice_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -97,6 +96,6 @@ class Admin::ProposesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_propose_params
-    params.require(:propose).permit(:title, :enable).merge(user_id: current_admin.id)
+    params.require(:propose).permit(:title, :content, :enable).merge(user_id: current_admin.id)
   end
 end
