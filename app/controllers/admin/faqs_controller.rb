@@ -8,8 +8,8 @@ class Admin::FaqsController < Admin::AdminController
     @controller_name = t('activerecord.models.faq')
   end
 
-  # GET /faqs
-  # GET /faqs.json
+  # GET /admin/faqs
+  # GET /admin/faqs.json
   def index
       params[:per_page] = 10 unless params[:per_page].present?
 
@@ -28,8 +28,8 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # GET /faqs/1
-  # GET /faqs/1.json
+  # GET /admin/faqs/1
+  # GET /admin/faqs/1.json
   def show
     @admin_faq_content=FaqContent.find(params[:id])
 
@@ -39,8 +39,8 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # GET /faqs/new
-  # GET /faqs/new.json
+  # GET /admin/faqs/new
+  # GET /admin/faqs/new.json
   def new
     @admin_faq = Faq.new
     @admin_faq.build_faq_content
@@ -53,14 +53,14 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # GET /faqs/1/edit
+  # GET /admin/faqs/1/edit
   def edit
     @admin_faq_categories = FaqCategory.all
     @admin_faq_category_id=@admin_faq.faq_category.id
   end
 
-  # POST /faqs
-  # POST /faqs.json
+  # POST /admin/faqs
+  # POST /admin/faqs.json
   def create
     @admin_faq = Faq.new(admin_faq_params)
 
@@ -75,8 +75,8 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # PUT /faqs/1
-  # PUT /faqs/1.json
+  # PUT /admin/faqs/1
+  # PUT /admin/faqs/1.json
   def update
     @admin_faq = Faq.find(params[:id])
 
@@ -91,8 +91,8 @@ class Admin::FaqsController < Admin::AdminController
     end
   end
 
-  # DELETE /faqs/1
-  # DELETE /faqs/1.json
+  # DELETE /admin/faqs/1
+  # DELETE /admin/faqs/1.json
   def destroy
     @admin_faq.destroy
 
