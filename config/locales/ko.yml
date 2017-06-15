@@ -2,9 +2,10 @@ ko:
   application_name : '안티 국민은행'
   meta_description : '안티 국민은행 홈페이지입니다, 살인자 은행이 망하는 그날까지!!'
   meta_keywords : '안티,kb,KB,국민은행,국민카드,정보유출,불법대출,금융,은행,대출,신용,신용대출,담보,사채,카드,카드론,이자,안티,급전,anti,살인자은행,antikb,이승기,김연아'
-  meta_image : 'http://images.sleepinglion.pe.kr/sl.jpg'
+  meta_image : 'http://assets.sleepinglion.pe.kr/sl.jpg'
   meta_url : 'http://www.antikb.site'
   title_separator : '-'
+  default_title : 'KB가 망하는 그날까지!!'
 
   home : '홈'
   home_title : '살인은행'
@@ -350,7 +351,6 @@ ko:
       <<: *errors
   activerecord:
     models:
-      home : 'KB가 망하는 그날까지!!'
       article : '관련기사'
       bank : '칭찬은행'
       notice : '공지사항'

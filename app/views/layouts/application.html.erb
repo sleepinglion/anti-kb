@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="<%=I18n.locale %>">
 <head>
-	<meta charset="utf-8" />
-	<%=display_meta_tags :site => t(:application_name),
+<meta charset="utf-8">
+<%=display_meta_tags :site => t(:application_name),
 	:title=>@title,
 	:description => @meta_description,
 	:keywords => @meta_keywords,
 	:separator => t(:title_separator),
-	:viewport => "width=device-width, initial-scale=1.0, user-scalable=yes",
+	:viewport => 'width=device-width, initial-scale=1.0, user-scalable=yes',
 	:reverse => true %>
-	<%=display_meta_tags og: {
+<%=display_meta_tags og: {
   	title:   @title,
   	description: @meta_description,
   	url:      @meta_url,
   	image:    @meta_image
-	}
-	%>
-	<meta name="author" content="Sleeping-Lion" />
-	<link rel="shortcut icon" href="<%=asset_path('favicon.ico') %>" />
-	<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
-	<%= csrf_meta_tags %>
-	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	<![endif]-->
+	} %>
+<meta name="author" content="Sleeping-Lion">
+<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>">
+<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<![endif]-->
 </head>
-<body>
-	<%= render :partial => 'layouts/header' %>
-	<div id="mom">
-		<div id="main" class="container">
-			<div class="row">
-		<% if current_page?(root_path) %>
-		<%= render :partial => 'layouts/aside' %>
-		<% else %>
-		<%= render :partial => 'layouts/page_header' %>
-		<% end %>
-		<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
-			<%=yield %>
-			<div class="clearfix">&nbsp;</div>
-		</section>
+<body itemscope itemtype="<%=@page_itemtype %>">
+<%= render :partial => 'layouts/header' %>
+<div id="mom">
+	<div id="main" class="container">
+		<div class="row">
+			<% if current_page?(root_path) %>
+			<%= render :partial => 'layouts/aside' %>
+			<% else %>
+			<%= render :partial => 'layouts/page_header' %>
+			<% end %>
+			<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
+				<%=yield %>
+				<div class="clearfix">&nbsp;</div>
+			</section>
+		</div>
 	</div>
 </div>
-	</div>
-	<%= render :partial => 'layouts/footer' %>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
-	<%= javascript_include_tag :application, "data-turbolinks-track" => true %>
-	</body>
+<%= render :partial => 'layouts/footer' %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<%= javascript_include_tag :application, "data-turbolinks-track" => true %>
+</body>
 </html>

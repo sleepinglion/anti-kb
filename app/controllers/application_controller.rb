@@ -6,15 +6,17 @@ class ApplicationController < ActionController::Base
   def initialize(*params)
     super(*params)
 
-
-    @title=t(:application_name)
-
     @application_name=t(:application_name)
     @controller_name=t(:application_name)
+    @title=t(:default_title)
 
     @meta_robot='all, index, follow'
     @meta_description=t(:meta_description)
     @meta_keywords=t(:meta_keywords)
+    @meta_image=t(:meta_image)
+    @meta_url=t(:meta_url)
+
+    @page_itemtype="http://schema.org/WebPage"        
   end
 
   def current_ability

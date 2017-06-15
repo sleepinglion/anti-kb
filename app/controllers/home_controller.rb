@@ -16,8 +16,6 @@ class HomeController < ApplicationController
     @models=Model.order('id desc').page(0).per(5)
     @reports = Report.order('id desc').page(0).per(5)
     @compliments = Compliment.order('id desc').page(0).per(5)
-
-    @title=t(:home,scope:[:activerecord,:models])
   end
 
   def kbsmind
