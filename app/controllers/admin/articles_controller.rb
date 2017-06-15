@@ -52,7 +52,7 @@ class Admin::ArticlesController < Admin::AdminController
 
     respond_to do |format|
       if @admin_article.save
-        format.html { redirect_to admin_article_path(@admin_article), notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_article_path(@admin_article), notice: @controller_name + t(:message_success_create)}
         format.json { render json: @admin_article, status: :created, location: @admin_article }
       else
         format.html { render action: "new" }
@@ -66,7 +66,7 @@ class Admin::ArticlesController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_article.update_attributes(admin_article_params)
-        format.html { redirect_to admin_article_path(@admin_article), notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_article_path(@admin_article), notice: @controller_name + t(:message_success_update)}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -81,7 +81,7 @@ class Admin::ArticlesController < Admin::AdminController
     @admin_article.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_articles_url }
+      format.html { redirect_to admin_articles_path }
       format.json { head :no_content }
     end
   end

@@ -20,18 +20,18 @@
 			<h1 class="col-xs-12 col-sm-3"><%= link_to t(:home_title),root_path %></h1>
 			<nav>
 				<ul class="nav nav-pills">
-					<li <% if params[:controller]=='reports' %>class="active"<% end %>><%= link_to reports_path do %>피해 신고<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-					<li <% if params[:controller]=='compliments' %>class="active"<% end %>><%= link_to compliments_path do %>경쟁사 칭찬<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-					<li <% if params[:controller]=='faqs' %>class="active"<% end %>><%= link_to faqs_path do %>KB FAQ<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='reports' %>class="active"<% end %>><%= link_to reports_path do %><%=t(:report,scope:[:activerecord,:models]) %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='compliments' %>class="active"<% end %>><%= link_to compliments_path do %><%=t(:compliment,scope:[:activerecord,:models]) %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+					<li <% if params[:controller]=='faqs' %>class="active"<% end %>><%= link_to faqs_path do %><%=t(:faq,scope:[:activerecord,:models]) %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
 					<li class="dropdown<% if params[:controller]=='proposes' || params[:controller]=='models' || params[:controller]=='improve' %> active<% end %>">
 						<%=link_to '#',{:class=>"dropdown-toggle dropmenu",:'data-toggle'=>"dropdown"} do %>
 						<%=t(:menu_propose) %>
 						<span class="caret"></span>
 						<% end %>
 						<ul	class="dropdown-menu">
-							<li <% if params[:controller]=='proposes' %>class="active"<% end %>><%= link_to proposes_path do %>망하게할 방법 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-							<li <% if params[:controller]=='models' %>class="active"<% end %>><%= link_to models_path do %>광고모델 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
-							<li <% if params[:controller]=='improve' %>class="active"<% end %>><%= link_to new_improve_path do %>개선사항 제안<span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+							<li <% if params[:controller]=='proposes' %>class="active"<% end %>><%= link_to proposes_path do %><%=t(:propose,scope:[:activerecord,:models]) %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+							<li <% if params[:controller]=='models' %>class="active"<% end %>><%= link_to models_path do %><%=t(:model,scope:[:activerecord,:models]) %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+							<li <% if params[:controller]=='improve' %>class="active"<% end %>><%= link_to new_improve_path do %><%=t(:improve,scope:[:activerecord,:models]) %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
 						</ul>
 					</li>
 				</ul>

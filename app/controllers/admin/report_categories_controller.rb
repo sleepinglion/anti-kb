@@ -81,7 +81,7 @@ class Admin::ReportCategoriesController < Admin::AdminController
     @admin_report_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_report_categories_url }
+      format.html { redirect_to admin_report_categories_path}
       format.json { head :ok }
     end
   end
@@ -94,6 +94,6 @@ class Admin::ReportCategoriesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_report_category_params
-    params.require(:report_category).permit(:report_category_id,:title,:enable).merge(user_id: current_admin.id)
+    params.require(:report_category).permit(:report_category_id,:title,:enable)
   end
 end

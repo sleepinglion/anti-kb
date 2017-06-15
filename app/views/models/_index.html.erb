@@ -13,11 +13,11 @@
 				<% end %>
 				<div class="media-body">
 					<h4 class="media-heading" itemprop="name"><%=link_to model.title,model_path(model) %></h4>
-					<p itemprop="description">
+					<div itemprop="description">
 					<%=link_to model_path(model) do %>
 					<%=simple_format(model.recommend_description) %>
 					<% end %>
-					</p>
+					</div>
 				</div>
 			</div>
 			</div>

@@ -13,13 +13,13 @@
   </tr>
 	<% end %>
 	</table>
-	
+
 	<div id="sl_bottom_menu">
 		<% if user_signed_in? %>
 		<% if current_user.admin? %>
 		<%= link_to 'FAQ 분류 생성',new_faq_category_path %> &nbsp; | &nbsp; <%= link_to 'FAQ',faqs_path %>
 		<% end %>
 		<% end %>
-	<div class="flickr_pagination"><%= paginate @faq_categories %></div>	
+	<div class="flickr_pagination"><%= paginate @faq_categories %></div>
 	</div>
 </section>

@@ -81,7 +81,7 @@ class Admin::ComplimentCategoriesController < Admin::AdminController
     @admin_compliment_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_compliment_categories_url }
+      format.html { redirect_to admin_compliment_categories_path}
       format.json { head :ok }
     end
   end
@@ -94,6 +94,6 @@ class Admin::ComplimentCategoriesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_compliment_category_params
-    params.require(:compliment_category).permit(:compliment_category_id,:title,:enable).merge(user_id: current_admin.id)
+    params.require(:compliment_category).permit(:compliment_category_id,:title,:enable)
   end
 end

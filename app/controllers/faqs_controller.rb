@@ -5,8 +5,7 @@ class FaqsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.faq')
-    @style="faqs"
-    @script="faqs"
+    @title=@controller_name
   end
 
   # GET /faqs
@@ -26,12 +25,6 @@ class FaqsController < BoardController
 
     @faqs = Faq.where(:faq_category_id=>@categoryId).order('id desc').page(params[:page]).per(10)
 
-    if(params[:id])
-      @faq = Faq.find(params[:id])
-    end
-
-    @script='faqs'
-
     admin=false
     if(current_user)
       if(current_user.admin)
@@ -48,11 +41,33 @@ class FaqsController < BoardController
   # GET /faqs/1
   # GET /faqs/1.json
   def show
-    @faqContent=@faq.faq_content
+    @faq_categories = FaqCategory.all
+
+    if(params[:id])
+      @faq = Faq.find(params[:id])
+    end
+
+    @title=@faq.title
+    @meta_description=@faq.faq_content.content
+
+    if(params[:faq_category_id])
+      @categoryId=params[:faq_category_id].to_i
+    else
+      @categoryId=@faq.faq_category_id
+    end
+
+    @faqs = Faq.where(:faq_category_id=>@categoryId).order('id desc').page(params[:page]).per(10)
+
+    admin=false
+    if(current_user)
+      if(current_user.admin)
+        admin=true
+      end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @faqContent  }
+      format.json { render json: @faq.faq_content}
     end
   end
 

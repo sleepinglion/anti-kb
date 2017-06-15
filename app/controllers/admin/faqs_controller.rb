@@ -66,7 +66,7 @@ class Admin::FaqsController < Admin::AdminController
 
     respond_to do |format|
       if @admin_faq.save
-        format.html { redirect_to admin_faqs_url, :notice=> @controller_name +t(:message_success_create)}
+        format.html { redirect_to admin_faq_path(@admin_faq), :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @admin_faq, status: :created, location: @admin_faq }
       else
         format.html { render action: "new" }
@@ -82,7 +82,7 @@ class Admin::FaqsController < Admin::AdminController
 
     respond_to do |format|
       if @admin_faq.update_attributes(admin_faq_params)
-        format.html { redirect_to admin_faqs_url, :notice=> @controller_name +t(:message_success_update)}
+        format.html { redirect_to admin_faq_path(@admin_faq), :notice=> @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -97,7 +97,7 @@ class Admin::FaqsController < Admin::AdminController
     @admin_faq.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_faqs_url}
+      format.html { redirect_to admin_faqs_path}
       format.json { head :ok }
     end
   end
@@ -110,6 +110,6 @@ class Admin::FaqsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_faq_params
-    params.require(:faq).permit(:id,:faq_category_id,:title)
+    params.require(:faq).permit(:id,:faq_category_id,:title, :enable, faq_content_attributes: [:id,:content])
   end
 end

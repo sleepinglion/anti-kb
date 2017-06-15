@@ -101,17 +101,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @title=@user.name
   end
 
   # GET /users/new
   # GET /users/new.json
   def new
-    @script='users/new'
   end
 
   # GET /users/1/edit
   def edit
-    @script='users/new'
   end
 
   # POST /users
@@ -150,15 +149,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-   @delete_user=DeleteUser.new({:username=>@user.username,:nickname=>@user.nickname,:email=>@user.email,:nation_num=>@user.nation_num,:mobile_num=>@user.mobile_num})
-
-    @delete_user.transaction do
-      @user.destroy
-      @s_save=@delete_user.save!
-    end
+    @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_path }
+      format.html { redirect_to users_path}
       format.json { head :no_content }
     end
   end

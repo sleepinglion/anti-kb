@@ -2,13 +2,21 @@ crumb :root do
   link t(:home), root_path
 end
 
+crumb :intro do
+   link t('activerecord.models.intro'), intro_index_path
+end
+
+crumb :sitemap do
+   link t('activerecord.models.sitemap'), sitemap_index_path
+end
+
 crumb :reports do
    link t('activerecord.models.report'), reports_path
 end
 
 crumb :report do |report|
    link report.title, report_path(report)
-   parent :faqs
+   parent :reports
 end
 
 crumb :compliments do
@@ -28,31 +36,9 @@ crumb :models do
    link t('activerecord.models.model'), models_path
 end
 
-crumb :galleries do
-   link t('activerecord.models.gallery'), galleries_path
-end
-
-crumb :gallery do |gallery|
-   link gallery.title, gallery_path(gallery)
-   parent :galleries
-end
-
-crumb :questions do
-   link t('activerecord.models.question'), questions_path
-end
-
-crumb :question do |question|
-   link question.title, question_path(question)
-   parent :questions
-end
-
-crumb :guest_books do
-   link t('activerecord.models.guest_book'), guest_books_path
-end
-
-crumb :guest_book do |guest_book|
-   link guest_book.title, guest_book_path(guest_book)
-   parent :guest_books
+crumb :model do |model|
+   link model.title, model_path(model)
+   parent :models
 end
 
 crumb :faqs do

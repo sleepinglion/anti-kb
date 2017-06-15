@@ -37,7 +37,7 @@
 				<td><%= link_to article.url,admin_article_path(article) %></td>
 				<td><%= raw flagToString(article.enable) %></td>
 				<td><%= article.created_at.to_date %></td>
-				<% if can?(:update, Article) || can?(:delete, Article) %>
+				<% if can?(:update, article) || can?(:delete, article) %>
 				<td> <% if can? :update, article %>
 				<%= link_to edit_admin_article_path(article),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>

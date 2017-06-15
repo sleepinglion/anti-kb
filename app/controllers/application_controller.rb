@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  layout :layout  
+  layout :layout
   before_action :set_locale
 
   def initialize(*params)
@@ -15,9 +15,6 @@ class ApplicationController < ActionController::Base
     @meta_robot='all, index, follow'
     @meta_description=t(:meta_description)
     @meta_keywords=t(:meta_keywords)
-
-    @style='application'
-    @script='application'
   end
 
   def current_ability

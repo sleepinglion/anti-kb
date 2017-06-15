@@ -20,7 +20,7 @@
   	<%= @admin_improve.created_at %>
   </p>
 </div>
-<% if can? :update, Improve %>
+<% if can? :update, @admin_improve %>
 <%= link_to t(:link_edit), edit_admin_improve_path(@admin_improve) %> |
 <% end %>
 <%= link_to t(:link_list), admin_improve_index_path %>

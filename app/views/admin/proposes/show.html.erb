@@ -20,7 +20,7 @@
   	<%= @admin_propose.created_at %>
   </p>
 </div>
-<% if can? :update, Propose %>
+<% if can? :update, @admin_propose %>
 <%= link_to t(:link_edit), edit_admin_propose_path(@admin_propose) %> |
 <% end %>
 <%= link_to t(:link_list), admin_proposes_path %>

@@ -5,6 +5,6 @@ class IntroController < ApplicationController
   end
 
   def index
-
+    @title=@controller_name
   end
 end

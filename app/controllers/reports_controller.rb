@@ -6,6 +6,7 @@ class ReportsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.report')
+    @title=@controller_name
   end
 
   # GET /reports
@@ -22,7 +23,8 @@ class ReportsController < BoardController
   # GET /reports/1
   # GET /reports/1.json
   def show
-
+    @title=@report.title
+    @meta_description=@report.report_content.content
   end
 
   # GET /reports/new

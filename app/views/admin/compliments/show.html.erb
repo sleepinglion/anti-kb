@@ -20,7 +20,7 @@
   	<%= @compliment.created_at %>
   </p>
 </div>
-<% if can? :update, Report %>
+<% if can? :update, @compliment %>
 <%= link_to t(:link_edit), edit_admin_compliment_path(@compliment) %> |
 <% end %>
 <%= link_to t(:link_list), admin_compliments_path %>

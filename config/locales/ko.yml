@@ -20,7 +20,8 @@ ko:
   status_stop : '중지'
   flag_true : '사용'
   flag_false : '중지'
-  no_data : '글이 없습니다.'
+  no_data : '글이 없습니다'
+  no_photo : '사진이 없습니다'
   all_category : '전체'
   sleepinglion : '잠자는사자'
 
@@ -349,6 +350,7 @@ ko:
       <<: *errors
   activerecord:
     models:
+      home : 'KB가 망하는 그날까지!!'
       article : '관련기사'
       bank : '칭찬은행'
       notice : '공지사항'
@@ -372,9 +374,12 @@ ko:
       article :
         title : '제목'
         url : '기사 주소'
+        description : '설명'
         enable : '사용여부'
       bank :
+        photo : '사진'
         title : '제목'
+        compliments_count : '칭찬 수'
         enable : '사용여부'
       report_category :
         title : '제목'
@@ -406,6 +411,7 @@ ko:
         faqs_count : 'FAQ 갯수'
         enable : '사용여부'
       faq :
+        faq_category_id : 'FAQ분류'
         title : '제목'
         enable : '사용여부'
       faq_content :

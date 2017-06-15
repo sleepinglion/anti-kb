@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  validates_presence_of :name, :email, :password, :description, :on => :create
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  validates_presence_of :name, :email, :description, :on => :create
   validates_length_of :email, :within => 4..255
   validates :email, :email => {:strict_mode => true}
-  validates_length_of :password, :within => 4..255
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  validates_length_of :password, :within => 4..255,:allow_blank => true
   mount_uploader :photo, UserUploader
 end

@@ -24,7 +24,7 @@
   	<%= @admin_article.created_at %>
   </p>
 </div>
-<% if can? :update, Article %>
+<% if can? :update, @admin_article %>
 <%= link_to t(:link_edit), edit_admin_article_path(@admin_article) %> |
 <% end %>
 <%= link_to t(:link_list), admin_articles_path %>

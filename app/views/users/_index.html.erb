@@ -1,4 +1,4 @@
-<section id="main_user">
+<div id="main_user">
 	<% unless @users.empty? %>
 	<% @users.each do |user| %>
 	<article class="users media" itemscope itemtype="http://schema.org/Person">
@@ -30,4 +30,4 @@
 	<%= paginate @users %>
 	</div>
 	<%=link_to t(:link_more),users_path,:class=>'more' %>
-</section>
+</div>

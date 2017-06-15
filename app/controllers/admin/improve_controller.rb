@@ -81,7 +81,7 @@ class Admin::ImproveController < Admin::AdminController
     @admin_improve.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_improves_url }
+      format.html { redirect_to admin_improves_path}
       format.json { head :no_content }
     end
   end

@@ -1,11 +1,4 @@
 class HomeController < ApplicationController
-
-  def initialize
-    super
-    @style="home"
-    @script="home"
-  end
-
   def index
     if(params[:tab])
       if(params[:tab]=='notice')
@@ -24,6 +17,7 @@ class HomeController < ApplicationController
     @reports = Report.order('id desc').page(0).per(5)
     @compliments = Compliment.order('id desc').page(0).per(5)
 
+    @title=t(:home,scope:[:activerecord,:models])
   end
 
   def kbsmind

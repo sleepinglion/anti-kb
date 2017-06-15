@@ -20,7 +20,7 @@
   	<%= @admin_notice.created_at %>
   </p>
 </div>
-<% if can? :update, Notice %>
+<% if can? :update, @admin_notice %>
 <%= link_to t(:link_edit), edit_admin_notice_path(@admin_notice) %> |
 <% end %>
 <%= link_to t(:link_list), admin_notices_path %>

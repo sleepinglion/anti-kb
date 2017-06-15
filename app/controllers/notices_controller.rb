@@ -6,8 +6,7 @@ class NoticesController < ApplicationController
   def initialize
     super
     @controller_name=t('activerecord.models.notice')
-    @style="board"
-    @script="board/index"
+    @title=@controller_name
   end
 
   # GET /notices

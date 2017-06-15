@@ -33,11 +33,11 @@
 			<% @admin_improves.each do |improve| %>
 			<tr>
 				<td><%= link_to improve.id,admin_improve_path(improve) %></td>
-				<td class="mw"><%= link_to improve.title,admin_improve_path(improve) %></td>
+				<td><%= link_to improve.title,admin_improve_path(improve) %></td>
 				<td></td>
 				<td><%= raw flagToString(improve.enable) %></td>
 				<td><%= improve.created_at.to_date %></td>
-				<% if can?(:update, Improve) || can?(:delete, Improve) %>
+				<% if can?(:update, improve) || can?(:delete, improve) %>
 				<td> <% if can? :update, improve %>
 				<%= link_to edit_admin_improve_path(improve),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>

@@ -53,7 +53,7 @@ class Admin::NoticesController < Admin::AdminController
 
     respond_to do |format|
       if @admin_notice.save
-        format.html { redirect_to admin_notice_path(@admin_notice), notice: '공지사항이 작성되었습니다.' }
+        format.html { redirect_to admin_notice_path(@admin_notice), :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @admin_notice, status: :created, location: @admin_notice }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class Admin::NoticesController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_notice.update_attributes(admin_notice_params)
-        format.html { redirect_to admin_notice_path(@admin_notice), notice: '공지사항이 수정되었습니다.' }
+        format.html { redirect_to admin_notice_path(@admin_notice), :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -82,7 +82,7 @@ class Admin::NoticesController < Admin::AdminController
     @admin_notice.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_notices_url }
+      format.html { redirect_to admin_notices_path}
       format.json { head :no_content }
     end
   end

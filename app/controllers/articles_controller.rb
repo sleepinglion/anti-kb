@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.article')
+    @title=@controller_name    
   end
 
   # GET /articles

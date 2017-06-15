@@ -34,7 +34,6 @@ class Admin::BanksController < Admin::AdminController
   # GET /admin/models/new.json
   def new
     @admin_bank = Bank.new
-    @admin_bank.build_notice_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +48,7 @@ class Admin::BanksController < Admin::AdminController
   # POST /admin/models
   # POST /admin/models.json
   def create
-    @admin_bank = Bank.new(admin_bank_param)
+    @admin_bank = Bank.new(admin_bank_params)
 
     respond_to do |format|
       if @admin_bank.save
@@ -82,7 +81,7 @@ class Admin::BanksController < Admin::AdminController
     @admin_bank.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_banks_url }
+      format.html { redirect_to admin_banks_path }
       format.json { head :no_content }
     end
   end
@@ -95,6 +94,6 @@ class Admin::BanksController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_bank_params
-    params.require(:model).permit(:title, :enable)
+    params.require(:bank).permit(:title, :enable)
   end
 end

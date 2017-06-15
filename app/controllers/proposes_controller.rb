@@ -5,8 +5,7 @@ class ProposesController < ApplicationController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.propose')
-    @style="board"
-    @script="board/index"
+    @title=@controller_name
   end
 
   # GET /proposes

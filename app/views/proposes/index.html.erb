@@ -1,5 +1,5 @@
 <% breadcrumb :proposes %>
-<section id="propose_main">
+<div id="propose_main">
 	<div id="index_main">
 		<% unless @proposes.empty? %>
 		<% @proposes.each do |propose| %>
@@ -16,4 +16,4 @@
 		<%= link_to t(:link_new),new_propose_path %>
 		<%= paginate @proposes %>
 	</div>
-</section>
+</div>

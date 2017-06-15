@@ -16,7 +16,7 @@
   	<%= @admin_compliment_category.created_at %>
   </p>
 </div>
-<% if can? :update, ComplimentCategory %>
+<% if can? :update, @admin_compliment_category %>
 <%= link_to t(:link_edit), edit_admin_compliment_category_path(@admin_compliment_category) %> |
 <% end %>
 <%= link_to t(:link_list), admin_compliment_categories_path %>

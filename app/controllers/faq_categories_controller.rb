@@ -4,8 +4,8 @@ class FaqCategoriesController < BoardController
 
   def initialize(*params)
     super(*params)
-    @style="board"
-    @controller_name='수정이 FAQ 분류'
+    @controller_name=t('activerecord.models.faq_category')
+    @title=@controller_name
   end
 
   # GET /faq_categories

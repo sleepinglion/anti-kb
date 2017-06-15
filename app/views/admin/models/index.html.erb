@@ -33,11 +33,17 @@
 			<% @admin_models.each do |model| %>
 			<tr>
 				<td><%= link_to model.id,admin_model_path(model) %></td>
-				<td><%= link_to admin_model_path(model) do %><%=image_tag model.photo.small_thumb %><% end %></td>
+				<td>
+					<% if model.photo? %>
+					<%= link_to admin_model_path(model) do %><%=image_tag model.photo.small_thumb %><% end %>
+					<% else %>
+					<%=t(:no_photo) %>
+					<% end %>
+				</td>
 				<td><%= link_to model.title,admin_model_path(model) %></td>
 				<td><%= raw flagToString(model.enable) %></td>
 				<td><%= model.created_at.to_date %></td>
-				<% if can?(:update, Model) || can?(:delete, Model) %>
+				<% if can?(:update, model) || can?(:delete, model) %>
 				<td> <% if can? :update, model %>
 				<%= link_to edit_admin_model_path(model),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>

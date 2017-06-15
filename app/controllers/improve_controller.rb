@@ -3,8 +3,8 @@ class ImproveController < ApplicationController
 
   def initialize(*params)
     super(*params)
-
     @controller_name=t('activerecord.models.improve')
+    @title=@controller_name
   end
   # GET /improve
   # GET /improve.json

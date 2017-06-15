@@ -52,7 +52,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @admin_user.save
-        format.html { redirect_to @admin_user, notice: @controller_name +t(:message_success_create) }
+        format.html { redirect_to admin_user_path(@admin_user), notice: @controller_name +t(:message_success_create) }
         format.json { render json: @admin_user, status: :created, location: @admin_user }
       else
         format.html { render action: "new" }
@@ -66,7 +66,7 @@ class Admin::UsersController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_user.update_attributes(admin_user_params)
-        format.html { redirect_to @admin_user, notice: @controller_name +t(:message_success_update) }
+        format.html { redirect_to admin_user_path(@admin_user), notice: @controller_name +t(:message_success_update) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -81,7 +81,7 @@ class Admin::UsersController < Admin::AdminController
     @admin_user.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_users_url }
+      format.html { redirect_to admin_users_path}
       format.json { head :no_content }
     end
   end
@@ -94,6 +94,6 @@ class Admin::UsersController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_user_params
-    params.require(:admin_user).permit(:id, :url, :title, :description, :photo)
+    params.require(:user).permit(:id, :name, :email, :password, :description, :photo)
   end
 end

@@ -7,7 +7,7 @@
 	:description => @meta_description,
 	:keywords => @meta_keywords,
 	:separator => t(:title_separator),
-	:viewport => "width=device-width, initial-scale=1.0, user-scalable=no",
+	:viewport => "width=device-width, initial-scale=1.0, user-scalable=yes",
 	:reverse => true %>
 	<%=display_meta_tags og: {
   	title:   @title,
@@ -27,7 +27,7 @@
 <body>
 	<%= render :partial => 'layouts/header' %>
 	<div id="mom">
-		<section id="main" class="container">
+		<div id="main" class="container">
 			<div class="row">
 		<% if current_page?(root_path) %>
 		<%= render :partial => 'layouts/aside' %>
@@ -39,10 +39,10 @@
 			<div class="clearfix">&nbsp;</div>
 		</section>
 	</div>
-	</section>
+</div>
 	</div>
 	<%= render :partial => 'layouts/footer' %>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 	<%= javascript_include_tag :application, "data-turbolinks-track" => true %>
 	</body>
 </html>

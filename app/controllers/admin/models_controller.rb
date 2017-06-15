@@ -81,7 +81,7 @@ class Admin::ModelsController < Admin::AdminController
     @admin_model.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_models_url }
+      format.html { redirect_to admin_models_path}
       format.json { head :no_content }
     end
   end

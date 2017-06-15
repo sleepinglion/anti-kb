@@ -42,7 +42,7 @@ $(document).ready(function() {
 			$("#faqList").empty();
 			if(data.faqs.length) {
 				$.each(data.faqs,function(index,value){
-					var a=$('<a class="title" href="/faq?id='+value.id+'">'+value.title+'</a>').click(getContent);
+					var a=$('<a class="title" href="/faqs/'+value.id+'">'+value.title+'</a>').click(getContent);
 					if(data.admin) {
 						var div=$('<div class="sl_faq_menu"><a>수정</a> &nbsp; | &nbsp; <a rel="nofollow" data-method="delete" data-confirm="정말로 삭제합니까?">삭제</a></div>');
 						div.find('a:first').attr('href','/faqs/'+value.id+'/edit');
@@ -75,9 +75,8 @@ $(document).ready(function() {
 	}
 
 	function getContent(){
-		var gid=$.uri.setUri($(this).attr('href')).param("id");
 		var parent=$(this).parent();
-		$.getJSON('/faqs/'+gid+'.json',function(value){
+		$.getJSON($(this).attr('href')+'.json',function(value){
 			if(parent.next().get(0)) {
 				if(parent.next().get(0).tagName!='DD') {
 					parent.after('<dd>');

@@ -54,7 +54,7 @@ class Admin::ProposesController < Admin::AdminController
 
     respond_to do |format|
       if @admin_propose.save
-        format.html { redirect_to admin_proposes_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_proposes_url, notice: @controller_name + t(:message_success_create) }
         format.json { render json: @admin_propose, status: :created, location: @admin_propose }
       else
         format.html { render action: "new" }
@@ -83,7 +83,7 @@ class Admin::ProposesController < Admin::AdminController
     @admin_propose.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_proposes_url }
+      format.html { redirect_to admin_proposes_path}
       format.json { head :no_content }
     end
   end

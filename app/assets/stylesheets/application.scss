@@ -84,7 +84,7 @@ footer address {margin:0;line-height: 100%}
 /* FAQ Category*/
 #faqCategoryList {float:left;width:100%;margin:10px 0 0 0;padding:0;background:#666;list-style:none}
 #faqCategoryList li {position:relative;float:left;margin:0;padding:0;border-right:1px solid #999}
-#faqCategoryList li a.title {float:left;width:100px;text-align:center;display:block;padding:10px 0;color:#fff;text-decoration:none}
+#faqCategoryList li a.title {float:left;width:100%;text-align:center;display:block;padding:10px 0;color:#fff;text-decoration:none}
 #faqCategoryList li.on {background:#f3f3f3}
 #faqCategoryList li.on a.title {background:#f3f3f3;color:#333}
 #faqCategoryList li.on .sl_faq_category_menu {float:right;background:#f3f3f3;color:#333}
@@ -168,6 +168,7 @@ footer a:hover {color: #000;text-decoration: underline}
 .sl_left {text-align:left}
 .sl_center {text-align:center}
 .sl_right {text-align:right}
+table td.sl_registered_date {color:#999}
 
 /* main_list */
 .slboard_list {float:left;width:100%;margin:0;border-bottom:1px solid #ccc;border-collapse:collapse; }

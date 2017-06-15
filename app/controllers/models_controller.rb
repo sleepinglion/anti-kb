@@ -5,8 +5,7 @@ class ModelsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.model')
-    @style="board"
-    @script="board/index"
+    @title=@controller_name
   end
 
   # GET /notices

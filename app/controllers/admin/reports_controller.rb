@@ -80,7 +80,7 @@ class Admin::ReportsController < Admin::AdminController
     @admin_report.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_reports_url }
+      format.html { redirect_to admin_reports_path}
       format.json { head :no_content }
     end
   end

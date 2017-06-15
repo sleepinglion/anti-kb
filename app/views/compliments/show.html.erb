@@ -1,5 +1,5 @@
 <% breadcrumb :compliment,@compliment %>
-<section id="compliment_show">
+<div id="compliment_show">
 	<div class="slboard_content" itemscope itemprop="article" itemtype="http://schema.org/Article">
 		<div class="sl_content_header">
 			<h3 itemprop="name"><%= @compliment.title %></h3>
@@ -17,4 +17,4 @@
 		<%= link_to t(:link_edit), edit_compliment_path(@compliment) %>
 		<% end %>
 	</div>
-</section>
+</div>

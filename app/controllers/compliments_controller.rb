@@ -6,6 +6,7 @@ class ComplimentsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.compliment')
+    @title=@controller_name
   end
 
   # GET /notices
@@ -17,6 +18,8 @@ class ComplimentsController < BoardController
   # GET /notices/1
   # GET /notices/1.json
   def show
+    @title=@compliment.title
+    @meta_description=@compliment.compliment_content.content
   end
 
   # GET /notices/new
