@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%=I18n.locale %>">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <%=display_meta_tags :site => t(:application_name),
 	:title=>@title,
 	:description => @meta_description,
@@ -15,8 +15,8 @@
   	url:      @meta_url,
   	image:    @meta_image
 	} %>
-<meta name="author" content="Sleeping-Lion">
-<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>">
+<meta name="author" content="Sleeping-Lion" />
+<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>" />
 <%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 <!--[if IE]>
