@@ -16,8 +16,8 @@
   	image:    @meta_image
 	} %>
 <meta name="author" content="Sleeping-Lion" />
-<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>" />
 <link rel="alternate" type="application/rss+xml" title="Sleeping-Lion RSS Feed" href="http://www.antikb.site/feed?format=rss" />
+<%= favicon_link_tag 'favicon.ico' %>
 <%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 <!--[if IE]>
