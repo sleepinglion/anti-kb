@@ -15,7 +15,7 @@ Antikb::Application.routes.draw do
 
   resources :users, :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :compliments, :reports, :notices, :models, :galleries
   get 'kbsmind'=>'home#kbsmind'
-
+  get 'feed',:to=>'home#feed'
 
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'

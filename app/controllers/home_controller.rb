@@ -24,4 +24,12 @@ class HomeController < ApplicationController
       format.json { render json: @faqContent  }
     end
   end
+
+  def feed
+    @reports = Report.all.where(:enable=>true)
+    @compliments = Compliment.all.where(:enable=>true)
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
 end
