@@ -5,6 +5,7 @@ class CreateCompliments < ActiveRecord::Migration
       t.references :compliment_category, :null=>false
       t.references :user, :null=>false
       t.string :title,:limit=>60, :null=>false
+      t.integer :default_view_count, :null=>false, :default=>0      
       t.integer :compliment_comment_count, :null=>false ,:default=>0
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps

@@ -78,18 +78,18 @@ ReportCategory.create!(:id=>4,:title=>'비리,횡령')
 ReportCategory.create!(:id=>5,:title=>'횡포')
 ReportCategory.create!(:id=>6,:title=>'기타')
 
-Report.create!(:id=>1,:user_id=>1,:report_category_id=>1,:title=>'진짜 이놈들은 고객을 뭘로 보는건지?',:created_at=>'2013-08-02 18:49:49',:updated_at=>'2013-08-02 18:49:49')
+Report.create!(:id=>1,:user_id=>1,:report_category_id=>1,:title=>'진짜 이놈들은 고객을 뭘로 보는건지?',:default_view_count=>156,:created_at=>'2013-08-02 18:49:49',:updated_at=>'2013-08-02 18:49:49')
 ReportContent.create!(:id=>1,:content=>'짜증 가득한 표정보면 정말 주먹이 우네요
 그냥 얼굴 때리고 싶은거 참느냐고 혼났어요
 인내심을 길러주는 우리의 살인은행')
 
-Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ',:created_at=>'2013-08-04 18:51:23',:updated_at=>'2013-08-04 18:51:23')
+Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ',:default_view_count=>158,:created_at=>'2013-08-04 18:51:23',:updated_at=>'2013-08-04 18:51:23')
 ReportContent.create!(:id=>2,:content=>'연거푸 사고치더니 살인은행 홈페이지에 사과문 또 떳네요
 사과문으로 공지사항 게시판 도배할 기세!! ㅋㅋㅋ
 니들은 개과천선 할 수없어
 그냥 지금 해체가 답이야!!!')
 
-Report.create!(:id=>3,:user_id=>31,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:created_at=>'2015-05-04 18:51:23',:updated_at=>'2015-05-04 18:51:23')
+Report.create!(:id=>3,:user_id=>31,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:default_view_count=>159,:created_at=>'2015-05-04 18:51:23',:updated_at=>'2015-05-04 18:51:23')
 ReportContent.create!(:id=>3,:content=>'이전 회사에서 월급통장 농협에서 만들라고 해서 만들러 갔는데
 이 미친놈들이 고객은 무슨 보이스 피싱 하수인(대포통장 만들러온 사람) 취급하네요?
 보안 개떡같아서 털린것은 지네면서 보안 강화한다고 하는 짓이 이런거... 참 답안나오네
@@ -168,12 +168,12 @@ ComplimentCategory.create!(:id=>5,:title=>'고객감동')
 ComplimentCategory.create!(:id=>6,:title=>'기타')
 
 
-Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:created_at=>'2015-08-02 18:49:49',:updated_at=>'2015-08-02 18:49:49')
+Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:default_view_count=>137,:created_at=>'2015-08-02 18:49:49',:updated_at=>'2015-08-02 18:49:49')
 ComplimentContent.create!(:id=>1,:content=>'역시 망할 살인자-은행에 대적할 은행은 우리은행이지요~
 홈페이지 진짜 잘만들었네
 ㅂㅅ같은 살인자 은행놈들은 언제 플래시 버릴려나?')
 
-Compliment.create!(:id=>2,:user_id=>1,:bank_id=>17,:compliment_category_id=>1,:title=>'신한은행도 좋음',:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10')
+Compliment.create!(:id=>2,:user_id=>1,:bank_id=>17,:compliment_category_id=>1,:title=>'신한은행도 좋음',:default_view_count=>131,:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10')
 ComplimentContent.create!(:id=>2,:content=>'신한은행에 계좌 만들러 갔을때의 친절함은 감동으로 다가왔습니다.
 KB,NH같은 썩은 공기업,공무원 마인드와는 차원이 다름이 몸소 느껴졌습니다.
 신한은행 인터넷뱅킹 서비스도 역시 썩은은행들과는 차원이 다르네요

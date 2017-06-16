@@ -34,7 +34,7 @@
 			<tr>
 				<td><%= link_to notice.id,admin_notice_path(notice) %></td>
 				<td><%= link_to notice.title,admin_notice_path(notice) %></td>
-				<td></td>
+				<td><%= notice.default_view_count+notice.impressionist_count(:filter=>:ip_address) %></td>
 				<td><%= raw flagToString(notice.enable) %></td>
 				<td><%= notice.created_at.to_date %></td>
 				<% if can?(:update, notice) || can?(:delete, notice) %>

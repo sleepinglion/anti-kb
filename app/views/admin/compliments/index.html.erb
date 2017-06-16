@@ -38,9 +38,9 @@
 			<tr>
 				<td><%= link_to compliment.id,admin_compliment_path(compliment) %></td>
 				<td><%= link_to compliment.compliment_category.title,admin_compliment_path(compliment) %></td>
-				<td><%= link_to compliment.bank.title,admin_compliment_path(compliment) %></td>				
+				<td><%= link_to compliment.bank.title,admin_compliment_path(compliment) %></td>
 				<td><%= link_to compliment.title,admin_compliment_path(compliment) %></td>
-				<td><%= compliment.impressionist_count(:filter=>:ip_address) %></td>
+				<td><%= compliment.default_view_count+compliment.impressionist_count(:filter=>:ip_address) %></td>
 				<td><%= raw flagToString(compliment.enable) %></td>
 				<td><%= compliment.created_at.to_date %></td>
 				<% if can?(:update, compliment) || can?(:delete, compliment) %>

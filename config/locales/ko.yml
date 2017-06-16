@@ -386,6 +386,7 @@ ko:
         reports_count : '피해신고 갯수'
         enable : '사용여부'
       report :
+        user_id : '작성자'
         report_category_id : '피해유형'
         title : '제목'
         enable : '사용여부'
@@ -396,6 +397,7 @@ ko:
         compliments_count : '칭찬하기 갯수'
         enable : '사용여부'
       compliment :
+        user_id : '작성자'
         bank_id : '칭찬은행'
         compliment_category_id : '칭찬유형'
         title : '제목'
