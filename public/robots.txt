@@ -3,4 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 User-agent: *
 Disallow: /admin
-Sitemap: http://www.sleepinglion.pe.kr/sitemap.xml.gz
+Sitemap: http://www.antikb.site/sitemap.xml.gz
