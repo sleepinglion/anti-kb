@@ -116,9 +116,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    require 'digest/md5'
-    @user.device_id= Digest::MD5.hexdigest(User.random_string(10)).upcase
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to user_path(@user), :notice => @controller_name +t(:message_success_insert)}

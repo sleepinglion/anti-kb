@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-  layout 'special'
+  layout 'user'
 
   def initialize(*params)
     super(*params)

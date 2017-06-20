@@ -76,9 +76,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if(params[:no_layout])
       return nil
     else
-      return 'special'
+      return 'user'
     end
-  end  
+  end
 
   protected
 

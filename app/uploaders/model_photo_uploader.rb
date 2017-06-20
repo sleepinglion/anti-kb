@@ -35,11 +35,11 @@ class ModelPhotoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :small_thumb do
-    process :resize_to_fill => [100, 120]
+    process :resize_to_fill => [100, 100]
   end
 
   version :medium_thumb do
-    process :resize_to_fill => [220, 240]
+    process :resize_to_fill => [200, 200]
   end
 
   version :large_thumb do

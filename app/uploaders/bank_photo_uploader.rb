@@ -37,7 +37,7 @@ class BankPhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :medium_thumb do
-    process :resize_to_fill => [100, 120]
+    process :resize_to_fill => [100, 100]
   end
 
   version :large_thumb do
