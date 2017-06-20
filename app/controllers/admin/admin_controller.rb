@@ -1,13 +1,6 @@
 class Admin::AdminController < ApplicationController
     load_and_authorize_resource except: [:create]
 
-    def initialize(*params)
-        super(*params)
-
-        @style = 'admin/application'
-        @script = 'admin/application'
-    end
-
     def current_ability
         @current_ability ||= AdminAbility.new(current_admin)
     end

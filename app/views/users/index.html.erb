@@ -1,4 +1,4 @@
-<section id="main_user">
+<div id="main_user">
 	<% unless @users.empty? %>
 	<% @users.each do |user| %>
 	<article class="users media" itemscope itemtype="http://schema.org/Person">
@@ -29,4 +29,4 @@
 	</div>
 	<%= paginate @users %>
 	</div>
-</section>
+</div>
