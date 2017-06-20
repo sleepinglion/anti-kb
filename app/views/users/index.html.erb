@@ -10,7 +10,7 @@
 		<% end %>
 		</div>
 		<div class="media-body">
-			<h4 itemprop="name" class="media-heading"><%=user.name %></h4>
+			<h4 itemprop="name" class="media-heading"><%=link_to user.name,user_path(user) %></h4>
 			<p itemprop="description"><%=user.description %></p>
 		</div>
 	</article>

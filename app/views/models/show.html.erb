@@ -1,33 +1,27 @@
 <% breadcrumb :model,@model %>
-<section id="slboard_notice_show">
+<section id="sl_model_show">
+	<h2><%= @model.title %></h2>
+	<p>작성자 :<%= @model.user.name %>&nbsp;&nbsp;&nbsp; 작성일 : <%= @model.created_at %></p>
 	<div class="slboard_content">
-		<div>
-			<h3><%= @model.title %></h3>
-			<p>작성자 :<%= @model.user.name %>&nbsp;&nbsp;&nbsp; 작성일 : <%= @model.created_at %></p>
-		</div>
-		<figure>
+		<figure class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 			<%=image_tag @model.photo.medium_thumb,:alt=>@model.title %>
 		</figure>
-		<br />
-		<br />
-		<div class="sl_content_main">
-			<div>
-			<label>추천사</label>
-			<pre><%= simple_format(@model.recommend_description) %></pre>
-			</div>
-			<br />
-			<br />
-			<div>
-			<label>추천받은 모델의 소감</label>
-			<pre><%= simple_format(@model.models_comment) %></pre>
-			</div>
+		<div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
+			<article>
+				<h3>추천사</h3>
+				<div><%= simple_format(@model.recommend_description) %></div>
+			</article>
+			<article>
+				<h3>추천받은 모델의 소감</h3>
+				<div><%= simple_format(@model.models_comment) %></div>
+			</article>
 		</div>
 	</div>
 	<div id="sl_content_bottom_menu">
 		<%= link_to t(:link_list),models_path %>
 		<% if user_signed_in? %>
 		<% if current_user.admin? %>
-		&nbsp; | &nbsp; <%= link_to '수정', edit_model_path(@model) %> &nbsp; | &nbsp; <%= link_to '삭제', @model, method: :delete, data: { confirm: '정말로 삭제합니까?' } %>
+		&nbsp; | &nbsp; <%= link_to t(:link_edit), edit_model_path(@model) %> &nbsp; | &nbsp; <%= link_to t(:link_delete), @model, method: :delete, data: { confirm: '정말로 삭제합니까?' } %>
 		<% end %>
 		<% end %>
 	</div>

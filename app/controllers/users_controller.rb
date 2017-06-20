@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   impressionist
   load_and_authorize_resource
   skip_load_resource :only => [:create]
-  before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)

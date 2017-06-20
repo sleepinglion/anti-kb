@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 //= require fancybox
 
@@ -149,6 +150,12 @@ footer address {margin:0;line-height: 100%}
 #main_img {float:left;width:100%;padding: 20px;text-align: center;}
 #main_page #user_new {float:none;background:#fff;width:400px;margin:0 auto;border-radius:5px;padding:30px}
 #users_main .content_list {padding:20px 30px;border:1px solid #ccc;margin:0 0 20px}
+
+#sl_model_show article {margin-bottom:20px}
+#sl_model_show article h3,#sl_model_show article div {background:#fff;margin:0 0 7px;padding:5px 10px;border-radius:5px}
+
+
+
 
 /* footer */
 footer ul {list-style: none;margin:10px 0;padding:0}
