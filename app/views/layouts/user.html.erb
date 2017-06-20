@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale %>">
+<head>
+<meta charset="utf-8" />
+<%=display_meta_tags :site => t(:application_name),
+	:title=>@title,
+	:description => @meta_description,
+	:keywords => @meta_keywords,
+	:separator => t(:title_separator),
+	:viewport => "width=device-width, initial-scale=1, user-scalable=yes",
+	:reverse => true %>
+<%=display_meta_tags og: {
+  	title:   @title,
+  	description: @meta_description,
+  	url:      @meta_url,
+  	image:    @meta_image
+	} %>
+<meta name="author" content="Sleeping-Lion" />
+<link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="http://www.antikb.site/feed?format=rss" />
+<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+<%= favicon_link_tag 'favicon.ico' %>
+<%= csrf_meta_tags %>
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<![endif]-->
+</head>
+<body id="special-page">
+	<div id="login-page" class="container">
+		<div class="row">
+			<h1><%=link_to t(:home_title),root_path %></h1>
+			<div id="sl_ad" style="margin-bottom:20px">
+			<% if Rails.env.production? %>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- 250정사각형 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-5400903051441488"
+			     data-ad-slot="7215435937"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			<% else %>
+			<div style="width:728px;height:90px;background:red;">&nbsp;</div>
+			<% end %>
+			</div>
+	<%=yield %>
+</div>
+</div>
+<%= javascript_include_tag :user, "data-turbolinks-track" => true %>
+</body>
+</html>
