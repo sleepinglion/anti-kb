@@ -8,7 +8,7 @@ Antikb::Application.routes.draw do
     get 'logout', :to=> 'admins::Sessions#destroy'
   end
 
-  devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
+  devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations",:passwords => "users/passwords"}, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
     get '/users', :to => 'users/registrations#index', :as => :user_root # Rails 3s
     get '/login', :to => 'users/sessions#new'
   end
