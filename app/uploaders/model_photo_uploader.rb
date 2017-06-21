@@ -14,9 +14,9 @@ class ModelPhotoUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     upload_dir="#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    unless Rails.env.production?
+    #unless Rails.env.production?
       upload_dir='uploads/'+upload_dir
-    end
+    #end
 
     return upload_dir
   end
