@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$("#remember_email").prop('checked',true);
 	}
 
-	$("#new_user").submit(function(){
+	$("#new_session_form").submit(function(){
 		var email=$.trim($("#user_email").val());
 		var password=$.trim($("#user_password").val());
 
