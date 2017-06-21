@@ -51,7 +51,7 @@ class Admin::ReportsController < Admin::AdminController
 
     respond_to do |format|
       if @admin_report.save
-        format.html { redirect_to admin_reports_url, notice: @controller_name + t(:message_success_update) }
+        format.html { redirect_to admin_reports_url, notice: @controller_name + t(:message_success_create) }
         format.json { render json: @admin_report, status: :created, location: @admin_report }
       else
         format.html { render action: "new" }

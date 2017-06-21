@@ -51,7 +51,7 @@ class FaqCategoriesController < BoardController
 
     respond_to do |format|
       if @faq_category.save
-        format.html { redirect_to faqs_url(:faq_category_id=>@faq_category), notice: @controller_name +t(:message_success_insert)}
+        format.html { redirect_to faqs_url(:faq_category_id=>@faq_category), notice: @controller_name +t(:message_success_create)}
         format.json { render json: @faq_category, status: :created, location: @faq_category }
       else
         format.html { render action: "new" }

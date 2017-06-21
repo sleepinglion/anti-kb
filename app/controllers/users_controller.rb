@@ -118,7 +118,7 @@ class UsersController < ApplicationController
   def create
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_path(@user), :notice => @controller_name +t(:message_success_insert)}
+        format.html { redirect_to user_path(@user), :notice => @controller_name +t(:message_success_create)}
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }

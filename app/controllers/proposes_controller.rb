@@ -51,7 +51,7 @@ class ProposesController < ApplicationController
 
     respond_to do |format|
       if @propose.save
-        format.html { redirect_to :action=>'index', :notice=> @controller_name +t(:message_success_insert)}
+        format.html { redirect_to proposes_url, :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @propose, status: :created, location: @propose }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ class ProposesController < ApplicationController
   def update
     respond_to do |format|
       if @propose.update_attributes(propose_params)
-        format.html { redirect_to :action=>'index', :notice=> @controller_name +t(:message_success_update)}
+        format.html { redirect_to proposes_url, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

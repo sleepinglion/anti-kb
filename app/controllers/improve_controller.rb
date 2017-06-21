@@ -54,7 +54,7 @@ class ImproveController < ApplicationController
       end
 
       if result
-        format.html { redirect_to @improve, :notice=> @controller_name +t(:message_success_insert)}
+        format.html { redirect_to @improve, :notice=> @controller_name +t(:message_success_create)}
         format.json { render :json => @improve, :status => :created, :location => @guest_book }
       else
         format.html { render :action => "new" }

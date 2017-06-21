@@ -51,7 +51,7 @@ class ModelsController < BoardController
 
     respond_to do |format|
       if @model.save
-        format.html { redirect_to @model, :notice=> @controller_name +t(:message_success_insert)}
+        format.html { redirect_to @model, :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @model, status: :created, location: @model }
       else
         format.html { render action: "new" }

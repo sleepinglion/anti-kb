@@ -50,7 +50,7 @@ class ReportsController < BoardController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, :notice=> @controller_name +t(:message_success_insert)}
+        format.html { redirect_to @report, :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }

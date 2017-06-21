@@ -39,7 +39,7 @@ class ComplimentsController < BoardController
 
     respond_to do |format|
       if @compliment.save
-        format.html { redirect_to @compliment, :notice=> @controller_name +t(:message_success_insert)}
+        format.html { redirect_to @compliment, :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @compliment, status: :created, location: @compliment }
       else
         format.html { render action: "new" }

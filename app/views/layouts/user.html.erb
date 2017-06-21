@@ -43,6 +43,12 @@
 			<div style="width:728px;height:90px;background:red;">&nbsp;</div>
 			<% end %>
 			</div>
+			<% if flash[:notice] %>
+			<%= render :partial => 'layouts/notice',:locals=>{:notice=>flash[:notice]} %>
+			<% end %>
+			<% if flash[:alert] %>
+			<%= render :partial => 'layouts/alert',:locals=>{:alert=>flash[:alert]} %>
+			<% end %>				
 	<%=yield %>
 </div>
 </div>

@@ -34,6 +34,12 @@
 			<% else %>
 			<%= render :partial => 'layouts/page_header' %>
 			<% end %>
+			<% if flash[:notice] %>
+			<%= render :partial => 'layouts/notice',:locals=>{:notice=>flash[:notice]} %>
+			<% end %>
+			<% if flash[:alert] %>
+			<%= render :partial => 'layouts/alert',:locals=>{:alert=>flash[:alert]} %>
+			<% end %>			
 			<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
 				<%=yield %>
 				<div class="clearfix">&nbsp;</div>

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.article')
-    @title=@controller_name    
+    @title=@controller_name
   end
 
   # GET /articles
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to articles_url, :notice=> @controller_name +t(:message_success_insert)}
+        format.html { redirect_to articles_url, :notice=> @controller_name +t(:message_success_create)}
         format.json { render json: @article, status: :created, location: @article }
       else
         format.html { render action: "new" }

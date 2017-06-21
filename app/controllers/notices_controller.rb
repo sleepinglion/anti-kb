@@ -41,7 +41,7 @@ class NoticesController < ApplicationController
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: @controller_name +t(:message_success_insert)}
+        format.html { redirect_to @notice, notice: @controller_name +t(:message_success_create)}
         format.json { render action: 'show', status: :created, location: @notice }
       else
         format.html { render action: 'new' }
