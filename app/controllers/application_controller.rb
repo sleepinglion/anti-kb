@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
     @meta_image=t(:meta_image)
     @meta_url=t(:meta_url)
 
-    @page_itemtype="http://schema.org/WebPage"        
+    @page_itemtype="http://schema.org/WebPage"
+    @resource ||= User.new
   end
 
   def current_ability
