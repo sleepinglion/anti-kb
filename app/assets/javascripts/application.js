@@ -30,6 +30,10 @@ $(document).ready(function() {
     return false;
 	});
 
+  $("#report_main tbody tr,#compliment_main tbody tr").click(function(){
+    location.href=$(this).find('a:first').attr('href');
+  });
+
 
 	$("#faqCategoryList a.title").click(getList);
 	$("#faqList dt a.title").click(getContent);

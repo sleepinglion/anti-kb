@@ -34,7 +34,6 @@
 			<% else %>
 			<%= render :partial => 'layouts/page_header' %>
 			<% end %>
-  		<%= devise_error_messages! %>			
 			<% if flash[:notice] %>
 			<%= render :partial => 'layouts/notice',:locals=>{:notice=>flash[:notice]} %>
 			<% end %>

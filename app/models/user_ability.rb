@@ -2,11 +2,8 @@ class UserAbility
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new # guest user (not logged in)
-    if user.admin? # Admin user
-      can :manage, :all
-    else # Non-admin user
-      can :read, :all
-    end
+      cannot :manage, :all
+      can :create, [User]
+      can :manage, [User, Propose, Model, Report, Compliment] if user
   end
 end

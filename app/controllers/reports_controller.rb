@@ -1,6 +1,6 @@
 class ReportsController < BoardController
+  load_and_authorize_resource  except: [:index, :show, :create]
   impressionist :actions=>[:show]
-  before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
@@ -80,6 +80,30 @@ class ReportsController < BoardController
     respond_to do |format|
       format.html { redirect_to reports_url }
       format.json { head :no_content }
+    end
+  end
+
+  def upvote
+    respond_to do |format|
+      if @report.liked_by current_user
+        format.html { redirect_to report_path(@report), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @report.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      if @report.downvote_from current_user
+        format.html { redirect_to report_path(@report), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @report.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

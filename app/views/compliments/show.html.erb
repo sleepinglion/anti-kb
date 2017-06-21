@@ -3,10 +3,18 @@
 	<div class="slboard_content" itemscope itemprop="article" itemtype="http://schema.org/Article">
 		<div class="sl_content_header">
 			<h3 itemprop="name"><%= @compliment.title %></h3>
-			<p><%=t(:user_id,scope:[:activerecord,:attributes,:compliment]) %> : <span  itemprop="author"><%=@compliment.user.name %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @compliment.created_at %></span><span class="none" itemprop="dateModified"><%= @compliment.updated_at %></span></p>
+			<p><%=t(:user_id,scope:[:activerecord,:attributes,:compliment]) %> : <span  itemprop="author"><%=link_to @compliment.user.name,user_path(@compliment.user) %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @compliment.created_at %></span><span class="none" itemprop="dateModified"><%= @compliment.updated_at %></span></p>
 		</div>
 		<div class="sl_content_main">
 			<div class="sl_content_text" itemprop="text"><%=simple_format(@compliment.compliment_content.content) %></div>
+			<div class="vote">
+			<%= link_to like_compliment_path(@compliment), method: :put do %>
+				<span class="glyphicon glyphicon-thumbs-up"><span><%=@compliment.cached_votes_up %></span></span>
+			<% end %>
+			<!-- <%= link_to dislike_compliment_path(@compliment), method: :put do %>
+				<span class="glyphicon glyphicon-thumbs-down"><span><%=@compliment.cached_votes_down %></span></span>
+			<% end %> -->
+		</div>
 		</div>
 	</div>
 	<div id="sl_content_bottom_menu">

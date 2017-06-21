@@ -47,6 +47,7 @@ ko:
   success_title : '축하합니다!!'
   message_success_create : '이(가) 성공적으로  등록되었습니다.'
   message_success_update : '이(가) 성공적으로  수정되었습니다.'
+  message_success_recommend : '추천되었습니다.'
 
   label_number : '번호'
   label_name : '작성자'
@@ -60,6 +61,7 @@ ko:
   label_report_category : '피해유형'
   label_bank : '은행'
   label_manage : '관리'
+  label_recommend_count : '추천수'
   label_created_at : '등록일시'
   label_updated_at : '수정일시'
 
@@ -121,7 +123,7 @@ ko:
       locked: 계정이 잠겨있습니다.
       not_found_in_database: 이메일 주소나 비밀번호가 틀립니다.
       timeout: 로그아웃 되었습니다. 계속 하려면 다시 로그인 해야 합니다.
-      unauthenticated: 계속하려면 로그인하거나 회원가입 해야 합니다.
+      unauthenticated: 계속하려면 로그인해야 합니다.
       unconfirmed: 계속하기 전에 계정확인(이메일)을 해야 합니다.
     mailer:
       confirmation_instructions:
@@ -449,6 +451,7 @@ ko:
         current_password : '현재 비밀번호'
         reports_count : '피해신고 갯수'
         compliments_count : '경쟁사칭찬 갯수'
+        url : '홈페이지'
         enable : '사용여부'
   recaptcha:
     errors:

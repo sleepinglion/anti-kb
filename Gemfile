@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 #gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -36,6 +36,8 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_commentable'
 gem 'ckeditor'
 gem 'fancybox2-rails'
 gem 'jquery-easing-rails'

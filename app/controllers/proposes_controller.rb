@@ -1,5 +1,5 @@
 class ProposesController < ApplicationController
-  before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'
+  load_and_authorize_resource  except: [:index, :show, :create]  
   before_action :set_propose, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)

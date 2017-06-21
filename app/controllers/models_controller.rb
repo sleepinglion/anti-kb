@@ -1,5 +1,5 @@
 class ModelsController < BoardController
-  before_action :authenticate_user!, :except => [:index,:show]
+  load_and_authorize_resource  except: [:index, :show, :create]
   before_action :set_model, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
@@ -79,8 +79,32 @@ class ModelsController < BoardController
   def destroy
     @model.destroy
     respond_to do |format|
-      format.html { redirect_to notices_url }
+      format.html { redirect_to models_path }
       format.json { head :no_content }
+    end
+  end
+
+  def upvote
+    respond_to do |format|
+      if @model.liked_by current_user
+        format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @model.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      if @model.downvote_from current_user
+        format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @model.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

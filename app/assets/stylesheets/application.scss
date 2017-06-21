@@ -81,6 +81,12 @@ header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
 
 footer address {margin:0;line-height: 100%}
 
+
+#report_main table tr:last-child td,#compliment_main table tr:last-child td{border-bottom:1px solid #ccc}
+#report_main tbody tr:hover,#compliment_main tbody tr:hover {cursor:pointer;background:#999}
+#report_main tbody tr:hover td,#compliment_main tbody tr:hover td {color:#ccc}
+#report_main tbody tr:hover td a,#compliment_main tbody tr:hover td a {color:#fff}
+
 /* FAQ Category*/
 #faqCategoryList {float:left;width:100%;margin:10px 0 0 0;padding:0;background:#666;list-style:none}
 #faqCategoryList li {position:relative;float:left;margin:0;padding:0;border-right:1px solid #999}
@@ -124,6 +130,11 @@ footer address {margin:0;line-height: 100%}
 #section_main .col-xs-12 div {float:left}
 #section_main .col-xs-12 div h4 {margin:0 0 1.5em;padding:0;font-weight:bold}
 .users {border:1px dotted #ccc;margin-bottom:5px;padding:10px;background:#fff}
+.users .vote a {margin-left:10px}
+.users .vote a:hover {text-decoration:none}
+.users .vote a span {vertical-align: top}
+.glyphicon-thumbs-up span {margin-left:3px;color:red}
+.glyphicon-thumbs-down span {margin-left:3px;color:blue}
 #sign_up {margin-top:10px}
 
 /* propose */

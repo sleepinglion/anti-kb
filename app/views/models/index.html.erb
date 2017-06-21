@@ -12,6 +12,14 @@
 			<%=link_to model_path(model) do %>
      	<p itemprop="description"><%= simple_format(model.models_comment) %></p>
 			<% end %>
+			<div class="vote pull-right">
+			<%= link_to like_model_path(model), method: :put do %>
+				<span class="glyphicon glyphicon-thumbs-up"><span><%=model.cached_votes_up %></span></span>
+			<% end %>
+			<!-- <%= link_to dislike_model_path(model), method: :put do %>
+				<span class="glyphicon glyphicon-thumbs-down"><span><%=model.cached_votes_down %></span></span>
+			<% end %> -->
+		</div>
     </div>
   	</li>
 	<% end %>

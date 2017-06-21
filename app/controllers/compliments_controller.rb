@@ -1,6 +1,6 @@
 class ComplimentsController < BoardController
+  load_and_authorize_resource  except: [:index, :show, :create]
   impressionist :actions=>[:show]
-  before_action :authenticate_user!, :except => [:index,:show], :message=>'로그인후 사용가능합니다'
   before_action :set_compliment, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
@@ -69,6 +69,30 @@ class ComplimentsController < BoardController
     respond_to do |format|
       format.html { redirect_to compliments_url }
       format.json { head :no_content }
+    end
+  end
+
+  def upvote
+    respond_to do |format|
+      if @compliment.liked_by current_user
+        format.html { redirect_to compliment_path(@compliment), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @compliment.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      if @report.downvote_from current_user
+        format.html { redirect_to compliment_path(@compliment), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @compliment.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

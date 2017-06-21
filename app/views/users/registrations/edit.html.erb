@@ -1,18 +1,25 @@
+<% if params[:no_layout] %>
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="myModalLabel">KB 망하게하기 서명</h4>
+		</div>
+		<div class="modal-body">
+<% end %>
 <div class="col-xs-12">
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put,:multipart => true, :class=>'slboard_form' }) do |f| %>
 	<%= devise_error_messages! %>
+
+	<article class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">필수입력 사항</h3>
+		</div>
+		<div class="panel-body">
+
 	<div class="form-group">
   	<%= f.label :email %><br />
   	<%= f.email_field :email, :class=>'form-control' %>
-	</div>
-	<div class="form-group">
-		<%= f.label :photo %>
-		<% if resource.photo? %>
-			<%= image_tag(resource.photo.small_thumb) %>
-		<% end %>
-		<br />
-		<%= f.file_field :photo %>
-		<%= f.hidden_field :photo_cache %>
 	</div>
 	<div class="form-group">
   <%= f.label :password %> <i>비밀번호 변경을 원하지 않으면 공백으로 제출</i><br />
@@ -30,9 +37,37 @@
   	<%= f.label :description %><br />
   	<%= f.text_field :description, :class=>'form-control' %>
   </div>
- 	<div class="form-group actions">
-		<%= f.submit :class=>"btn btn-primary" %>
+
+</div>
+</article>
+
+	<article class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">선택입력 사항</h3>
+		</div>
+		<div class="panel-body">
+
+	<div class="form-group">
+		<%= f.label :photo %>
+		<% if resource.photo? %>
+			<%= image_tag(resource.photo.small_thumb) %>
+		<% end %>
+		<br />
+		<%= f.file_field :photo %>
+		<%= f.hidden_field :photo_cache %>
 	</div>
+	<div class="form-group">
+  	<%= f.label :url %><br />
+  	<%= f.url_field :url, :class=>'form-control' %>
+	</div>
+</div>
+</article>
+
+
+<div class="form-group actions">
+		<%= f.submit :class=>'btn btn-lg btn-primary btn-block' %>
+</div>
+
 <% end %>
 <article>
 	<h3>회원탈퇴</h3>

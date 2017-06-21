@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   impressionist
-  load_and_authorize_resource
-  skip_load_resource :only => [:create]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource  except: [:index, :show, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def initialize(*params)
     super(*params)
@@ -154,6 +153,29 @@ class UsersController < ApplicationController
     end
   end
 
+  def upvote
+    respond_to do |format|
+      if @user.liked_by current_user
+        format.html { redirect_to user_path(@user), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      if @user.downvote_from current_user
+        format.html { redirect_to user_path(@user), :notice => t(:message_success_recommend)}
+        format.json { head :no_content }
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   private
 

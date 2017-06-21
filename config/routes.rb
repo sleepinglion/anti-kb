@@ -13,7 +13,35 @@ Antikb::Application.routes.draw do
     get '/login', :to => 'users/sessions#new'
   end
 
-  resources :users, :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :compliments, :reports, :notices, :models, :galleries
+  resources :users do
+    member do
+      put 'like', to: 'users#upvote'
+      put 'dislike', to: 'users#downvote'
+    end
+  end
+
+  resources :reports do
+    member do
+      put 'like', to: 'reports#upvote'
+      put 'dislike', to: 'reports#downvote'
+    end
+  end
+
+  resources :compliments  do
+    member do
+      put 'like', to: 'compliments#upvote'
+      put 'dislike', to: 'compliments#downvote'
+    end
+  end
+
+  resources :models  do
+    member do
+      put 'like', to: 'models#upvote'
+      put 'dislike', to: 'models#downvote'
+    end
+  end
+
+  resources :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :notices, :galleries
   get 'kbsmind'=>'home#kbsmind'
   get 'feed',:to=>'home#feed'
 
