@@ -4,7 +4,11 @@
 			<div  id="top_menu" class="col-xs-12">
 				<ul>
 					<% if user_signed_in? %>
-					<li><%=link_to(current_user.name, edit_user_registration_path) %>님 환영합니다.</li>
+					<li>
+						<%=link_to edit_user_registration_path do %>
+						<span id="username"><%=current_user.name %></span>님 환영합니다.
+						<% end %>
+					</li>
 					<li><%= link_to t(:logout),destroy_user_session_path %></li>
 					<% else %>
 					<li><%= link_to t(:login),new_user_session_path %></li>

@@ -44,8 +44,8 @@ Antikb::Application.routes.draw do
   resources :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :notices, :galleries
   get 'kbsmind', to: 'home#kbsmind'
   get 'feed',to: 'home#feed'
-  get "users/add_new_comment/:id",to: "users#new_comment", as: "new_comment_to_users"
-  post "users/add_new_comment",to: "users#create_comment", as: "create_comment_to_users"
+  get 'users/add_new_comment/:id',to: 'users#new_comment', as: 'new_comment_to_users'
+  post 'users/add_new_comment',to: 'users#create_comment', as: 'create_comment_to_users'
 
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'

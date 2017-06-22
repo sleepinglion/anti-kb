@@ -55,7 +55,11 @@ class UsersController < ApplicationController
 
   def create_comment
     @user.comments << Comment.new(comment_params)
-    redirect_to user_path(@user)
+
+    respond_to do |format|
+      format.html { redirect_to user_path(@user)}
+      format.json { render :json => @users }
+    end
   end
 
   # GET /users
