@@ -36,7 +36,9 @@ $(document).ready(function() {
 
 
   $(".comment_form").click(function(){
-
+      var mb=$(this).parent();
+      mb.append();
+      return false;
   });
 
   $(".comment_form_with_list").click(function(){
@@ -54,7 +56,7 @@ $(document).ready(function() {
         if(data.length) {
           mb.append($('<div class="comment_layer"><div class="comment_form"></div><div class="comment_list"></div></div>'));
           $.each(data,function(index,value) {
-            mb.find('.comment_list').append($('<div class="comment">'+value.comment+'</div>'));
+            mb.find('.comment_list').append($('<h5>'+value.username+'</h5><div class="comment">'+value.comment+'</div>'));
           });
         }
       });
