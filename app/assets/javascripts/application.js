@@ -1,4 +1,4 @@
-//= require jquery
+  //= require jquery
 //= require jquery_ujs
 //= require plugin/jquery.uri.js
 //= require fancybox
@@ -32,6 +32,34 @@ $(document).ready(function() {
 
   $("#report_main tbody tr,#compliment_main tbody tr").click(function(){
     location.href=$(this).find('a:first').attr('href');
+  });
+
+
+  $(".comment_form").click(function(){
+
+  });
+
+  $(".comment_form_with_list").click(function(){
+    if($(this).parent().find('.comment_layer').length) {
+      var comment_layer=$(this).parent().find('.comment_layer');
+      if(comment_layer.is(':visible')) {
+        comment_layer.slideUp();
+      } else {
+        comment_layer.slideDown();
+      }
+    } else {
+      var mb=$(this).parent();
+      var uid=$(this).parent().find('a:first').attr('href').split('/').pop();
+		  $.getJSON($(this).parent().find('a:first').attr('href')+'.json',function(data){
+        if(data.length) {
+          mb.append($('<div class="comment_layer"><div class="comment_form"></div><div class="comment_list"></div></div>'));
+          $.each(data,function(index,value) {
+            mb.find('.comment_list').append($('<div class="comment">'+value.comment+'</div>'));
+          });
+        }
+      });
+    }
+    return false;
   });
 
 

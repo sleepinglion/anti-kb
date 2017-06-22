@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   impressionist
   load_and_authorize_resource  except: [:index, :show, :create]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment]
 
   def initialize(*params)
     super(*params)
@@ -47,6 +47,15 @@ class UsersController < ApplicationController
       format.json { render :json => a }
       format.xls
     end
+  end
+
+  def new_comment
+
+  end
+
+  def create_comment
+    @user.comments << Comment.new(comment_params)
+    redirect_to user_path(@user)
   end
 
   # GET /users
@@ -101,6 +110,12 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @title=@user.name
+    @comments = @user.comments.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @comments}
+    end
   end
 
   # GET /users/new
@@ -187,5 +202,9 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:title,:create_at)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:comment).merge(user_id: current_user.id)
   end
 end

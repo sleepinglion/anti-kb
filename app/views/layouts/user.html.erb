@@ -17,14 +17,14 @@
 	} %>
 <meta name="author" content="Sleeping-Lion" />
 <link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="http://www.antikb.site/feed?format=rss" />
-<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag :application, :media=>'all', 'data-turbolinks-track' => true %>
 <%= favicon_link_tag 'favicon.ico' %>
 <%= csrf_meta_tags %>
 <!--[if IE]>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 <![endif]-->
 </head>
-<body id="special-page">
+<body itemscope itemtype="<%=@page_itemtype %>" id="special-page">
 	<div id="login-page" class="container">
 		<div class="row">
 			<h1><%=link_to t(:home_title),root_path %></h1>
@@ -48,7 +48,7 @@
 			<% end %>
 			<% if flash[:alert] %>
 			<%= render :partial => 'layouts/alert',:locals=>{:alert=>flash[:alert]} %>
-			<% end %>				
+			<% end %>
 	<%=yield %>
 </div>
 </div>

@@ -12,6 +12,11 @@
 		<div class="media-body">
 			<h4 itemprop="name" class="media-heading"><%=link_to user.name,user_path(user) %></h4>
 			<p itemprop="description"><%=user.description %></p>
+			<% if user.comments.count.zero? %>
+			<%= link_to '댓글쓰기',new_comment_to_users_path(user),:class=>'comment_form' %>
+			<% else %>
+			<%= link_to "댓글 #{user.comments.count}",new_comment_to_users_path(user),:class=>'comment_form_with_list' %>
+			<% end %>
 			<div class="vote pull-right">
 			<%= link_to like_user_path(user), method: :put do %>
 				<span class="glyphicon glyphicon-thumbs-up"><span><%=user.cached_votes_up %></span></span>
