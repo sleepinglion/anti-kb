@@ -137,6 +137,9 @@ footer address {margin:0;line-height: 100%}
 .glyphicon-thumbs-down span {margin-left:3px;color:blue}
 #sign_up {margin-top:10px}
 
+.popup_page {background:#eee}
+.popup_page h1 {margin:0 0 30px;padding:10px;background:#ccc}
+
 /* propose */
 #propose_main .content_list,#model_main .media {float:left;background: none repeat scroll 0 0 #FAFAFA;border: 1px solid #CCCCCC;margin: 20px 0;padding:2%;width:100%}
 #propose_main .content_list_head {border-bottom: 1px dotted #CCCCCC;padding: 5px 0;position: relative}
@@ -240,6 +243,7 @@ table td.sl_registered_date {color:#999}
 	.nav-pills > li + li {margin:0}
 	#mom {float:left;clear:both;width:100%;margin:0}
 	#main {float:left;margin:0;padding:0;width:100%;padding:3%;border-radius:5px;background:#fff}
+  #login-page {width:100%}
 	aside {float:left;width:100%}
 	aside form {float:left}
 	#ad_main {float:right}

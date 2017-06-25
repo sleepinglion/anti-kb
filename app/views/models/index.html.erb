@@ -13,12 +13,15 @@
      	<p itemprop="description"><%= simple_format(model.models_comment) %></p>
 			<% end %>
 			<div class="vote pull-right">
+			<% if user_signed_in? %>
 			<%= link_to like_model_path(model), method: :put do %>
 				<span class="glyphicon glyphicon-thumbs-up"><span><%=model.cached_votes_up %></span></span>
 			<% end %>
-			<!-- <%= link_to dislike_model_path(model), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-down"><span><%=model.cached_votes_down %></span></span>
-			<% end %> -->
+			<% else %>
+			<%= link_to like_model_path(model), {method: :put, :class=>"confirm_login"} do %>
+				<span class="glyphicon glyphicon-thumbs-up"><span><%=model.cached_votes_up %></span></span>
+			<% end %>
+			<% end %>
 		</div>
     </div>
   	</li>

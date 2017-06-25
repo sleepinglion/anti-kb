@@ -13,17 +13,30 @@
 			<h4 itemprop="name" class="media-heading"><%=link_to user.name,user_path(user) %></h4>
 			<p itemprop="description"><%=user.description %></p>
 			<% if user.comments.count.zero? %>
+			<% if user_signed_in? %>
 			<%= link_to '댓글쓰기',new_comment_to_users_path(user),:class=>'comment_form_only' %>
+			<% else %>
+			<%= link_to '댓글쓰기',new_comment_to_users_path(user),:class=>'confirm_login' %>
+			<% end %>
 			<% else %>
 			<%= link_to "댓글 #{user.comments.count}",new_comment_to_users_path(user),:class=>'comment_form_with_list' %>
 			<% end %>
 			<div class="vote pull-right">
+			<% if user_signed_in? %>
 			<%= link_to like_user_path(user), method: :put do %>
 				<span class="glyphicon glyphicon-thumbs-up"><span><%=user.cached_votes_up %></span></span>
 			<% end %>
 			<!-- <%= link_to dislike_user_path(user), method: :put do %>
 				<span class="glyphicon glyphicon-thumbs-down"><span><%=user.cached_votes_down %></span></span>
 			<% end %> -->
+			<% else %>
+			<%= link_to like_user_path(user), {method: :put, :class=>"confirm_login"} do %>
+				<span class="glyphicon glyphicon-thumbs-up"><span><%=user.cached_votes_up %></span></span>
+			<% end %>
+			<!-- <%= link_to dislike_user_path(user), method: :put do %>
+				<span class="glyphicon glyphicon-thumbs-down"><span><%=user.cached_votes_down %></span></span>
+			<% end %> -->
+			<% end %>
 		</div>
 		</div>
 	</article>

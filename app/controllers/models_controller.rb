@@ -90,7 +90,7 @@ class ModelsController < BoardController
         format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
         format.json { head :no_content }
       else
-        format.html { render :action => "index" }
+        format.html { render :json => {'vote_up'=>@model.cached_votes_up}}
         format.json { render :json => @model.errors, :status => :unprocessable_entity }
       end
     end
@@ -102,7 +102,7 @@ class ModelsController < BoardController
         format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
         format.json { head :no_content }
       else
-        format.html { render :action => "index" }
+        format.html { render :json => {'vote_up'=>@model.cached_votes_down}}
         format.json { render :json => @model.errors, :status => :unprocessable_entity }
       end
     end

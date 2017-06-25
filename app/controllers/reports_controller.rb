@@ -87,7 +87,7 @@ class ReportsController < BoardController
     respond_to do |format|
       if @report.liked_by current_user
         format.html { redirect_to report_path(@report), :notice => t(:message_success_recommend)}
-        format.json { head :no_content }
+        format.json { render :json => {'vote_up'=>@report.cached_votes_up}}
       else
         format.html { render :action => "index" }
         format.json { render :json => @report.errors, :status => :unprocessable_entity }
@@ -99,7 +99,7 @@ class ReportsController < BoardController
     respond_to do |format|
       if @report.downvote_from current_user
         format.html { redirect_to report_path(@report), :notice => t(:message_success_recommend)}
-        format.json { head :no_content }
+        format.json { render :json => {'vote_up'=>@report.cached_votes_down}}
       else
         format.html { render :action => "index" }
         format.json { render :json => @report.errors, :status => :unprocessable_entity }

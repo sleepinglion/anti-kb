@@ -24,10 +24,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 <![endif]-->
 </head>
-<body itemscope itemtype="<%=@page_itemtype %>" id="special-page">
+<body itemscope itemtype="<%=@page_itemtype %>" id="special-page"<% if params[:popup].present? %> class="popup_page"<% end %>>
 	<div id="login-page" class="container">
 		<div class="row">
 			<h1><%=link_to t(:home_title),root_path %></h1>
+			<% unless params[:popup].present? %>
 			<div id="sl_ad" style="margin-bottom:20px">
 			<% if Rails.env.production? %>
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -41,6 +42,7 @@
 			</script>
 			<% else %>
 			<div style="width:728px;height:90px;background:red;">&nbsp;</div>
+			<% end %>
 			<% end %>
 			</div>
 			<% if flash[:notice] %>

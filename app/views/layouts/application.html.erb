@@ -48,6 +48,7 @@
 	</div>
 </div>
 <%= render :partial => 'layouts/footer' %>
+<input type="hidden" id="user_login_path" value="<%=new_user_session_path %>" />
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 <%= javascript_include_tag :application, "data-turbolinks-track" => true %>
 </body>

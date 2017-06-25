@@ -73,8 +73,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def layout
-    if(params[:no_layout])
-      return nil
+    if params[:no_layout].present?
+      return false
     else
       return 'user'
     end

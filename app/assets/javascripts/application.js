@@ -1,4 +1,4 @@
-  //= require jquery
+//= require jquery
 //= require jquery_ujs
 //= require plugin/jquery.uri.js
 //= require fancybox
@@ -30,10 +30,34 @@ $(document).ready(function() {
     return false;
 	});
 
+  $('.vote a:not(".confirm_login")').click(function(){
+    var vote_link=$(this);
+    $.post(vote_link.attr('href')+'.json',{'_method':'put'},function(data){
+      if(data.vote_up) {
+        vote_link.find('span span').text(data.vote_up);
+      } else {
+
+      }
+    },'json');
+    return false;
+  });
+
+  $('.confirm_login').click(function(){
+		if(confirm("로그인후에 사용가능합니다.\n지금 로그인 하시겠습니까?")) {
+      window.open($("#user_login_path").val()+'?popup=true',"","width=450, height=400, resizable=no, scrollbars=no, status=no;");
+		} else {
+			return false;
+		}
+		return false;
+	});
+
   $("#report_main tbody tr,#compliment_main tbody tr").click(function(){
     location.href=$(this).find('a:first').attr('href');
   });
 
+  $("#report_main tbody tr td a,#compliment_main tbody tr td a").click(function(){
+    return false;
+  });
 
   $(".comment_form_only").click(function(){
     if($(this).parent().find('.comment_layer').length) {
@@ -77,7 +101,17 @@ $(document).ready(function() {
       var uid=$(this).parent().find('a:first').attr('href').split('/').pop();
 
       mb.append($('<div class="comment_layer"><div class="comment_form"></div><div class="comment_list"></div></div>'));
+
       mb.find('.comment_form').load($(this).attr('href')+'?no_layout=true',function(){
+        mb.find('.login_confirm').focus(function(){
+          $(this).blur();
+          if(confirm("로그인후에 사용가능합니다.\n지금 로그인 하시겠습니까?")) {
+            window.open($("#user_login_path").val()+'?popup=true',"","width=450, height=400, resizable=no, scrollbars=no, status=no;");
+          } else {
+            return false;
+          }
+        });
+
         $(this).find('form').submit(function(){
           var comment=$(this).find('textarea').val();
           $.post($(this).attr('action')+'.json',{'id':$(this).find('input[name="id"]').val(),'comment[comment]':comment},function(data){
@@ -182,6 +216,6 @@ jQuery.fn.highlight = function() {
                 "background-color": "#ffff99",
                 "opacity": ".9"
             })
-            .fadeOut(500);
+            .fadeOut(1000);
     });
 }

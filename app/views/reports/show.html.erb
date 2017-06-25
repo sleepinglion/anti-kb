@@ -8,12 +8,15 @@
 		<div class="sl_content_main">
 			<div class="sl_content_text" itemprop="text"><%=simple_format(@report.report_content.content) %></div>
 			<div class="vote">
+			<% if user_signed_in? %>
 			<%= link_to like_report_path(@report), method: :put do %>
 				<span class="glyphicon glyphicon-thumbs-up"><span><%=@report.cached_votes_up %></span></span>
 			<% end %>
-			<!-- <%= link_to dislike_report_path(@report), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-down"><span><%=@report.cached_votes_down %></span></span>
-			<% end %> -->
+			<% else %>
+			<%= link_to like_report_path(@report), {method: :put, :class=>"confirm_login"} do %>
+				<span class="glyphicon glyphicon-thumbs-up"><span><%=@report.cached_votes_up %></span></span>
+			<% end %>
+			<% end %>
 		</div>
 		</div>
 	</div>
