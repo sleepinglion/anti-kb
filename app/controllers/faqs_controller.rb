@@ -5,6 +5,7 @@ class FaqsController < BoardController
     super(*params)
     @controller_name=t('activerecord.models.faq')
     @title=@controller_name
+    @page_itemtype='http://schema.org/QAPage'    
   end
 
   # GET /faqs
@@ -69,7 +70,7 @@ class FaqsController < BoardController
       format.json { render json: @faq.faq_content}
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_faq
