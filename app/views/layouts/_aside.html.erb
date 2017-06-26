@@ -1,29 +1,27 @@
 <aside class="visible-lg">
-	<fieldset>
 	<% if user_signed_in? %>
-			<legend><%=t(:logout) %></legend>
-	<div id="login_users">
+	<article id="login_users">
 			<p>
 				<%=link_to edit_user_registration_path do %>
 				<span id="username"><%=current_user.name %></span>님 환영합니다.
 				<% end %>
 			</p>
 			<p id="logout_submit"><%= link_to t(:logout), destroy_user_session_path %></p>
-	</div>
+	</article>
 	<% else %>
-	<%=form_tag new_user_session_path do %>
-  <div class="form-group">
-    <%= label_tag :email,t(:email,scope:[:activerecord,:attributes,:user]) %>
-    <%= text_field_tag 'user[email]',nil, :id=>'email',:class=>'form-control',:maxLength=>150,:required=>'required' %>
-  </div>
-  <div class="form-group">
-  	<%= label_tag :password,t(:password,scope:[:activerecord,:attributes,:user]) %>
-  	<%= password_field_tag 'user[password]',nil, :id=>'password', :class=>'form-control',:maxLength=>100,:required=>'required' %>
-  </div>
-  <%= submit_tag t(:login),:class=>"btn btn-primary" %>
+	<article>
+	<h2>
+		<%=link_to new_user_session_path do %>
+			<span class="logo"><%=t(:application_name) %></span>
+			<span><%=t(:login) %></span>
+		<% end %>
+	</h2>
+	<p>
+    <%= link_to "서명하기", new_user_registration_path %>
+    <%= link_to "비밀번호 찾기", new_user_password_path  %>
+	</p>
+</article>
 	<% end %>
-	<% end %>
-	</fieldset>
 <div id="ad_main" class="main_content">
 <% if Rails.env.production? %>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
