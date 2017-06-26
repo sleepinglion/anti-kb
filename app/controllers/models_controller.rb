@@ -88,9 +88,9 @@ class ModelsController < BoardController
     respond_to do |format|
       if @model.liked_by current_user
         format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
-        format.json { head :no_content }
+        format.json { render :json => {'vote_up'=>@model.cached_votes_down}}
       else
-        format.html { render :json => {'vote_up'=>@model.cached_votes_up}}
+        format.html { render :action => "index" }
         format.json { render :json => @model.errors, :status => :unprocessable_entity }
       end
     end
@@ -100,9 +100,9 @@ class ModelsController < BoardController
     respond_to do |format|
       if @model.downvote_from current_user
         format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
-        format.json { head :no_content }
+        format.json { render :json => {'vote_up'=>@model.cached_votes_down}}
       else
-        format.html { render :json => {'vote_up'=>@model.cached_votes_down}}
+        format.html { render :action => "index" }
         format.json { render :json => @model.errors, :status => :unprocessable_entity }
       end
     end

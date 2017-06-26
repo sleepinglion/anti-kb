@@ -44,7 +44,7 @@ $(document).ready(function() {
 
   $('.confirm_login').click(function(){
 		if(confirm("로그인후에 사용가능합니다.\n지금 로그인 하시겠습니까?")) {
-      window.open($("#user_login_path").val()+'?popup=true',"","width=450, height=400, resizable=no, scrollbars=no, status=no;");
+      window.open($("#user_login_path").val()+'?popup=true',"","width=450, height=420, resizable=no, scrollbars=no, status=no;");
 		} else {
 			return false;
 		}
@@ -56,6 +56,7 @@ $(document).ready(function() {
   });
 
   $("#report_main tbody tr td a,#compliment_main tbody tr td a").click(function(){
+    location.href=$(this).attr('href');
     return false;
   });
 
@@ -73,16 +74,7 @@ $(document).ready(function() {
 
       mb.append($('<div class="comment_layer"><div class="comment_form"></div><div class="comment_list"></div></div>'));
       mb.find('.comment_form').load($(this).attr('href')+'?no_layout=true',function(){
-        $(this).find('form').submit(function(){
-          var comment=$(this).find('textarea').val();
-          $.post($(this).attr('action')+'.json',{'id':$(this).find('input[name="id"]').val(),'comment[comment]':comment},function(data){
-            mb.find('textarea').val('');
-            var new_comment=$('<h5>'+$("#username").text()+'</h5><div class="comment">'+nl2br(comment)+'</div>');
-            mb.find('.comment_list').append(new_comment);
-            new_comment.highlight();
-          });
-          return false;
-        });
+        $(this).find('form').submit(comment_form_submit);
       });
     }
     return false;
@@ -106,22 +98,13 @@ $(document).ready(function() {
         mb.find('.login_confirm').focus(function(){
           $(this).blur();
           if(confirm("로그인후에 사용가능합니다.\n지금 로그인 하시겠습니까?")) {
-            window.open($("#user_login_path").val()+'?popup=true',"","width=450, height=400, resizable=no, scrollbars=no, status=no;");
+            window.open($("#user_login_path").val()+'?popup=true',"","width=450, height=420, resizable=no, scrollbars=no, status=no;");
           } else {
             return false;
           }
         });
 
-        $(this).find('form').submit(function(){
-          var comment=$(this).find('textarea').val();
-          $.post($(this).attr('action')+'.json',{'id':$(this).find('input[name="id"]').val(),'comment[comment]':comment},function(data){
-            mb.find('textarea').val('');
-            var new_comment=$('<h5>'+$("#username").text()+'</h5><div class="comment">'+nl2br(comment)+'</div>');
-            mb.find('.comment_list').append(new_comment);
-            new_comment.highlight();
-          });
-          return false;
-        });
+        $(this).find('form').submit(comment_form_submit);
       });
 
 		  $.getJSON($(this).parent().find('a:first').attr('href')+'.json',function(data){
@@ -134,6 +117,27 @@ $(document).ready(function() {
     }
     return false;
   });
+
+
+  function comment_form_submit(){
+    var comment=$(this).find('textarea').val();
+
+    if($.trim(comment) == '') {
+      alert('댓글을 써주세요');
+      $(this).find('textarea').focus();
+      return false;
+    }
+
+    var mb=$(this).parent().parent().parent();
+
+    $.post($(this).attr('action')+'.json',{'id':$(this).find('input[name="id"]').val(),'comment[comment]':comment},function(data){
+      mb.find('textarea').val('');
+      var new_comment=$('<h5>'+$("#username").text()+'</h5><div class="comment">'+nl2br(comment)+'</div>');
+      mb.find('.comment_list').append(new_comment);
+      new_comment.highlight();
+    });
+    return false;
+  }
 
 
 	$("#faqCategoryList a.title").click(getList);

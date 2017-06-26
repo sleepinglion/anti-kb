@@ -86,7 +86,7 @@ class ComplimentsController < BoardController
 
   def downvote
     respond_to do |format|
-      if @report.downvote_from current_user
+      if @compliment.downvote_from current_user
         format.html { redirect_to compliment_path(@compliment), :notice => t(:message_success_recommend)}
         format.json { render :json => {'vote_up'=>@compliment.cached_votes_down}}
       else

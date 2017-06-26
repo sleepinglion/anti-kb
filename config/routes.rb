@@ -41,6 +41,8 @@ Antikb::Application.routes.draw do
     end
   end
 
+  resources :comments, only: :destroy  
+
   resources :articles, :intro, :improve, :sitemap, :faqs, :faq_categories, :proposes, :notices, :galleries
   get 'kbsmind', to: 'home#kbsmind'
   get 'feed',to: 'home#feed'
