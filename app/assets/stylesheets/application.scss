@@ -67,7 +67,7 @@ footer {clear: both; position: relative; text-align: center}
 
 /* header */
 header h1 { position: relative;float: left}
-header h1 a,#login-page h1 a {float:left;display:block;width:150px;height:30px;color: #666;text-indent:-9999px;text-decoration: none;background:asset-url('logo.png') no-repeat}
+header h1 a {float:left;display:block;width:150px;height:30px;color: #666;text-indent:-9999px;text-decoration: none;background:asset-url('logo.png') no-repeat}
 header h1 a:hover { color: red; }
 header nav { position: relative;float:right;z-index:8}
 header nav li { float: left; list-style: none}
@@ -81,6 +81,7 @@ header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
 #login-page h1 {}
 #login-page h1 a {float:none;margin:0 auto}
 
+aside article h3 {margin:0 0 10px;padding:0;text-align:center}
 aside h2 a {display:block;border:1px solid #ccc;border-radius:5px;padding:5px}
 aside h2 a span {display:block;width:100%;text-align: center}
 aside h2 a:hover {text-decoration:none;color:#000}
@@ -292,6 +293,7 @@ table td.sl_registered_date {color:#999}
 	header nav ul {margin:10px 0 0 0;padding:0}
 	.sub_main {padding-bottom:40px}
   .jumbotron,.media {background:#fff}
+  .modal-dialog {width:728px}
 	footer {clear: both; position: relative;width:100%;height: 4em; margin:0;text-align: center;background:#e3e3e3 }
 	/* aside */
 	aside {position:absolute;top:120px;left:15px;width:250px;margin:0}
@@ -310,6 +312,7 @@ table td.sl_registered_date {color:#999}
   html,body {font-size:16px}
 	.sub_main {padding-bottom:50px}
 	.adsbygoogle {height: 100px}
+  .modal-dialog {width:750px}
   #main_main {padding-left:310px}
   footer ul li a,footer address {font-size:14px}
 }
@@ -321,6 +324,7 @@ table td.sl_registered_date {color:#999}
 @media (min-width: 1500px) {
   html,body {font-size:18px}
   .container {width:1500px}
+  .modal-dialog {width:992px}
   .jumbotron {text-align: center}
   .adsbygoogle {height: 140px}
 
