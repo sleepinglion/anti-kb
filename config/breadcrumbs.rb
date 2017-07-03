@@ -6,6 +6,10 @@ crumb :intro do
    link t('activerecord.models.intro'), intro_index_path
 end
 
+crumb :improve do
+   link t('activerecord.models.improve'), improve_index_path
+end
+
 crumb :sitemap do
    link t('activerecord.models.sitemap'), sitemap_index_path
 end
