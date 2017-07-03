@@ -263,13 +263,13 @@ Model.create!(:user_id=>1,:title=>'순실이',:recommend_description=>'국민은
 하긴 국민은행의 횡령 횡포는 나와 우열을 가릴 수 없긴 하지',:photo=>File.open(Rails.root.join("app", "assets", "images", "sunsiry.jpg")))
 
 
-Notice.create!(:id=>1,:user_id=>1,:title=>'www.anti-kb.kr이 새롭게 태어났습니다.',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')
+Notice.create!(:id=>1,:user_id=>1,:title=>'www.anti-kb.net이 새롭게 태어났습니다.',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')
 NoticeContent.create!(:id=>1, :content=>'그 동안 관리되지 못했던 anti-kb가 새롭게 리뉴얼 되어서 오픈하였습니다.
 기존과 크게 다른점은 없지만 몇몇 메뉴를 보강하고 서버와 언어를 바꿨습니다.
 변함없이 살인자-은행이 망할때까지 운영해나가겠습니다.')
-Notice.create!(:id=>2,:user_id=>1,:title=>'www.antikb.site로 도메인 변경',:created_at=>'2017-01-04 18:51:23',:updated_at=>'2017-01-04 18:51:23')
+Notice.create!(:id=>2,:user_id=>1,:title=>'www.antikb.site도메인 추가 및 재오픈',:created_at=>'2017-01-04 18:51:23',:updated_at=>'2017-01-04 18:51:23')
 NoticeContent.create!(:id=>2, :content=>'개인적인 운영비용 충당의 어려움으로 인해 또다시 얼마동안 서비스되지 못하고 폐쇄되었던점 사과드립니다.
 기존 데이터는 그대로 보존하고서 업데이트후에 오픈하였습니다.
 몇몇 날짜 데이터와 방문자 데이터가 상실되었지만 복구중입니다.
-도메인이 변경되어 이제 www.antikb.site로 접속하시면 됩니다.
+도메인도 추가되어 이제 www.antikb.site로도 접속됩니다.
 이제 살인자-은행 망하는 그날까지 중단없이 서비스 하겠습니다.')

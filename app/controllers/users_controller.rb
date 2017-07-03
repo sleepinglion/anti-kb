@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @category=t(:menu_user)
     @sub_menu=t(:submenu_user)
     @controller_name=t('activerecord.models.user')
+    @script='application'
   end
 
   def user_id_select
@@ -50,6 +51,14 @@ class UsersController < ApplicationController
 
   def new_comment
 
+  end
+
+  def layout
+    if params[:no_layout].present?
+      return false
+    else
+      return 'user'
+    end
   end
 
   def create_comment
@@ -101,7 +110,7 @@ class UsersController < ApplicationController
 
     @user_count=User.count
     #@users_active_count=User.count(:conditions=>{:flag=>true})
-    @script='users/index'
+
 
     respond_to do |format|
       format.html # index.html.erb

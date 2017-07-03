@@ -56,7 +56,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 header {position:relative;float:left;width: 100%}
 footer {clear: both; position: relative; text-align: center}
 .page-header {float:left;width:100%;border-bottom:1px solid #ccc}
-.page-header h2 {float:left;margin:0.7em 0 0;padding:0;font-weight:bold;color:#666}
+.page-header h2,.page-header h1 {float:left;margin:0.7em 0 0;padding:0;font-weight:bold;color:#666;font-size:140%}
 .page-header .breadcrumb  {float:right;margin:0}
 .alert-success {clear:both}
 
@@ -66,9 +66,9 @@ footer {clear: both; position: relative; text-align: center}
 #login-page h1 a {display:block}
 
 /* header */
-header h1 { position: relative;float: left}
-header h1 a {float:left;display:block;width:150px;height:30px;color: #666;text-indent:-9999px;text-decoration: none;background:asset-url('logo.png') no-repeat}
-header h1 a:hover { color: red; }
+header h1,header h2 { position: relative;float: left}
+header h1 a,header h2 a {float:left;display:block;width:150px;height:30px;color: #666;text-indent:-9999px;text-decoration: none;background:asset-url('logo.png') no-repeat}
+header h1 a:hover,header h2 a:hover { color: red; }
 header nav { position: relative;float:right;z-index:8}
 header nav li { float: left; list-style: none}
 header nav ul.nav-pills > li + li {margin-left:20px}
@@ -77,9 +77,9 @@ header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
 #top_menu {position:absolute;top:0;left:0;float:left;width:100%;z-index:9}
 #top_menu ul {float:right;margin:0;padding:0;list-style:none}
 #top_menu li {float:left;margin:0 10px 0 0;padding:0}
-
 #login-page h1 {}
 #login-page h1 a {float:none;margin:0 auto}
+#main_user {margin-bottom:30px}
 
 aside article h3 {margin:0 0 10px;padding:0;text-align:center}
 aside h2 a {display:block;border:1px solid #ccc;border-radius:5px;padding:5px}
@@ -241,10 +241,10 @@ table td.sl_registered_date {color:#999}
 @media all and (max-width: 768px) {
 	html,body {background:#ccc}
 	header {background:none;border-bottom:0;margin:1% 0}
-	header h1 {margin:2%;padding:0;font-size:1.6em}
-	header h1 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
-	header h1 a:hover {text-decoration:none}
-	header h1 a:active {color:red}
+	header h1,header h2 {margin:2%;padding:0;font-size:1.6em}
+	header h1 a,header h2 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
+	header h1 a:hover,header h1 a:hover {text-decoration:none}
+	header h1 a:active,header h1 a:hover {color:red}
 	header nav {float:left;width:100%;margin:0;padding:0}
 	header nav ul {float:left;width:100%;margin:0;padding:0;background:#fff;border-radius:5px}
 	header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
@@ -276,7 +276,7 @@ table td.sl_registered_date {color:#999}
 	#mom {margin: -91px 0 -51px;min-height:100%;}
 	#main {padding-top:91px;padding-bottom:51px}
 	header { height: 90px;background:#fff; border-bottom: 1px solid #ccc;}
-	header h1 {margin-top:35px}
+	header h1,header h2 {margin-top:35px}
 	header nav ul { clear:both;float: left;width:100%;margin:30px 0 0;padding:0}
 	.sub_main {padding:20px 0 40px}
 	footer {clear: both; position: relative;width:96%; height: 50px; margin: 0px 2%; text-align: center; border-top: 1px solid #ccc; }
@@ -288,7 +288,7 @@ table td.sl_registered_date {color:#999}
 	#main {position:relative;padding-top:5em;padding-bottom:4em}
 	#main_main {float:right;width:100%;padding-top:30px}
 	header {height: 5em; background:#fff;border-bottom: 1px solid #ccc;}
-	header h1 { position: relative; z-index:9; float: left; margin: 30px 0 0 0; padding:0}
+	header h1,header h2 { position: relative; z-index:9; float: left; margin: 30px 0 0 0; padding:0}
 	header nav {float:right;z-index: 9;margin:20px 0 0}
 	header nav ul {margin:10px 0 0 0;padding:0}
 	.sub_main {padding-bottom:40px}
