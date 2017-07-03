@@ -1,16 +1,21 @@
 <% unless user_signed_in? %>
-<div class="jumbotron hero-unit">
-	<h2><%=raw t(:home_main_title) %></h2>
-	<p class="lead"><%=raw t(:home_main_description) %></p>
-	<%=link_to t(:sign),new_user_registration_path,:class=>'btn btn-lg btn-primary' %>
+<div class="col-xs-12">
+	<div class="jumbotron hero-unit">
+		<h2><%=raw t(:home_main_title) %></h2>
+		<p class="lead"><%=raw t(:home_main_description) %></p>
+		<%=link_to t(:sign),new_user_registration_path,:class=>'btn btn-lg btn-primary' %>
+	</div>
 </div>
 <% end %>
 <div id="section_main_top">
+	<div class="col-xs-12">
 		<ul class="nav nav-tabs">
 			<li <% if(!params[:tab]) %>class="active"<% end %>><%=link_to('KB망하게 하기 서명','/')%></li>
 			<li <% if(params[:tab]=='article') %>class="active"<% end %>><%=link_to('KB관련 기사',:controller=>'home',:tab=>'article')%></li>
 			<li <% if(params[:tab]=='notice') %>class="active"<% end %>><%=link_to('공지사항',:controller=>'home',:tab=>'notice')%></li>
 		</ul>
+	</div>
+	<div class="col-xs-12">
 		<% if params[:tab].present? %>
 		<% if params[:tab]=='article' %>
 		<%= render :partial => 'articles/index' %>
@@ -22,8 +27,9 @@
 		<%= render :partial => 'users/index' %>
 		<% end %>
 	</div>
-	<hr />
-	<div id="section_main_bottom" class="row">
+</div>
+<hr />
+<div id="section_main_bottom">
 		<% if params[:tab].present? %>
 		<% if params[:tab]=='article' %>
 		<article class="col-xs-12 col-md-6">

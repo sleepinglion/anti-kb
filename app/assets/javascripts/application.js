@@ -197,6 +197,9 @@ $(document).ready(function() {
 			$("#faqList dd").hide();
 			parent.addClass('on');
 			parent.next().html('<p>'+nl2br(value.content)+'</p>').slideDown();
+      if (history && history.pushState) {
+        history.pushState('','faq_'+value.id,'/faqs/'+value.id);
+      }
 		});
 
 		return false;

@@ -1,4 +1,5 @@
-<div id="main_user">
+<section id="main_user">
+	<h2 class="none">KB망하게 하기 서명 목록</h2>
 	<% unless @users.empty? %>
 	<% @users.each do |user| %>
 	<article class="users media" itemscope itemtype="http://schema.org/Person">
@@ -44,8 +45,10 @@
 	<% else %>
 	<p><%=t(:no_data) %></p>
 	<% end %>
+	<% if current_page?(root_path) %>
 	<%=link_to t(:link_more),users_path,:class=>'more' %>
-
+	<% end %>
+</section>
 <div id="sign_up">
 		<span class="label label-info"><%=@user_count %></span> 명이 서명하였습니다.
 		<% unless user_signed_in? %> &nbsp;&nbsp;
@@ -53,5 +56,4 @@
 		<b><%=t(:sign) %></b>
 		<% end %>
 		<% end %>
-</div>
 </div>

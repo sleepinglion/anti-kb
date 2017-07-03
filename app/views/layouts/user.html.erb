@@ -29,22 +29,8 @@
 		<div class="row">
 			<h1><%=link_to t(:home_title),root_path %></h1>
 			<% unless params[:popup].present? %>
-			<div id="sl_ad" style="margin-bottom:20px">
-			<% if Rails.env.production? %>
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- 250정사각형 -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:728px;height:90px"
-			     data-ad-client="ca-pub-5400903051441488"
-			     data-ad-slot="7215435937"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<% else %>
-			<div style="width:728px;height:90px;background:red;">&nbsp;</div>
+			<%= render :partial => 'layouts/ad' %>
 			<% end %>
-			<% end %>
-			</div>
 			<% if flash[:notice] %>
 			<%= render :partial => 'layouts/notice',:locals=>{:notice=>flash[:notice]} %>
 			<% end %>

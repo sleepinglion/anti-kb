@@ -5,7 +5,7 @@
 		<ol id="faqCategoryList">
 			<% unless @faq_categories.empty? %>
 			<% @faq_categories.each do |faq_category| %>
-			<li <% if(@categoryId==faq_category.id) %>class="on"<% end %>>
+			<li <% if(@categoryId==faq_category.id) %>class="on"<% end %> style="width:<%=re %>%" >
 				<%= link_to truncate(faq_category.title,:length => 20),faqs_path(:faq_category_id=>faq_category.id),{:class=>'title'} %>
 				<% if(@categoryId==faq_category.id) %>
 				<% if user_signed_in? %>
@@ -29,7 +29,7 @@
 			<% unless @faqs.empty? %>
 			<% @faqs.each do |faq| %>
 			<dt <% if @faq %><% if @faq.id==faq.id %>class="on"<% end %><% end %>>
-				<%= link_to truncate(faq.title,:length => 80), faqs_path(:faq_category_id=>params[:faq_category_id],:id=>faq),{:class=>'title'} %>
+				<%= link_to truncate(faq.title,:length => 80), faq_path(faq),{:class=>'title'} %>
 				<% if user_signed_in? %>
 				<% if current_user.admin? %>
 				<div class="sl_faq_menu">

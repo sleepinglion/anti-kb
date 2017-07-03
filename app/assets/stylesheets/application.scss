@@ -62,8 +62,9 @@ footer {clear: both; position: relative; text-align: center}
 
 #special-page {background:#eee}
 #login-page {background:#fff;min-height:100%;width:728px}
-#login-page h1 {padding-bottom:20px;text-align:center}
+#login-page h1 {padding-bottom:15px;text-align:center}
 #login-page h1 a {display:block}
+#login-page #sl_ad {margin-bottom:20px}
 
 /* header */
 header h1,header h2 { position: relative;float: left}
@@ -79,7 +80,7 @@ header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
 #top_menu li {float:left;margin:0 10px 0 0;padding:0}
 #login-page h1 {}
 #login-page h1 a {float:none;margin:0 auto}
-#main_user {margin-bottom:30px}
+#sign_up {margin-bottom:30px}
 
 aside article h3 {margin:0 0 10px;padding:0;text-align:center}
 aside h2 a {display:block;border:1px solid #ccc;border-radius:5px;padding:5px}
@@ -118,7 +119,7 @@ footer address {margin:0;line-height: 100%}
 #section_main {float:left;width:100%}
 #section_main_top {float:left;position:relative;width:100%}
 #section_main_top .nav {margin-bottom:20px}
-#section_main_top a.more {position:absolute;top:10px;right:0;color:#999;text-decoration:none}
+#section_main_top a.more {position:absolute;top:-55px;right:15px;color:#999;text-decoration:none}
 #section_main_top a.more:hover {color:#333;text-decoration:underline}
 #section_main_top article li .date {float:right;color:#999}
 #section_main_top .label {font-size:110%}
@@ -241,7 +242,7 @@ table td.sl_registered_date {color:#999}
 @media all and (max-width: 768px) {
 	html,body {background:#ccc}
 	header {background:none;border-bottom:0;margin:1% 0}
-	header h1,header h2 {margin:2%;padding:0;font-size:1.6em}
+	header h1,header h2 {margin-top:2%;margin-bottom:2%;font-size:1.6em}
 	header h1 a,header h2 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
 	header h1 a:hover,header h1 a:hover {text-decoration:none}
 	header h1 a:active,header h1 a:hover {color:red}
@@ -257,10 +258,13 @@ table td.sl_registered_date {color:#999}
 	.nav-pills > li + li {margin:0}
 	#mom {float:left;clear:both;width:100%;margin:0}
 	#main {float:left;margin:0;padding:0;width:100%;padding:3%;border-radius:5px;background:#fff}
+  #section_main_top a.more {right:30px}
   #login-page {width:100%}
+  .page-header {margin-top:1%}
 	aside {float:left;width:100%}
 	aside form {float:left}
 	#ad_main {float:right}
+  #main_main .hero-unit a {display:block}
 	#section_main_top { width:100% }
 	#section_main_top .nav li {float:left;width:100%;margin:0;padding:0}
 	#section_main_top .nav li a {border:none}
@@ -269,6 +273,7 @@ table td.sl_registered_date {color:#999}
 	#section_main_top {clear:both;float:left}
 	#section_main_bottom {margin-bottom:0}
 	footer {float:left;background:#fff;border-radius:5px;width:100%;margin:1% 0 0}
+  footer address {margin:7px 0}
 }
 
 @media all and (min-width: 768px) and (max-width: 992px) {
@@ -313,7 +318,7 @@ table td.sl_registered_date {color:#999}
 	.sub_main {padding-bottom:50px}
 	.adsbygoogle {height: 100px}
   .modal-dialog {width:750px}
-  #main_main {padding-left:310px}
+  #main_main {padding-left:280px}
   footer ul li a,footer address {font-size:14px}
 }
 

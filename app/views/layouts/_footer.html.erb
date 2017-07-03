@@ -1,12 +1,12 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<ul class="row">
-				<li class="col-xs-4 col-md-3"><%= link_to t(:intro,scope:[:activerecord,:models]),intro_index_path %></li>
-				<li class="hidden-xs col-md-3">email:<%=mail_to 'admin@anti-kb.net' %></li>
-				<li class="col-xs-4 col-md-3"><%= link_to t(:sitemap,scope:[:activerecord,:models]),sitemap_index_path %></li>
+			<ul class="col-xs-12">
+				<li class="col-xs-6 col-sm-4"><%= link_to t(:intro,scope:[:activerecord,:models]),intro_index_path %></li>
+				<li class="hidden-xs col-sm-4">email:<%=mail_to 'admin@anti-kb.net' %></li>
+				<li class="col-xs-6 col-sm-4"><%= link_to t(:sitemap,scope:[:activerecord,:models]),sitemap_index_path %></li>
 			</ul>
-			<address>CopyLeft, <%=link_to 'SL','http://wwww.sleepinglion.pe.kr',:target=>'_blank' %>. All wrongs reserved. Since 2013</address>
+			<address class="col-xs-12">CopyLeft, <%=link_to 'SL','http://wwww.sleepinglion.pe.kr',:target=>'_blank' %>. All wrongs reserved. Since 2013</address>
 		</div>
 	</div>
 </footer>
