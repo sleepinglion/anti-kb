@@ -51,8 +51,10 @@
 			<% if flash[:alert] %>
 			<%= render :partial => 'layouts/alert',:locals=>{:alert=>flash[:alert]} %>
 			<% end %>
-	<%=yield %>
-</div>
+		</div>
+		<div class="row">
+			<%=yield %>
+		</div>
 </div>
 <%= javascript_include_tag @script, "data-turbolinks-track" => true %>
 </body>

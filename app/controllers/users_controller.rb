@@ -79,12 +79,7 @@ class UsersController < ApplicationController
     end
 
     unless params[:per_page].present?
-      params[:per_page]=20
-    end
-
-    if params[:format]=='xls'
-      params[:page]=nil
-      params[:per_page]=500000
+      params[:per_page]=10
     end
 
     conditions={}
@@ -109,7 +104,6 @@ class UsersController < ApplicationController
     @users = @users.order('id desc').page(params[:page]).per(params[:per_page])
 
     @user_count=User.count
-    #@users_active_count=User.count(:conditions=>{:flag=>true})
 
 
     respond_to do |format|

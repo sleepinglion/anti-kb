@@ -29,7 +29,6 @@
 <%= render :partial => 'layouts/header' %>
 <div id="mom">
 	<div id="main" class="container">
-		<div class="row">
 			<% if current_page?(root_path) %>
 			<%= render :partial => 'layouts/aside' %>
 			<% else %>
@@ -41,11 +40,12 @@
 			<% if flash[:alert] %>
 			<%= render :partial => 'layouts/alert',:locals=>{:alert=>flash[:alert]} %>
 			<% end %>
-			<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
-				<%=yield %>
-				<div class="clearfix">&nbsp;</div>
-			</section>
-		</div>
+			<div class="row">
+				<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
+					<%=yield %>
+					<div class="clearfix">&nbsp;</div>
+				</section>
+			</div>
 	</div>
 </div>
 <%= render :partial => 'layouts/footer' %>
