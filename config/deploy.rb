@@ -1,7 +1,7 @@
 set :application, 'antikb'
 set :repo_url, 'git@github.com:sleepinglion/anti-kb.git'
 set :branch, 'master'
-set :deploy_to, '/home/deploy/antikb'
+set :deploy_to, '/home/deploy/anti-kb'
 # set :scm, :git
 
 # set :format, :pretty
