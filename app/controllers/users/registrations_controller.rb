@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.user')
-    @script='application'    
+    @script='application'
   end
 
   def index

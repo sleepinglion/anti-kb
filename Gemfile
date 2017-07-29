@@ -48,6 +48,13 @@ gem 'i18n-js'
 gem 'non-stupid-digest-assets'
 gem 'email_validator'
 gem 'unf'
+gem 'omniauth-oauth2' , '~> 1.3.1'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-gplus'
+gem 'twitter'
+gem 'fb_graph'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -81,3 +88,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mocha', group: :test
