@@ -1,4 +1,4 @@
-class UserAuthentication
+class UserAuthentication < ActiveRecord::Base
 belongs_to :user
 belongs_to :authentication_provider
 
