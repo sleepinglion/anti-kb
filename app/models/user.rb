@@ -9,10 +9,9 @@ class User < ActiveRecord::Base
   validates :email, :email => {:strict_mode => true}
   validates_length_of :password, :within => 4..255,:allow_blank => true
   mount_uploader :photo, UserUploader
-  has_many :user_authorization
+  has_many :user_authorizations
 
   def self.create_from_omniauth(params)
-        self.send(params.provider,params)
-    end
-
+      self.send(params.provider,params)
+  end
 end
