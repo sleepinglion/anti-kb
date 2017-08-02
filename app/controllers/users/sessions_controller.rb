@@ -7,6 +7,12 @@ class Users::SessionsController < Devise::SessionsController
     @script='login'
   end
 
+  def create
+    user = User.from_omniauth(env["omniauth.auth"]) ## Setting "user" here
+    session[:user_id] = user.id  ## Changed this to use the set "user"
+    redirect_to root_url
+  end  
+
   def layout
     if params[:no_layout].present?
       return false
