@@ -6,7 +6,7 @@ module OmniauthAttributesConcern
            attributes = {
                            email: params['info']['email'],
                            name: params['info']['nickname'],
-                           encrypted_password: Devise.friendly_token,
+                           password: Devise.friendly_token,
                            description: '망해라'
                        }
            create(attributes)
@@ -17,7 +17,7 @@ module OmniauthAttributesConcern
          attributes = {
                          email: params['info']['email'],
                          name: params['info']['nickname'],
-                         encrypted_password: Devise.friendly_token,
+                         password: Devise.friendly_token,
                          description: '망해라'
                      }
          create(attributes)
@@ -28,7 +28,7 @@ module OmniauthAttributesConcern
         attributes = {
                         email: params['info']['email'],
                         name: params['info']['nickname'],
-                        encrypted_password: Devise.friendly_token,
+                        password: Devise.friendly_token,
                         description: '망해라'
                     }
         create(attributes)
