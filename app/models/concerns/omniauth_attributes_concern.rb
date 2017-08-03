@@ -33,5 +33,16 @@ module OmniauthAttributesConcern
                     }
         create(attributes)
      end
+
+     def kakao params
+       (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
+       attributes = {
+                       email: params['info']['email'],
+                       name: params['info']['nickname'],
+                       password: Devise.friendly_token,
+                       description: '망해라'
+                   }
+       create(attributes)
+    end
      end
  end
