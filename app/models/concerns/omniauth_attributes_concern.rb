@@ -16,7 +16,7 @@ module OmniauthAttributesConcern
          (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
          attributes = {
                          email: params['info']['email'],
-                         name: params['info']['nickname'],
+                         name: params['info']['name'],
                          password: Devise.friendly_token,
                          description: '망해라'
                      }
