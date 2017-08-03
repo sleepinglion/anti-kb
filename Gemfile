@@ -53,6 +53,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-gplus'
+gem 'omniauth-kakao'
 gem 'twitter'
 gem 'fb_graph'
 
