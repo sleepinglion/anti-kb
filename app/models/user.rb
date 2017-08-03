@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   has_many :user_authorizations
 
   def self.create_from_omniauth(params)
-      self.send(params.provider,params)
+      self.__send__(params.provider,params)
   end
 end
