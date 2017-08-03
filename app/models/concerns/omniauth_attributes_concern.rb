@@ -23,7 +23,7 @@ module OmniauthAttributesConcern
          create(attributes)
       end
 
-      def gplus params
+      def google_oauth2 params
         (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
         attributes = {
                         email: params['info']['email'],
