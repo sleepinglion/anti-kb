@@ -254,5 +254,5 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['FACEBOOK_KEY'] ,  ENV['FACEBOOK_SECRET'], :display => "popup" , :scope => 'email,publish_actions', info_fields: 'email,name,gender'
   config.omniauth :twitter,  ENV['TWITTER_KEY'] ,  ENV['TWITTER_SECRET'] , :display => "popup" , :scope => 'email'
   config.omniauth :google_oauth2 ,  ENV['GPLUS_KEY'] , ENV['GPLUS_SECRET'] , :display => "popup" , scope: 'userinfo.email, userinfo.profile'
-  config.omniauth :kakao, ENV['KAKAO_KEY'] , ENV['KAKAO_SECRET'] , :display => "popup"
+  config.omniauth :kakao, ENV['KAKAO_KEY'] , ENV['KAKAO_SECRET'] , :display => "popup", :redirect_path=>"/users/auth/kakao/callback"
 end
