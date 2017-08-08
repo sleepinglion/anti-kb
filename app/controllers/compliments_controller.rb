@@ -76,7 +76,7 @@ class ComplimentsController < BoardController
     respond_to do |format|
       if @compliment.liked_by current_user
         format.html { redirect_to compliment_path(@compliment), :notice => t(:message_success_recommend)}
-        format.json { render :json => {'vote_up'=>@compliment.cached_votes_down}}
+        format.json { render :json => {'vote_up'=>@compliment.cached_votes_up}}
       else
         format.html { render :action => "index" }
         format.json { render :json => @compliment.errors, :status => :unprocessable_entity }

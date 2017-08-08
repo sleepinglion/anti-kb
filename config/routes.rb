@@ -11,10 +11,7 @@ Antikb::Application.routes.draw do
   devise_for :users, :controllers => {:omniauth_callbacks=>'users/omniauth_callbacks', :sessions => "users/sessions",:registrations => "users/registrations",:passwords => "users/passwords"}, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
     get '/users', :to => 'users/registrations#index', :as => :user_root # Rails 3s
     get '/login', :to => 'users/sessions#new'
-    get '/auth/:provider/callback' => 'authentications#create'
   end
-
-  get "/auth/:action/callback", :controller => "authentications", :constraints => { :action => /twitter|facebook|google/ }
 
   resources :users do
     member do
