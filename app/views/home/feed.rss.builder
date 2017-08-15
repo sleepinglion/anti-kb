@@ -4,7 +4,7 @@ xml.rss :version => "2.0" do
     xml.title @application_name
     xml.author 'Sleeping-Lion'
     xml.description @meta_description
-    xml.link 'http://www.antikb.site'
+    xml.link 'http://www.anti-kb.net'
     xml.language I18n.locale.to_s
 
     for article in @reports
@@ -16,7 +16,7 @@ xml.rss :version => "2.0" do
         end
         xml.author 'SleepingLion'
         xml.pubDate article.created_at.to_s(:rfc822)
-        xml.link 'http://www.antikb.site/reports/' + article.id.to_s
+        xml.link 'http://www.anti-kb.net/reports/' + article.id.to_s
         xml.guid article.id
 
         text = article.report_content.content
@@ -37,7 +37,7 @@ xml.rss :version => "2.0" do
         end
         xml.author 'SleepingLion'
         xml.pubDate article.created_at.to_s(:rfc822)
-        xml.link 'http://www.antikb.site/compliments/' + article.id.to_s
+        xml.link 'http://www.anti-kb.net/compliments/' + article.id.to_s
         xml.guid article.id
 
         text = article.compliment_content.content
