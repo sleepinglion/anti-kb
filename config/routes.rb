@@ -49,6 +49,7 @@ Antikb::Application.routes.draw do
   get 'users/add_new_comment/:id',to: 'users#new_comment', as: 'new_comment_to_users'
   post 'users/add_new_comment',to: 'users#create_comment', as: 'create_comment_to_users'
 
+  get 'home', to: 'home#index'
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'
     resources :users, :articles, :improve, :faq_categories, :faqs , :proposes, :compliment_categories, :compliments, :report_categories, :reports, :notices, :models, :banks

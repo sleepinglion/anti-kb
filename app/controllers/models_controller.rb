@@ -88,7 +88,7 @@ class ModelsController < BoardController
     respond_to do |format|
       if @model.liked_by current_user
         format.html { redirect_to model_path(@model), :notice => t(:message_success_recommend)}
-        format.json { render :json => {'vote_up'=>@model.cached_votes_down}}
+        format.json { render :json => {'vote_up'=>@model.cached_votes_up}}
       else
         format.html { render :action => "index" }
         format.json { render :json => @model.errors, :status => :unprocessable_entity }

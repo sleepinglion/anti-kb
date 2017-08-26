@@ -25,7 +25,7 @@
 			<div class="vote pull-right">
 			<% if user_signed_in? %>
 			<%= link_to like_user_path(user), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-up"><span><%=user.cached_votes_up %></span></span>
+				<span class="glyphicon glyphicon-thumbs-up<% if current_user.voted_for? user %> already-vote<% end %>"><span><%=user.cached_votes_up %></span></span>
 			<% end %>
 			<!-- <%= link_to dislike_user_path(user), method: :put do %>
 				<span class="glyphicon glyphicon-thumbs-down"><span><%=user.cached_votes_down %></span></span>

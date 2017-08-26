@@ -10,7 +10,7 @@
 			<div class="vote">
 			<% if user_signed_in? %>
 			<%= link_to like_compliment_path(@compliment), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-up"><span><%=@compliment.cached_votes_up %></span></span>
+				<span class="glyphicon glyphicon-thumbs-up<% if current_user.voted_for? @compliment %> already-vote<% end %>"><span><%=@compliment.cached_votes_up %></span></span>
 			<% end %>
 			<% else %>
 			<%= link_to like_compliment_path(@compliment), {method: :put, :class=>"confirm_login"} do %>

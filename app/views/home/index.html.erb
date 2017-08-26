@@ -7,16 +7,22 @@
 	</div>
 </div>
 <% end %>
+<% unless(params[:no_nav]) %>
+<nav class="col-xs-12">
+	<ul class="nav nav-tabs">
+		<li<% unless(params[:tab]) %> class="active"<% end %><% if(params[:tab]=='default') %> class="active"<% end %>><%=link_to('KB망하게 하기 서명',:controller=>'home',:tab=>'default')%></li>
+		<li<% if(params[:tab]=='article') %> class="active"<% end %>><%=link_to('KB관련 기사',:controller=>'home',:tab=>'article')%></li>
+		<li<% if(params[:tab]=='notice') %> class="active"<% end %>><%=link_to('공지사항',:controller=>'home',:tab=>'notice')%></li>
+	</ul>
+</nav>
+<div id="main_layer">
+<% end %>
 <div id="section_main_top">
 	<div class="col-xs-12">
-		<ul class="nav nav-tabs">
-			<li <% if(!params[:tab]) %>class="active"<% end %>><%=link_to('KB망하게 하기 서명','/')%></li>
-			<li <% if(params[:tab]=='article') %>class="active"<% end %>><%=link_to('KB관련 기사',:controller=>'home',:tab=>'article')%></li>
-			<li <% if(params[:tab]=='notice') %>class="active"<% end %>><%=link_to('공지사항',:controller=>'home',:tab=>'notice')%></li>
-		</ul>
-	</div>
-	<div class="col-xs-12">
 		<% if params[:tab].present? %>
+		<% if params[:tab]=='default' %>
+		<%= render :partial => 'users/index' %>
+		<% end %>
 		<% if params[:tab]=='article' %>
 		<%= render :partial => 'articles/index' %>
 		<% end %>
@@ -31,6 +37,9 @@
 <hr />
 <div id="section_main_bottom">
 		<% if params[:tab].present? %>
+		<% if params[:tab]=='default' %>
+		<%= render :partial => 'models/index' %>
+		<% end %>
 		<% if params[:tab]=='article' %>
 		<article class="col-xs-12 col-md-6">
 			<h3>횡령,횡포엔 1등,업무엔 꼴등</h3>
@@ -53,3 +62,6 @@
 		<%= render :partial => 'models/index' %>
 		<% end %>
 </div>
+<% unless(params[:no_nav]) %>
+</div>
+<% end %>
