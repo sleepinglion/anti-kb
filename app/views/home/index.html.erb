@@ -1,3 +1,4 @@
+<% unless(params[:no_nav]) %>
 <% unless user_signed_in? %>
 <div class="col-xs-12">
 	<div class="jumbotron hero-unit">
@@ -7,7 +8,6 @@
 	</div>
 </div>
 <% end %>
-<% unless(params[:no_nav]) %>
 <nav class="col-xs-12">
 	<ul class="nav nav-tabs">
 		<li<% unless(params[:tab]) %> class="active"<% end %><% if(params[:tab]=='default') %> class="active"<% end %>><%=link_to('KB망하게 하기 서명',:controller=>'home',:tab=>'default')%></li>
