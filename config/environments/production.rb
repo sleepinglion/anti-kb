@@ -51,16 +51,15 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   config.cache_store = :redis_store, {
-    host: "sleepinglion.redis.cache.windows.net",
+    host: "localhost",
     port: 6379,
     db: 0,
-    password: "pRDuVA9FoJ7azjEwYcK+Tow08ofH+e4IoyrUJ1bn6wQ=",
     namespace: "cache",
   }
 
   config.action_dispatch.rack_cache = {
-    metastore: "redis://sleepinglion.redis.cache.windows.net:6379/1/metastore",
-    entitystore: "redis://sleepinglion.redis.cache.windows.net:6379/1/entitystore"
+    metastore: "redis://localhost:6379/1/metastore",
+    entitystore: "redis://localhost:6379/1/entitystore"
   }
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
@@ -69,7 +68,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'antikb.site' }
+  config.action_mailer.default_url_options = { :host => 'anti-kb.net' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'localhost',
