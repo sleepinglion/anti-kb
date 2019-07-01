@@ -79,7 +79,7 @@ group :development do
 end
 
 group :production do
-  gem 'asset_sync'
+  gem 'asset_sync','~> 2.8'
   gem 'fog-azure-rm'
   gem 'mysql2'
   gem 'dotenv-rails'  
