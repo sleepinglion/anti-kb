@@ -79,10 +79,12 @@ group :development do
 end
 
 group :production do
-  #gem 'asset_sync'
+  gem 'asset_sync'
+  gem 'fog-azure-rm'
   gem 'mysql2'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails'  
   gem 'recaptcha', :require => 'recaptcha/rails'
+  gem 'rails-letsencrypt' 
 
   # Redis Cache
   gem 'redis-rails'
