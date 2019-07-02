@@ -16,7 +16,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-#/Gemfile.lock
 /public/uploads
 /public/assets
 /public/sitemap.xml.gz
@@ -24,7 +23,7 @@
 /db/schema.rb
 .env
 .project
-#Gemfile.lock
+Gemfile.lock
 *.sql
 
 # Ignore Byebug command history file.
