@@ -183,7 +183,7 @@ GEM
     http-form_data (2.1.1)
     http_parser.rb (0.6.0)
     httpclient (2.8.3)
-    i18n (1.6.0)
+    i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     i18n-js (3.3.0)
       i18n (>= 0.6.6)
@@ -198,7 +198,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.2.0)
-    json-jwt (1.10.2)
+    json-jwt (1.11.0)
       activesupport (>= 4.2)
       aes_key_wrap
       bindata
@@ -236,7 +236,7 @@ GEM
     mini_magick (4.9.3)
     mini_mime (1.0.1)
     mini_portile2 (2.1.0)
-    minitest (5.11.3)
+    minitest (5.13.0)
     mocha (1.9.0)
       metaclass (~> 0.0.1)
     ms_rest (0.6.4)
