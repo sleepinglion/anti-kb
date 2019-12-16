@@ -130,7 +130,7 @@ GEM
       activemodel
     equalizer (0.0.11)
     erubis (2.7.0)
-    excon (0.64.0)
+    excon (0.71.0)
     execjs (2.7.0)
     fancybox2-rails (0.2.7)
       railties (>= 3.1.0)
