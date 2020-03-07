@@ -28,6 +28,7 @@ gem 'redis-store','~> 1.4.0'
 gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
 gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'cancan'
 gem 'kaminari'
