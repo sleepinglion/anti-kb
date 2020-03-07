@@ -27,7 +27,7 @@ gem 'redis-store','~> 1.4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'cancan'
 gem 'kaminari'

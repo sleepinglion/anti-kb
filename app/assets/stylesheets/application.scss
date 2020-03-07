@@ -1,7 +1,6 @@
 @charset "utf-8";
 //= require fancybox
 
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
 @font-face {
@@ -9,10 +8,8 @@
     src: local('☺'),url(font-path('NanumGothic-Regular.eot?#iefix')) format('embedded-opentype'),url(font-path('NanumGothic-Regular.woff')) format('woff');
 }
 
-$default_active_color : #666;
-
 /* default */
-html, body {margin:0;padding:0;height: 100%}
+html,body {margin:0;padding:0;height: 100%}
 body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif;color:#333}
 label {vertical-align:middle;cursor:pointer}
 a img {border:none}
@@ -24,11 +21,14 @@ a:active {color:red}
 a:hover{color:#333;text-decoration:underline;}
 a img {border:none}
 
-h1 {font-size :160%}
-h2 {font-size :140%}
-h3 {font-size :120%}
-h4,h5,h6 {font-size : 100%}
+h1 {font-size :180%}
+h2 {font-size :150%}
+h3 {font-size :130%}
+h4,h5,h6 {font-size : 110%}
 
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
+mark, rp, rt, ruby, summary, time {display:inline;}
 
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {background:#eee ;font-weight:bold}
