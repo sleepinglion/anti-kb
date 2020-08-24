@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/redis-store/redis-store.git
+  revision: 3acfa95f4eb6260c714fdb00a3d84be8eedc13b2
+  specs:
+    redis-store (1.9.0)
+      redis (>= 4, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -389,8 +396,6 @@ GEM
       redis-actionpack (>= 5.0, < 6)
       redis-activesupport (>= 5.0, < 6)
       redis-store (>= 1.2, < 2)
-    redis-store (1.9.0)
-      redis (>= 4, < 5)
     ref (2.0.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -525,7 +530,7 @@ DEPENDENCIES
   redis
   redis-rack-cache
   redis-rails
-  redis-store
+  redis-store!
   sass-rails (~> 5.0)
   sitemap_generator
   spring
