@@ -2,20 +2,19 @@
 	<h3>KB에게 추천하는 새 KB모델</h3>
 	<% unless @models.empty? %>
 	<div class="carousel-inner" role="listbox" style="clear:both">
-		<% @models.each_with_index do |model,index| %>
+		<% @models.each_with_index do |m_model,index| %>
 
 			<div class="item<% if index.zero? %> active<% end %>">
 				<div class="media" itemscope itemtype="http://schema.org/Person">
-				<%=link_to model_path(model),:class=>"pull-left" do %>
+				<%=link_to model_path(m_model),:class=>"pull-left" do %>
 				<figure itemprop="image">
-					<%=image_tag model.photo.small_thumb,:alt=>model.title %>
 				</figure>
 				<% end %>
 				<div class="media-body">
-					<h4 class="media-heading" itemprop="name"><%=link_to model.title,model_path(model) %></h4>
+					<h4 class="media-heading" itemprop="name"><%=link_to m_model.title,model_path(m_model) %></h4>
 					<div itemprop="description">
-					<%=link_to model_path(model) do %>
-					<%=simple_format(model.recommend_description) %>
+					<%=link_to model_path(m_model) do %>
+					<%=simple_format(m_model.recommend_description) %>
 					<% end %>
 					</div>
 				</div>

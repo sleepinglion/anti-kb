@@ -1,4 +1,4 @@
-class AddCachedVotesToReports < ActiveRecord::Migration
+class AddCachedVotesToReports < ActiveRecord::Migration[4.2]
   def self.up
     add_column :reports, :cached_votes_total, :integer, :default => 0
     add_column :reports, :cached_votes_score, :integer, :default => 0

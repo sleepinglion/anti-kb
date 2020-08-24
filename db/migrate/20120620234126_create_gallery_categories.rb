@@ -1,4 +1,4 @@
-class CreateGalleryCategories < ActiveRecord::Migration
+class CreateGalleryCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :gallery_categories do |t|
       t.string :title,:null=>false

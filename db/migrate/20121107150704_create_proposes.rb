@@ -1,4 +1,4 @@
-class CreateProposes < ActiveRecord::Migration
+class CreateProposes < ActiveRecord::Migration[4.2]
   def change
     create_table :proposes do |t|
       t.references :user, :null=>false

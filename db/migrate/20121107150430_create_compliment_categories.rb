@@ -1,4 +1,4 @@
-class CreateComplimentCategories < ActiveRecord::Migration
+class CreateComplimentCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :compliment_categories do |t|
       t.string :title, :limit=>60, :null=>false

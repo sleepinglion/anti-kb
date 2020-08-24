@@ -1,4 +1,4 @@
-class CreateFaqCategories < ActiveRecord::Migration
+class CreateFaqCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :faq_categories do |t|
       t.string :title,:null=>false

@@ -1,4 +1,4 @@
-class CreateImprove < ActiveRecord::Migration
+class CreateImprove < ActiveRecord::Migration[4.2]
   def change
     create_table :improve do |t|
       t.string :title

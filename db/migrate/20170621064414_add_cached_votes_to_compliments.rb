@@ -1,4 +1,4 @@
-class AddCachedVotesToCompliments < ActiveRecord::Migration
+class AddCachedVotesToCompliments < ActiveRecord::Migration[4.2]
   def self.up
     add_column :compliments, :cached_votes_total, :integer, :default => 0
     add_column :compliments, :cached_votes_score, :integer, :default => 0
