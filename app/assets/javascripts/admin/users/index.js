@@ -1,4 +1,4 @@
-//= require admin/application
+//= require ../../../stylesheets/admin/application
 
 $(document).ready(function(){
 
