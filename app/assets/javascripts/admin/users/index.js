@@ -1,5 +1,3 @@
-//= require ../../../stylesheets/admin/application
-
 $(document).ready(function(){
 
 

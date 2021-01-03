@@ -1,6 +1,6 @@
 <% unless(params[:no_nav]) %>
 <% unless user_signed_in? %>
-<div class="col-xs-12">
+<div class="col-12">
 	<div class="jumbotron hero-unit">
 		<h2><%=raw t(:home_main_title) %></h2>
 		<p class="lead"><%=raw t(:home_main_description) %></p>
@@ -8,7 +8,7 @@
 	</div>
 </div>
 <% end %>
-<nav class="col-xs-12">
+<nav class="col-12">
 	<ul class="nav nav-tabs">
 		<li<% unless(params[:tab]) %> class="active"<% end %><% if(params[:tab]=='default') %> class="active"<% end %>><%=link_to('KB망하게 하기 서명',:controller=>'home',:tab=>'default')%></li>
 		<li<% if(params[:tab]=='article') %> class="active"<% end %>><%=link_to('KB관련 기사',:controller=>'home',:tab=>'article')%></li>
@@ -18,7 +18,7 @@
 <div id="main_layer">
 <% end %>
 <div id="section_main_top">
-	<div class="col-xs-12">
+	<div class="col-12">
 		<% if params[:tab].present? %>
 		<% if params[:tab]=='default' %>
 		<%= render :partial => 'users/index' %>
@@ -41,11 +41,11 @@
 		<%= render :partial => 'models/index' %>
 		<% end %>
 		<% if params[:tab]=='article' %>
-		<article class="col-xs-12 col-md-6">
+		<article class="col-12 col-lg-6">
 			<h3>횡령,횡포엔 1등,업무엔 꼴등</h3>
 			<p style="margin-top:20px">엄마나~~ 역시 규모는 최고구만 직원이 2만 2천명이야??<br /> 그래서 능률은 다른은행에 비해 그 정도였구만=><%=link_to 'KB는 꼴찌','http://www.newspim.com/view.jsp?newsId=20131107000999',:target=>'_blank' %></p>
 		</article>
-		<article class="col-xs-12 col-md-6">
+		<article class="col-12 col-lg-6">
 			<h3>KB가 망할날이 오는가보네요</h3>
 			<p>일본에서도 사고내고, 카자흐스탄에서는 최대부실 적자, 직원은 100억 횡령= 뭐 평상시에도 있던 일이지만 이번에 터지네요<br />
 			<%=link_to '불법대출,비리 사과문','https://omoney.kbstar.com/quics?page=C018592&bbsMode=view&articleId=8580',:target=>'_blank' %>

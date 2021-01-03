@@ -5,7 +5,7 @@
 	<% @models.each do |model| %>
   	<li class="media" itemscope itemtype="http://schema.org/Person">
   	<%=link_to model_path(model),:class=>"pull-left" do %>
-    	<%=image_tag model.photo.small_thumb,:itemprop=>"image" %>
+    	<%=image_tag model.photo.small_thumb.url,:itemprop=>"image" %>
     <% end %>
     <div class="media-body">
       <h4 class="media-heading" itemprop="name"><%=link_to model.title,model_path(model) %></h4>
