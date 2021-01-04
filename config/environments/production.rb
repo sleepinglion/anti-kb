@@ -66,6 +66,8 @@ Rails.application.configure do
     entitystore: "redis://localhost:6379/1/entitystore"
   }
 
+  config.active_record.cache_versioning = false
+
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
