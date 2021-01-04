@@ -3,10 +3,10 @@
 	<h2><%= @model.title %></h2>
 	<p>작성자 :<%= @model.user.name %>&nbsp;&nbsp;&nbsp; 작성일 : <%= @model.created_at %></p>
 	<div class="slboard_content">
-		<figure class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-			<%=image_tag @model.photo.medium_thumb,:alt=>@model.title %>
+		<figure class="col-12 col-lg-3">
+			<%=image_tag @model.photo.medium_thumb.url,:alt=>@model.title %>
 		</figure>
-		<div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
+		<div class="col-12 col-lg-9">
 			<article>
 				<h3>추천사</h3>
 				<div><%= simple_format(@model.recommend_description) %></div>

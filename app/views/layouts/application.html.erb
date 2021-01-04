@@ -1,56 +1,49 @@
 <!DOCTYPE html>
-<html lang="<%=I18n.locale %>">
+<html lang="<%= I18n.locale %>">
 <head>
-<meta charset="utf-8" />
-<%=display_meta_tags :site => t(:application_name),
-	:title=>@title,
-	:description => @meta_description,
-	:keywords => @meta_keywords,
-	:separator => t(:title_separator),
-	:viewport => 'width=device-width, initial-scale=1, user-scalable=yes',
-	:reverse => true %>
-<%=display_meta_tags og: {
-  	title:   @title,
-  	description: @meta_description,
-  	url:      @meta_url,
-  	image:    @meta_image
-	} %>
-<meta name="author" content="Sleeping-Lion" />
-<link rel="canonical" href="https://www.anti-kb.net" />
-<link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="http://www.anti-kb.net/feed?format=rss" />
-<%= stylesheet_link_tag :application, :media=>'all', 'data-turbolinks-track' => true %>
-<%= favicon_link_tag 'favicon.ico' %>
-<%= csrf_meta_tags %>
-<!--[if IE]>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-<![endif]-->
+  <meta charset="utf-8"/>
+  <%= display_meta_tags :site => t(:application_name),
+                        :title => @title,
+                        :description => @meta_description,
+                        :keywords => @meta_keywords,
+                        :separator => t(:title_separator),
+                        :viewport => 'width=device-width, initial-scale=1, user-scalable=yes',
+                        :reverse => true %>
+  <%= display_meta_tags og: {
+    title: @title,
+    description: @meta_description,
+    url: @meta_url,
+    image: @meta_image
+  } %>
+  <meta name="author" content="Sleeping-Lion"/>
+  <link rel="canonical" href="https://www.anti-kb.site"/>
+  <link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="https://www.anti-kb.site/feed?format=rss"/>
+  <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <![endif]-->
 </head>
-<body itemscope itemtype="<%=@page_itemtype %>">
+<body itemscope itemtype="<%= @page_itemtype %>">
 <%= render :partial => 'layouts/header' %>
 <div id="mom">
-	<div id="main" class="container">
-			<% if current_page?(root_path) %>
-			<%= render :partial => 'layouts/aside' %>
-			<% else %>
-			<%= render :partial => 'layouts/page_header' %>
-			<% end %>
-			<% if flash[:notice] %>
-			<%= render :partial => 'layouts/notice',:locals=>{:notice=>flash[:notice]} %>
-			<% end %>
-			<% if flash[:alert] %>
-			<%= render :partial => 'layouts/alert',:locals=>{:alert=>flash[:alert]} %>
-			<% end %>
-			<div class="row">
-				<section <% if current_page?(root_path) %>id="main_main"<% else %>class="col-xs-12"<% end %>>
-					<%=yield %>
-					<div class="clearfix">&nbsp;</div>
-				</section>
-			</div>
-	</div>
+  <div id="main" class="container">
+    <% if current_page?(root_path) %>
+      <%= render :partial => 'layouts/aside' %>
+    <% else %>
+      <%= render :partial => 'layouts/page_header' %>
+    <% end %>
+    <div class="row">
+      <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
+    </div>
+        <%= yield %>
+        <div class="clearfix">&nbsp;</div>
+    </div>
 </div>
 <%= render :partial => 'layouts/footer' %>
-<input type="hidden" id="user_login_path" value="<%=new_user_session_path %>" />
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
-<%= javascript_include_tag :application, "data-turbolinks-track" => true %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </body>
 </html>

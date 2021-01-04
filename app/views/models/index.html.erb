@@ -4,8 +4,8 @@
 	<% unless @models.empty? %>
 	<% @models.each do |model| %>
   	<li class="media" itemscope itemtype="http://schema.org/Person">
-  	<%=link_to model_path(model),:class=>"pull-left" do %>
-    	<%=image_tag model.photo.small_thumb.url,:itemprop=>"image" %>
+  	<%=link_to model_path(model) do %>
+    	<%=image_tag model.photo.medium_thumb.url,:itemprop=>"image",:class=>"mr-3" %>
     <% end %>
     <div class="media-body">
       <h4 class="media-heading" itemprop="name"><%=link_to model.title,model_path(model) %></h4>

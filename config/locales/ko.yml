@@ -29,6 +29,8 @@ ko:
   no_photo : '사진이 없습니다'
   all_category : '전체'
   sleepinglion : '잠자는사자'
+  prev : '이전'
+  next : '다음'
 
   login_page : '로그인 페이지'
   login_title : '관리자 로그인'

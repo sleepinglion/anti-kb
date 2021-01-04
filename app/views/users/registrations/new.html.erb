@@ -1,12 +1,12 @@
-<div class="col-xs-12">
+<div class="col-12">
 <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
   <%= devise_error_messages! %>
 
-	<article class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">필수입력 사항</h3>
+	<article class="card">
+		<div class="card-header">
+			<h3>필수입력 사항</h3>
 		</div>
-		<div class="panel-body">
+		<div class="card-body">
 
   <div class="form-group">
 		<%= f.label :name %>
@@ -27,11 +27,11 @@
 </div>
 </article>
 
-	<article class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">선택입력 사항</h3>
+	<article class="card">
+		<div class="card-header">
+			<h3>선택입력 사항</h3>
 		</div>
-		<div class="panel-body">
+		<div class="card-body">
 	<div class="form-group">
 		<%= f.label :photo %>
 		<% if resource.photo? %>

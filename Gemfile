@@ -28,26 +28,23 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets', '~> 3.7.2'
-gem 'bootstrap-sass'
 gem 'devise'
 gem 'cancancan'
 gem 'kaminari'
 gem 'carrierwave'
-#gem 'rmagick'
 gem 'mini_magick'
-gem 'impressionist'
-gem 'acts-as-taggable-on'
-gem 'acts_as_votable', '~> 0.10.0'
-gem 'acts_as_commentable'
-gem 'fancybox2-rails'
-gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
+gem 'globalize'
+
+gem 'impressionist'
+gem 'acts-as-taggable-on'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_commentable'
 gem 'email_validator'
 gem 'unf'
 gem 'omniauth-oauth2'
@@ -74,9 +71,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   # Capistrano
-  gem 'capistrano', '~> 3.0'
+  gem 'capistrano'
   gem 'capistrano-bundler'
-  gem 'capistrano-passenger'  
+  gem 'capistrano-passenger'
   gem 'capistrano-rails'
 end
 
@@ -86,9 +83,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'rails_best_practices'
-  gem 'rubocop'
-  gem 'rubycritic'
 end
 
 group :production do

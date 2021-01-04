@@ -1,12 +1,15 @@
 <footer>
-	<div class="container">
-		<div class="row">
-			<ul class="col-xs-12">
-				<li class="col-xs-6 col-sm-4"><%= link_to t(:intro,scope:[:activerecord,:models]),intro_index_path %></li>
-				<li class="hidden-xs col-sm-4">email:<%=mail_to 'admin@anti-kb.net' %></li>
-				<li class="col-xs-6 col-sm-4"><%= link_to t(:sitemap,scope:[:activerecord,:models]),sitemap_index_path %></li>
-			</ul>
-			<address class="col-xs-12">CopyLeft, <%=link_to 'SL','http://wwww.sleepinglion.pe.kr',:target=>'_blank' %>. All wrongs reserved. Since 2013</address>
-		</div>
-	</div>
+  <div class="container">
+    <ul class="row">
+      <li class="col-6 col-lg-4"><%= link_to t(:intro, scope: [:activerecord, :models]), intro_index_path %></li>
+      <li class="hidden-xs col-lg-4">email:<%= mail_to 'admin@anti-kb.site' %></li>
+      <li class="col-6 col-lg-4"><%= link_to t(:sitemap, scope: [:activerecord, :models]), sitemap_index_path %></li>
+    </ul>
+    <div class="row">
+      <address class="col-12">CopyLeft,
+        <a href="https://www.sleepinglion.pe.kr" target="_blank"><%= t(:sleepinglion) %></a>
+        &nbsp;&nbsp; All wrongs reserved. Since 2013
+      </address>
+    </div>
+  </div>
 </footer>
