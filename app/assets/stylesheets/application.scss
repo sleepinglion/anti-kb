@@ -71,8 +71,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 /* layout */
 #mom {clear:both;float:left;width:100%;padding:0}
 .sub_main {padding-bottom:30px}
-.page-header {margin-top:30px}
-.page-header div {border-bottom:1px solid #999;margin-bottom:40px}
+.page-header {margin-top:30px;border-bottom:1px solid #999;margin-bottom:40px}
 .page-header h2 {float:left;margin:0.4em 0;padding:0;font-weight:bold;color:#666}
 .page-header nav  {float:right;margin:0}
 .page-header nav ol {margin:0;padding-right:0}
@@ -92,6 +91,8 @@ footer {clear: both; position: relative; text-align: center}
 .page-header {float:left;width:100%;border-bottom:1px solid #ccc}
 .page-header h2,.page-header h1 {float:left;margin:0.7em 0 0;padding:0;font-weight:bold;color:#666;font-size:140%}
 .page-header .breadcrumb  {float:right;margin:0}
+.page-header .breadcrumb li {margin-left:5px;margin-right:5px}
+.page-header .breadcrumb li:first-child:after {content:' /'}
 .alert-success {clear:both}
 
 #special-page {background:#eee}
@@ -168,11 +169,12 @@ footer address {margin:0;line-height: 100%}
 #section_main_bottom article li {float:left;width:100%;margin:3px 0;padding:0}
 #section_main_bottom article span.date {float:right;color:#999}
 #section_main_bottom .article2 {float:right;}
-#section_main .col-xs-12 figure {float:left;margin:0 20px 0 0;padding:0}
-#section_main .col-xs-12 div {float:left}
-#section_main .col-xs-12 div h4 {margin:0 0 1.5em;padding:0;font-weight:bold}
+#section_main .col-12 figure {float:left;margin:0 20px 0 0;padding:0}
+#section_main .col-12 div {float:left}
+#section_main .col-12 div h4 {margin:0 0 1.5em;padding:0;font-weight:bold}
 .users {border:1px dotted #ccc;margin-bottom:5px;padding:10px;background:#fff}
 .users.media {margin-top:0;margin-bottom:15px}
+.users .vote {float:right}
 .users .vote a {margin-left:10px}
 .users .vote a:hover {text-decoration:none}
 .users .vote a span {vertical-align: top}
@@ -245,23 +247,6 @@ footer a:hover {color: #000;text-decoration: underline}
 .sl_right {text-align:right}
 table td.sl_registered_date {color:#999}
 .already-vote {color:red}
-
-/* main_list */
-.slboard_list {float:left;width:100%;margin:0;border-bottom:1px solid #ccc;border-collapse:collapse; }
-.slboard_list p {margin:0;padding:0;line-height:100%}
-.slboard_list th {padding:10px 0;background:#ccc}
-.slboard_list td {padding:10px 0;border-bottom:1px solid #f0f0f0;}
-.slboard_list tr.nb td{border-bottom:none}
-.slboard_list td a {color:#666;text-decoration:none}
-.slboard_list td a:hover {color:#333;text-decoration:underline}
-.slboard_list td .sl_photo {margin:0;padding:0}
-.slboard_list th p.registered_date{display:inline;padding-left:40px}
-.slboard_list th p.sl_name,.slboard_list td p.sl_name{text-align:left;text-indent:10px}
-.slboard_list th p.sl_registered_date {margin-right:10px}
-.slboard_list td p.sl_registered_date{font-family:Arial;margin-right:10px;letter-spacing:0;color:#999}
-.slboard_list td p.sl_count,.slboard_list td p.comment  {font-family:Arial;letter-spacing:0;color:#999}
-.slboard_list td .file_link {margin-left:10px}
-
 
 /* content */
 .slboard_content {margin-bottom:10px;padding-bottom:10px}

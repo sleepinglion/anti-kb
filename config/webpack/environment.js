@@ -7,11 +7,11 @@ environment.plugins.prepend('Provide',
         $: 'jquery/src/jquery',
         jQuery: 'jquery/src/jquery',
         Popper: ['popper.min.js', 'default'], // for Bootstrap 4
+        'window.jQuery': 'jquery'
     })
 )
 const aliasConfig = {
-    'jquery': 'jquery/src/jquery',
-    'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
+    'jquery': 'jquery/src/jquery'
 }
 
 environment.config.set('resolve.alias', aliasConfig);

@@ -22,21 +22,15 @@
 			<% else %>
 			<%= link_to "댓글 #{user.comments.count}",new_comment_to_users_path(user),:class=>'comment_form_with_list' %>
 			<% end %>
-			<div class="vote pull-right">
+			<div class="vote">
 			<% if user_signed_in? %>
 			<%= link_to like_user_path(user), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-up<% if current_user.voted_for? user %> already-vote<% end %>"><span><%=user.cached_votes_up %></span></span>
+            <span class="material-icons<% if current_user.voted_for? user %> already-vote<% end %>">thumb_up</span><span class="text"> <%=user.cached_votes_up %></span>
 			<% end %>
-			<!-- <%= link_to dislike_user_path(user), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-down"><span><%=user.cached_votes_down %></span></span>
-			<% end %> -->
 			<% else %>
 			<%= link_to like_user_path(user), {method: :put, :class=>"confirm_login"} do %>
-				<span class="glyphicon glyphicon-thumbs-up"><span><%=user.cached_votes_up %></span></span>
+            <span class="material-icons">thumb_up</span><span class="text"> <%=user.cached_votes_up %></span>
 			<% end %>
-			<!-- <%= link_to dislike_user_path(user), method: :put do %>
-				<span class="glyphicon glyphicon-thumbs-down"><span><%=user.cached_votes_down %></span></span>
-			<% end %> -->
 			<% end %>
 		</div>
 		</div>
