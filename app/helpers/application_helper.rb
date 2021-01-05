@@ -36,4 +36,8 @@ module ApplicationHelper
       return 'style="width:90px"'
     end
   end
+
+  def get_dt_format(date)
+    return date
+  end
 end

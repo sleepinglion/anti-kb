@@ -1,5 +1,7 @@
-<div id="compliment_edit">
-	<%= render 'form' %>
-	<%= link_to t(:link_show), @compliment %> |
-	<%= link_to t(:link_list), compliments_path %>
+<div id="compliment_edit" class="row">
+  <%= render 'form' %>
+  <div class="col-12">
+    <%= link_to t(:link_show), @compliment %> |
+    <%= link_to t(:link_list), compliments_path %>
+  </div>
 </div>

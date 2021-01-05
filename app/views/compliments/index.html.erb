@@ -32,7 +32,7 @@
 				<td><%= link_to compliment.title.truncate(25), compliment %></td>
 				<td class="text-right sl_count"><%=compliment.default_view_count+compliment.impressionist_count(:filter=>:ip_address) %></td>
 				<td class="text-right sl_count"><%=compliment.cached_votes_up %></td>
-				<td class="text-right"><%=compliment.created_at.to_date %></td>
+				<td class="text-right sl_registered_date"><%=get_dt_format(compliment.created_at.to_date) %></td>
 			</tr>
 			<% end %>
 		<% else %>
@@ -45,6 +45,6 @@
   <%= paginate @compliments %>
 </article>
   <div class="col-12">
-    <%= link_to t(:link_new),new_report_path %>
+    <%= link_to t(:link_new),new_compliment_path %>
   </div>
 </div>
