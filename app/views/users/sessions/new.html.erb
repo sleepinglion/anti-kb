@@ -1,24 +1,52 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:id=>'new_session_form',:class=>'form-horizontal col-12' }) do |f| %>
-<div class="form-group">
-	<%= f.label :email, :class=>"control-label" %>
-		<%= f.email_field :email,:class=>'form-control input-lg',:required=>'required' %>
-</div>
-<div class="form-group">
-	<%= f.label :password, :class=>"control-label" %>
-		<%= f.password_field :password,:class=>'form-control input-lg',:required=>'required' %>
-</div>
-<div class="form-group">
-	<div class="checkbox col-sm-offset-2 col-sm-10">
-		<label>
-		<input type="checkbox" name="remember_email" id="remember_email">
-		<%= t(:remember_email) %>
-		</label>
-	</div>
-</div>
-<div class="form-group">
-		<%= f.submit t(:login),:class=>'btn btn-lg btn-primary btn-block' %>
-</div>
-<div class="col-12">
-<%= render :partial => "users/shared/links" %>
-</div>
-<% end %>
+<div class="row">
+    <div class="col-12">
+      <% if flash.count > 0 %>
+        <div id="sl_message" class="alert alert-danger" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <% flash.each do |name, msg| %>
+            <%= content_tag :p, msg, id: "flash_#{name}" %>
+          <% end %>
+        </div>
+      <% end %>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:id=>'new_session_form',:class=>'col-12' }) do |f| %>
+        <div class="card">
+          <div class="card-body">
+
+            <div class="form-group row">
+              <label for="sl_email" class="col-sm-2 col-form-label text-right"><%= t(:email) %></label>
+              <div class="col-sm-10">
+                <%= f.text_field :email, :autofocus => true, :class => "form-control form-control-lg", :required => "required", :placeholder => t(:login_p_email) %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="sl_password" class="col-sm-2 col-form-label text-right"><%= t(:password) %></label>
+              <div class="col-sm-10">
+                <%= f.password_field :password, :class => "form-control form-control-lg", :required => "required", :placeholder => t(:login_p_password) %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="remember_email">
+                  <label class="form-check-label" for="remember_email"><%= t(:remember_me) %></label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block btn-lg"><%= t(:login) %></button>
+          </div>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-12 col-xl-6">
+          <%= render :partial => "users/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>

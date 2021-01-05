@@ -1,4 +1,4 @@
-<aside class="visible-lg">
+<aside>
 	<% if user_signed_in? %>
 	<article id="login_users">
 		<p>
@@ -20,7 +20,7 @@
 	<% end %>
 	<article>
 		<h3>KB 임직원의 진심</h3>
-		<%=link_to '숨겨왔던 KB 임직원의 마음','/kbsmind',:class=>'modal_link btn btn-block btn-large btn-success',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
+		<%=link_to 'KB 임직원의 마음의 소리','/kbsmind',:class=>'modal_link btn btn-block btn-large btn-success',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
 	</article>
 	<div id="ad_main" class="main_content">
 		<% if Rails.env.production? %>

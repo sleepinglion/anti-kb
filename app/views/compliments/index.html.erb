@@ -1,4 +1,5 @@
 <% breadcrumb :compliments %>
+<div class="row">
 <article id="compliment_main" class="col-12">
 	<table class="table">
 		<colgroup>
@@ -40,9 +41,10 @@
 			</tr>
 			<% end %>
 		</tbody>
-	</table>
+  </table>
   <%= paginate @compliments %>
 </article>
-<div class="col-12">
-	<%= link_to t(:link_new), new_compliment_path %>
+  <div class="col-12">
+    <%= link_to t(:link_new),new_report_path %>
+  </div>
 </div>

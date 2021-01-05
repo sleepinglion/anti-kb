@@ -1,4 +1,5 @@
-<div class="col-12">
+<div class="row">
+  <div class="col-12">
 <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
   <%= devise_error_messages! %>
 
@@ -54,7 +55,8 @@
 	</div>
 	<% end %>
 	<div class="form-group actions">
-			<%= f.submit :class=>'btn btn-lg btn-primary btn-block' %>
+			<%= f.submit t(:sign),:class=>'btn btn-lg btn-primary btn-block' %>
 	</div>
 <% end %>
+  </div>
 </div>

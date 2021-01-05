@@ -11,6 +11,9 @@ ko:
   chineses : '중국어'
   english : '영어'
 
+  site_url: 'www.anti-kb.site'
+  site_full_url: 'https://www.anti-kb.site'
+
   home : '홈'
   home_title : '살인은행'
   search : '검색'

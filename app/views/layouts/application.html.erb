@@ -16,8 +16,8 @@
     image: @meta_image
   } %>
   <meta name="author" content="Sleeping-Lion"/>
-  <link rel="canonical" href="https://www.anti-kb.site"/>
-  <link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="https://www.anti-kb.site/feed?format=rss"/>
+  <link rel="canonical" href="<%=t(:site_full_url) %>"/>
+  <link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="<%=t(:site_full_url) %>feed?format=rss"/>
   <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
@@ -30,18 +30,11 @@
 <%= render :partial => 'layouts/header' %>
 <div id="mom">
   <div id="main" class="container">
-    <% if current_page?(root_path) %>
-      <%= render :partial => 'layouts/aside' %>
-    <% else %>
+    <% unless current_page?(root_path) %>
       <%= render :partial => 'layouts/page_header' %>
     <% end %>
-    <div class="row">
       <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
-    </div>
-    <div class="row">
         <%= yield %>
-        <div class="clearfix">&nbsp;</div>
-    </div>
     </div>
 </div>
 <%= render :partial => 'layouts/footer' %>

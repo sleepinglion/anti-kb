@@ -97,9 +97,8 @@ footer {clear: both; position: relative; text-align: center}
 
 #special-page {background:#eee}
 #login-page {background:#fff;min-height:100%;width:728px}
-#login-page h1 {padding-bottom:15px;text-align:center}
-#login-page h1 a {display:block}
-#login-page #sl_ad {margin-bottom:20px}
+#special-page h1 {margin-top:20px;padding-bottom:15px}
+#special-page h1 a {display:block}
 
 /* header */
 header h1,header h2 { position: relative;float: left}
@@ -178,8 +177,9 @@ footer address {margin:0;line-height: 100%}
 .users .vote a {margin-left:10px}
 .users .vote a:hover {text-decoration:none}
 .users .vote a span {vertical-align: top}
-.glyphicon-thumbs-up span {margin-left:3px}
 #sign_up {margin-top:10px}
+
+#new_user .card {margin-bottom:20px}
 
 .comment_layer {float:left;width:100%}
 .comment_form {float:left;width:100%}
@@ -247,6 +247,7 @@ footer a:hover {color: #000;text-decoration: underline}
 .sl_right {text-align:right}
 table td.sl_registered_date {color:#999}
 .already-vote {color:red}
+
 
 /* content */
 .slboard_content {margin-bottom:10px;padding-bottom:10px}
@@ -329,7 +330,7 @@ table td.sl_registered_date {color:#999}
   .modal-dialog {width:728px}
 	footer {clear: both; position: relative;width:100%;height: 4em; margin:0;text-align: center;background:#e3e3e3 }
 	/* aside */
-	aside {position:absolute;top:120px;left:15px;width:250px;margin:0}
+	aside {position:absolute;top:30px;left:15px;width:250px;margin:0}
 	aside article {margin:0 0 30px;padding:10px;border-radius:5px}
 	aside article p {text-align:center}
 	#ad_main {clear:both}

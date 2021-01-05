@@ -1,5 +1,5 @@
 <% breadcrumb :intro %>
-<section id="intro" class="sub_main">
+<section id="intro" class="col-12">
 	<h2 class="none"><%=t(:intro,scope:[:activerecord,:models]) %></h2>
 	<article class="card">
 		<div class="card-header">
@@ -33,5 +33,5 @@
 			<%=image_tag 'rails.png',:alt=>"Ruby on Rails" %>
 		</div>
 	</article>
-	<%= render :partial => 'layouts/ad' %>
 </section>
+<%= render :partial => 'layouts/ad' %>

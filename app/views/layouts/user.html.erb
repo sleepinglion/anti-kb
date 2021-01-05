@@ -30,17 +30,10 @@
 <% end %>>
 <div class="container">
   <div class="row">
-    <h1 class="col-12"><%= link_to t(:home_title), root_path %></h1>
-    <% unless params[:popup].present? %>
-      <%= render :partial => 'layouts/ad' %>
-    <% end %>
+    <h1 class="col-12 text-center"><%= link_to t(:home_title), root_path %></h1>
   </div>
-    <div class="row">
-      <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
-    </div>
-  <div class="row">
-    <%= yield %>
-  </div>
+  <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
+  <%= yield %>
 </div>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </body>
