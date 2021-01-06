@@ -40,11 +40,15 @@ $(document).ready(function() {
 
         var this_link=$(this);
         $('#main_layer').load('/home?'+param,function(){
-            $('#main_main nav li').removeClass('active');
-            this_link.parent().addClass('active');
+            $('#main_main nav li a').removeClass('active');
+            this_link.addClass('active');
             $('.vote a:not(".confirm_login")').click(vote_click);
             $('.confirm_login').click(confirm_login_click);
         });
+
+        if (history && history.pushState) {
+            history.pushState('','tab_'+tab,'/?tab='+tab);
+        }
 
         return false;
     });
@@ -131,7 +135,6 @@ $(document).ready(function() {
         }
         return false;
     });
-
 
     function comment_form_submit(e){
         e.preventDefault();
