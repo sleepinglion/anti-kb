@@ -1,20 +1,19 @@
 <% unless (params[:no_nav]) %>
-<%
-  default_menu_class='nav-link'
-  article_menu_class='nav-link'
-  notice_menu_class='nav-link'
+  <%
+    default_menu_class = 'nav-link'
+    article_menu_class = 'nav-link'
+    notice_menu_class = 'nav-link'
 
-  case params[:tab]
+    case params[:tab]
     when 'article'
-      article_menu_class+=' active'
+      article_menu_class += ' active'
     when 'notice'
-      notice_menu_class+=' active'
-  else
-    default_menu_class+=' active'
-  end
-%>
-  <section class="container">
-    <div class="row">
+      notice_menu_class += ' active'
+    else
+      default_menu_class += ' active'
+    end
+  %>
+  <section class="row">
       <div id="main_main" class="col-12">
         <%= render :partial => 'layouts/aside' %>
         <% unless user_signed_in? %>
@@ -88,7 +87,6 @@
 </div>
 </div>
 <% unless (params[:no_nav]) %>
-  </div>
   </div>
   </section>
 <% end %>

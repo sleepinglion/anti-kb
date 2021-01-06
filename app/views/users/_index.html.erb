@@ -42,7 +42,7 @@
     <p><%= t(:no_data) %></p>
   <% end %>
   <% if current_page?(root_path) %>
-    <%= link_to t(:link_more), users_path, :class => 'more' %>
+    <%= link_to t(:link_more), users_path, :class => 'more none_more',:title=>'망하게하기 서명 더보기' %>
   <% end %>
 </section>
 <div id="sign_up">

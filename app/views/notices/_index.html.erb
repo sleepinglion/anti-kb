@@ -1,5 +1,5 @@
 <article>
-  <h3>공지사항</h3>
+  <h3 class="none">공지사항</h3>
 	<% unless @notices.empty? %>
 	<ul>
 		<% @notices.each do |notice| %>
@@ -9,5 +9,5 @@
 	<% else %>
 	<p><%=t(:no_data) %></p>
 	<% end %>
-	<%=link_to t(:link_more),notices_path,:class=>'more' %>
+	<%=link_to t(:link_more),notices_path,:class=>'more none_more',:title=>'공지사항 더보기' %>
 </article>
