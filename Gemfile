@@ -40,6 +40,8 @@ gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
 gem 'globalize'
+gem "nokogiri", ">= 1.11.0.rc4"
+
 
 gem 'impressionist'
 gem 'acts-as-taggable-on'

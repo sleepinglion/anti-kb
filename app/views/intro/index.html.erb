@@ -1,6 +1,7 @@
 <% breadcrumb :intro %>
-<section id="intro" class="col-12">
-	<h2 class="none"><%=t(:intro,scope:[:activerecord,:models]) %></h2>
+<section id="intro" class="sub_main row">
+	<h2 class="col-12 none"><%=t(:intro,scope:[:activerecord,:models]) %></h2>
+  <div class="col-12">
 	<article class="card">
 		<div class="card-header">
 			<h3>제작 과정과 목적</h3>
@@ -33,5 +34,6 @@
 			<%=image_tag 'rails.png',:alt=>"Ruby on Rails" %>
 		</div>
 	</article>
+  </div>
+  <%= render :partial => 'layouts/ad' %>
 </section>
-<%= render :partial => 'layouts/ad' %>

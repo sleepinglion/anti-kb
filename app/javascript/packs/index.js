@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var csrf_token=$('meta[name="csrf-token"]').attr('content');
+
     function vote_click(){
         if($(this).find('span.already-vote').length) {
             alert('이미 투표하셨습니다.');
@@ -6,10 +8,10 @@ $(document).ready(function() {
         }
 
         var vote_link=$(this);
-        $.post(vote_link.attr('href')+'.json',{'_method':'put'},function(data){
+        $.post(vote_link.attr('href')+'.json',{'_method':'put','authenticity_token':csrf_token},function(data){
             if(data.vote_up) {
                 vote_link.find('span:first').addClass('already-vote');
-                vote_link.find('span span').text(data.vote_up);
+                vote_link.find('span.text').text(' '+data.vote_up);
             } else {
 
             }
@@ -217,25 +219,5 @@ $(document).ready(function() {
 
         return false;
     }
-
-    function nl2br (str, is_xhtml) {
-        var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
-        return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
-    }
 });
 
-jQuery.fn.highlight = function() {
-    $(this).each(function() {
-        var el = $(this);
-        el.before("<div/>")
-        el.prev()
-            .width(el.width())
-            .height(el.height())
-            .css({
-                "position": "absolute",
-                "background-color": "#ffff99",
-                "opacity": ".9"
-            })
-            .fadeOut(1000);
-    });
-}
