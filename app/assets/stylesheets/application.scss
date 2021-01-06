@@ -109,12 +109,13 @@ header nav li { float: left; list-style: none}
 header nav ul.nav-pills > li + li {margin-left:20px}
 header nav a { float: left; font-size:1.3em; color: #666; text-decoration: none}
 header nav .dropdown-menu li {float:left;width:100%;margin:0;padding:0}
-#top_menu {position:absolute;top:0;left:0;float:left;width:100%;z-index:9}
+#top_menu {position:absolute;top:20px;right:30px;float:left;width:100%;z-index:9}
 #top_menu ul {float:right;margin:0;padding:0;list-style:none}
 #top_menu li {float:left;margin:0 10px 0 0;padding:0}
 #login-page h1 {}
 #login-page h1 a {float:none;margin:0 auto}
 #sign_up {margin-bottom:30px}
+.no-display-title {margin:0;padding:0;height:1px;text-indent: -9999px}
 
 aside article h3 {margin:0 0 10px;padding:0;text-align:center}
 aside h2 a {display:block;border:1px solid #ccc;border-radius:5px;padding:5px}
@@ -179,7 +180,7 @@ footer address {margin:0;line-height: 100%}
 .users .vote a span {vertical-align: top}
 #sign_up {margin-top:10px}
 
-#new_user .card {margin-bottom:20px}
+#new_user .card,#edit_user .card {margin-bottom:20px}
 
 .comment_layer {float:left;width:100%}
 .comment_form {float:left;width:100%}
@@ -329,7 +330,7 @@ table td.sl_registered_date {color:#999}
   .modal-dialog {width:728px}
 	footer {clear: both; position: relative;width:100%;height: 4em; margin:0;text-align: center;background:#e3e3e3 }
 	/* aside */
-	aside {position:absolute;top:30px;left:15px;width:250px;margin:0}
+	aside {position:absolute;top:30px;left:0;width:250px;margin:0}
 	aside article {margin:0 0 30px;padding:10px;border-radius:5px}
 	aside article p {text-align:center}
 	#ad_main {clear:both}

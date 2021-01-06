@@ -1,6 +1,6 @@
 <% breadcrumb :compliment,@compliment %>
 <div id="compliment_show" class="sub_main row">
-	<div class="slboard_content" itemscope itemprop="article" itemtype="http://schema.org/Article">
+	<div class="slboard_content col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
 		<div class="sl_content_header">
 			<h3 itemprop="name"><%= @compliment.title %></h3>
 			<p><%=t(:user_id,scope:[:activerecord,:attributes,:compliment]) %> : <span  itemprop="author"><%=link_to @compliment.user.name,user_path(@compliment.user) %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @compliment.created_at %></span><span class="none" itemprop="dateModified"><%= @compliment.updated_at %></span></p>

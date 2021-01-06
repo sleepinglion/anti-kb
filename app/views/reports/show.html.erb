@@ -1,6 +1,6 @@
 <% breadcrumb :report,@report %>
 <div id="report_show" class="sub_main row">
-	<div class="slboard_content" itemscope itemprop="article" itemtype="http://schema.org/Article">
+	<div class="slboard_content col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
 		<div class="sl_content_header">
 			<h3 itemprop="name"><%= @report.title %></h3>
 			<p><%=t(:user_id,scope:[:activerecord,:attributes,:report]) %> : <span  itemprop="author"><%=link_to @report.user.name,user_path(@report.user) %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @report.created_at %></span><span class="none" itemprop="dateModified"><%= @report.updated_at %></span></p>
