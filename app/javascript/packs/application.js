@@ -11,5 +11,4 @@ require("jquery");
 require("bootstrap");
 require("./jquery.lazyload.min");
 require("./jquery.uri");
-require("./common");
 require("./index");

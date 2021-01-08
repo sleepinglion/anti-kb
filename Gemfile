@@ -59,10 +59,6 @@ gem 'omniauth-kakao'
 gem 'twitter'
 gem 'fb_graph2'
 
-
-gem 'dotenv-rails'
-gem 'rails-letsencrypt'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -94,12 +90,13 @@ end
 
 group :production do
   gem 'asset_sync'
-  gem 'fog-azure-rm',github: 'sleepinglion/fog-azure-rm'
+  gem 'fog-azure-rm', github: 'sleepinglion/fog-azure-rm'
   gem 'mysql2'
   gem 'redis'
-  gem 'redis-store',github: 'redis-store/redis-store'
+  gem 'redis-store', github: 'redis-store/redis-store'
+  gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'
-
+  gem 'rails-letsencrypt'
 
   gem 'mini_racer', platforms: :ruby
   gem 'execjs'
