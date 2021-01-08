@@ -41,6 +41,9 @@ class ReportsController < BoardController
 
   # GET /reports/1/edit
   def edit
+      if @report.user_id!=current_user.id
+        redirect_to @report, :alert=> "권한이 없습니다."
+      end
   end
 
   # POST /reports

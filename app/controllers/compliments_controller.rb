@@ -30,6 +30,9 @@ class ComplimentsController < BoardController
 
   # GET /notices/1/edit
   def edit
+    if @compliment.user_id!=current_user.id
+      redirect_to @compliment, :alert=> "권한이 없습니다."
+    end
   end
 
   # POST /compliments

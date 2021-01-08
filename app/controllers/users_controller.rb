@@ -123,6 +123,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+      if @user.id!=current_user.id
+        redirect_to @user, :alert=> "권한이 없습니다."
+      end
   end
 
   # POST /users

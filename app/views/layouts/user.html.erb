@@ -32,7 +32,6 @@
   <div class="row">
     <h1 class="col-12 text-center"><%= link_to t(:home_title), root_path %></h1>
   </div>
-  <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
   <%= yield %>
 </div>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>

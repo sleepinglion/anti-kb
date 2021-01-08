@@ -16,7 +16,7 @@ ko:
   email_webmaster: 'admin@anti-kb.site'
 
   home : '홈'
-  home_title : '살인은행'
+  home_title : '살인은행이 망하는 그날까지!'
   search : '검색'
   ad : '광고'
   login : '로그인'
@@ -55,10 +55,11 @@ ko:
   message_success_update : '이(가) 성공적으로  수정되었습니다.'
   message_success_recommend : '추천되었습니다.'
 
+  email : '이메일'
+  password : '비밀번호'
+  remember_me : '이메일 기억하기'
   label_number : '번호'
   label_name : '작성자'
-  label_email : '이메일'
-  label_password : '비밀번호'
   label_name : '작성자'
   label_title : '제목'
   label_count : '조회수'
