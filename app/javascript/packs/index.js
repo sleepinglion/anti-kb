@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     function confirm_login_click(){
         if(confirm("로그인후에 사용가능합니다.\n지금 로그인 하시겠습니까?")) {
-            window.open('/users/login?popup=true',"","width=450, height=420, resizable=no, scrollbars=no, status=no;");
+            location.href='/users/login';
         } else {
             return false;
         }
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
         var mb=$(this).parent().parent().parent();
 
-        $.post($(this).attr('action')+'.json',{'id':$(this).find('input[name="id"]').val(),'comment[comment]':comment},function(data){
+        $.post($(this).attr('action')+'.json',{'id':$(this).find('input[name="id"]').val(),'authenticity_token':csrf_token,'comment[comment]':comment},function(data){
             mb.find('textarea').val('');
             var new_comment=$('<h5>'+$("#username").text()+'</h5><div class="comment">'+nl2br(comment)+'</div>');
             mb.find('.comment_list').append(new_comment);

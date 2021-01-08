@@ -53,14 +53,6 @@ class UsersController < ApplicationController
 
   end
 
-  def layout
-    if params[:no_layout].present?
-      return false
-    else
-      return 'user'
-    end
-  end
-
   def create_comment
     @user.comments << Comment.new(comment_params)
 
