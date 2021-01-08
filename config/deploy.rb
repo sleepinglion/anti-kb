@@ -2,13 +2,14 @@ set :application, 'antikb'
 set :repo_url, 'git@github.com:sleepinglion/anti-kb.git'
 set :branch, 'master'
 set :deploy_to, '/home/deploy/anti-kb'
-# set :scm, :git
 
 # set :format, :pretty
 # set :log_level, :debug
 set :pty, true
 set :linked_files, %w{config/database.yml .env}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/assets public/uploads}
+set :rbenv_type, :user
+set :rbenv_ruby, "2.7.2"
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5

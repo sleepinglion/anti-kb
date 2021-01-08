@@ -88,8 +88,8 @@ group :test do
 end
 
 group :production do
-  gem 'asset_sync','~> 2.8'
-  gem 'fog-azure-rm'
+  gem 'asset_sync'
+  gem 'fog-azure-rm',github: 'sleepinglion/fog-azure-rm'
   gem 'mysql2'
   gem 'redis'
   gem 'redis-store',github: 'redis-store/redis-store'

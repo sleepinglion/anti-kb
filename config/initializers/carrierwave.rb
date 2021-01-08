@@ -1,10 +1,12 @@
 CarrierWave.configure do |config|
   if Rails.env.production?
+    require 'dotenv/load'
+    require 'fog/azurerm'
     config.storage = :fog
     config.fog_credentials = {
-      :provider => 'AzureRM', # required
+      :provider => ENV['FOG_PROVIDER'], # required
       :azure_storage_account_name => ENV['AZURE_STORAGE_ACCOUNT_NAME'], # required
-      :azure_storage_access_key => ENV['AZURE_STORAGE_ACCESS_KEY'], # required
+      :azure_storage_access_key => ENV['AZURE_STORAGE_ACCESS_KEY'] # required
       # :region => 'ap-northeast-1' # optional, defaults to 'us-east-1'
       #:host                   => 's3.example.com',             # optional, defaults to nil
       #:endpoint               => 'https://s3.example.com:8080' # optional, defaults to nil
@@ -15,4 +17,6 @@ CarrierWave.configure do |config|
   else
     config.storage = :file
   end
+
+  config.cache_dir = File.join(Rails.root, 'tmp', 'uploads', Rails.env)
 end

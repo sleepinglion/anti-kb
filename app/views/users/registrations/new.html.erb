@@ -1,62 +1,57 @@
 <div class="row">
   <div class="col-12">
-<%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
-  <%= devise_error_messages! %>
-
-	<article class="card">
-		<div class="card-header">
-			<h3>필수입력 사항</h3>
-		</div>
-		<div class="card-body">
-
-  <div class="form-group">
-		<%= f.label :name %>
-		<%= f.text_field :name, :class=>'form-control',:required=>'required' %>
-  </div>
-  <div class="form-group">
-		<%= f.label :email %>
-		<%= f.email_field :email, :class=>'form-control',:required=>'required' %>
-  </div>
-  <div class="form-group">
-		<%= f.label :password %>
-		<%= f.password_field :password, :class=>'form-control',:required=>'required' %>
-  </div>
-  <div class="form-group">
-		<%= f.label :description %>
-		<%= f.text_field :description, :class=>'form-control',:required=>'required' %>
-	</div>
-</div>
-</article>
-
-	<article class="card">
-		<div class="card-header">
-			<h3>선택입력 사항</h3>
-		</div>
-		<div class="card-body">
-	<div class="form-group">
-		<%= f.label :photo %>
-		<% if resource.photo? %>
-			<%= image_tag(resource.photo.small_thumb) %>
-		<% end %>
-		<%= f.file_field :photo %>
-		<%= f.hidden_field :photo_cache %>
-		</div>
-		<div class="form-group">
-	  	<%= f.label :url %><br />
-	  	<%= f.url_field :url, :class=>'form-control' %>
-		</div>
-	</div>
-</article>
-
-
-	<% if Rails.env.production?	%>
-	<div class="form-group">
-		<%= recaptcha_tags  %>
-	</div>
-	<% end %>
-	<div class="form-group actions">
-			<%= f.submit t(:sign),:class=>'btn btn-lg btn-primary btn-block' %>
-	</div>
-<% end %>
+    <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
+      <%= devise_error_messages! %>
+      <article class="card">
+        <div class="card-header">
+          <h3>필수입력 사항</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, :class => 'form-control', :required => 'required' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, :class => 'form-control', :required => 'required' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, :class => 'form-control', :required => 'required' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_field :description, :class => 'form-control', :required => 'required' %>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h3>선택입력 사항</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <%= f.label :photo %>
+            <% if resource.photo? %>
+              <%= image_tag(resource.photo.small_thumb) %>
+            <% end %>
+            <%= f.file_field :photo %>
+            <%= f.hidden_field :photo_cache %>
+          </div>
+          <div class="form-group">
+            <%= f.label :url %><br/>
+            <%= f.url_field :url, :class => 'form-control' %>
+          </div>
+        </div>
+      </article>
+      <% if Rails.env.production? %>
+        <div class="form-group">
+          <%= recaptcha_tags %>
+        </div>
+      <% end %>
+      <div class="form-group actions">
+        <%= f.submit t(:sign), :class => 'btn btn-lg btn-primary btn-block' %>
+      </div>
+    <% end %>
   </div>
 </div>

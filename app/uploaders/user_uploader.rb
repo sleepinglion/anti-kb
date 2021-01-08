@@ -5,16 +5,20 @@ class UserUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    upload_dir="#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    #unless Rails.env.production?
-      upload_dir='uploads/'+upload_dir
-    #end
-
-    return upload_dir
+    if Rails.env.production?
+      return "#{model.class.to_s.underscore}/#{model.id}"
+    else
+      return "uploads/#{model.class.to_s.underscore}/#{model.id}"
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
