@@ -1,6 +1,6 @@
-<aside>
+<aside class="d-none d-lg-block row">
 	<% if user_signed_in? %>
-	<article id="login_users">
+	<article id="login_users" class="col-12 col-md-6 col-xl-12">
 		<p>
 			<%=link_to edit_user_registration_path do %>
 			<span id="username"><%=current_user.name %></span>님 환영합니다.
@@ -9,7 +9,7 @@
 		<p id="logout_submit"><%= link_to t(:logout), destroy_user_session_path,:class=>'btn btn-secondary btn-block' %></p>
 	</article>
 	<% else %>
-	<article>
+	<article class="col-12 col-md-6 col-xl-12">
 		<p>서명후 로그인가능합니다</p>
 		<h2><%=link_to t(:login),new_user_session_path,:class=>"btn btn-block btn-primary" %></h2>
 		<p>
@@ -18,7 +18,7 @@
 		</p>
 	</article>
 	<% end %>
-	<article>
+	<article class="col-12 col-md-6 col-xl-12">
 		<h3>KB 임직원의 진심</h3>
 		<%=link_to 'KB 임직원의 마음의 소리','/kbsmind',:class=>'modal_link btn btn-block btn-large btn-success',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
 	</article>

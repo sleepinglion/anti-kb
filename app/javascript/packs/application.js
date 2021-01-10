@@ -11,4 +11,5 @@ require("jquery");
 require("bootstrap");
 require("./jquery.lazyload.min");
 require("./jquery.uri");
+require("@fancyapps/fancybox");
 require("./index");
