@@ -776,8 +776,7 @@ footer address {
   color: #999
 }
 
-#main_model .carousel-control-prev {
-  display: block;
+.carousel-control-prev {
   background: none;
   top: 50px;
   left: -20px;
@@ -787,8 +786,7 @@ footer address {
   height: 150px
 }
 
-#main_model .carousel-control-next {
-  display: block;
+.carousel-control-next {
   background: none;
   top: 50px;
   right: -20px;
@@ -796,10 +794,6 @@ footer address {
   width: 20px;
   background: #ccc;
   height: 150px
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  margin-top: 60px
 }
 
 #main_model .carousel-indicators li {
@@ -1128,8 +1122,11 @@ table td.sl_registered_date {
     margin: 1% 0 0
   }
   footer address {
-    margin: 7px 0
+    margin: 7px 0;
+    line-height: 170%;
   }
+
+  .carousel-control-prev, .carousel-control-next { display:none}
 }
 
 @media all and (min-width: 768px) and (max-width: 992px) {
