@@ -17,7 +17,7 @@
 	<%= render :partial => 'layouts/admin/header' %>
 	<div id="mom" class="container-fluid">
 		<div id="main" class="row">
-			<div id="content" class="col-xs-12">
+			<div id="content" class="col-12">
 				<% unless controller.controller_name=='admin' %>
 					<% if(!params[:no_layout] and !current_page?(admin_path)) %>
 						<ol class="breadcrumb">

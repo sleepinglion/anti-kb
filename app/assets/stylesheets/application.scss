@@ -387,6 +387,13 @@ footer address {
   line-height: 100%
 }
 
+.table-responsive table th,.table-responsive table td {
+  white-space: nowrap;
+}
+
+#report_main table th,#report_main table td, #compliment_main table th,#compliment_main table td {
+  word-break: break-all;
+}
 
 #report_main table tr:last-child td, #compliment_main table tr:last-child td {
   border-bottom: 1px solid #ccc
@@ -1126,6 +1133,11 @@ table td.sl_registered_date {
     line-height: 170%;
   }
 
+  .table-responsive table {
+    overflow-y: scroll;
+    margin: 5px 0;
+  }
+
   .carousel-control-prev, .carousel-control-next { display:none}
 }
 
@@ -1172,9 +1184,6 @@ table td.sl_registered_date {
 }
 
 @media all and (min-width: 992px) {
-  html, body {
-    font-size: 14px
-  }
   #mom {
     margin: -5em 0 -4em;
     min-height: 100%;
