@@ -316,7 +316,7 @@ header nav .dropdown-menu li {
   padding: 3px 20px
 }
 
-#mobile_menu {display:none}
+#mobile_menu {cursor:pointer;display:none;z-index:999}
 
 #top_menu {
   position: absolute;
@@ -1135,6 +1135,18 @@ table td.sl_registered_date {
   footer address {
     margin: 7px 0;
     line-height: 170%;
+  }
+
+  .side_nav {
+    position: fixed;
+    top:0;
+    left:-500px;
+    height:100%;
+    width:80%;
+    max-width: 500px;
+    background:#eee;
+    z-index:999;
+    padding:3% 5%;
   }
 
   .table-responsive table {

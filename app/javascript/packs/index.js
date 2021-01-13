@@ -1,5 +1,16 @@
 $(document).ready(function() {
+    mobile_menu=1;
     var csrf_token=$('meta[name="csrf-token"]').attr('content');
+
+    $("a.simple_image").fancybox({
+        'opacity'   : true,
+        'overlayShow'        : true,
+        'overlayColor': '#000000',
+        'overlayOpacity'     : 0.9,
+        'titleShow':true,
+        'openEffect'  : 'elastic',
+        'closeEffect' : 'elastic'
+    });
 
     function vote_click(){
         if($(this).find('span.already-vote').length) {
@@ -232,6 +243,16 @@ $(document).ready(function() {
         }
 
         return true;
+    });
+
+    $("#mobile_menu").click(function(){
+        if(mobile_menu) {
+            $('.side_nav').animate({'left':'0'}, 400, 'easeOutCubic');
+            mobile_menu=0;
+        } else {
+            $('.side_nav').animate({'left':'-500px'}, 400, 'easeInOutCubic');
+            mobile_menu=1;
+        }
     });
 
     function nl2br (str, is_xhtml) {
