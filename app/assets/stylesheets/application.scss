@@ -982,6 +982,9 @@ table td.sl_registered_date {
   html, body {
     background: #ccc
   }
+
+  #top_menu {display:none}
+
   header {
     background: none;
     border-bottom: 0;
@@ -1272,7 +1275,7 @@ table td.sl_registered_date {
   aside {
     position: absolute;
     top: 30px;
-    left: 15px;
+    left: 30px;
     width: 270px;
     margin: 0
   }
@@ -1287,7 +1290,7 @@ table td.sl_registered_date {
     width: 750px
   }
   #main_main {
-    padding-left: 295px
+    padding-left: 305px
   }
   footer ul li a, footer address {
     font-size: 14px

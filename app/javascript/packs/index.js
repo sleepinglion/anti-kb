@@ -223,6 +223,17 @@ $(document).ready(function() {
         return false;
     }
 
+    $("#new_user").submit(function(){
+        var imgSize=$('#user_photo')[0].files[0].size;
+
+        if(imgSize > (1 * 1024 * 1024)) {
+            alert("첨부 이미지 파일은 1MB 이하여야 합니다.");
+            return false;
+        }
+
+        return true;
+    });
+
     function nl2br (str, is_xhtml) {
         var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
         return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');

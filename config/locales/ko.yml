@@ -44,7 +44,7 @@ ko:
   login_remember : '기억해줘'
 
   home_main_title : '살인은행이 망하는 그날까지!!'
-  home_main_description : '서명에 참여해주세요. 작은움직임이 살인은행이 망하게하는 힘이됩니다.'
+  home_main_description : '서명에 참여해주세요.<br class="d-block d-sm-none" /> 작은움직임이 살인은행이 망하게하는 힘이됩니다.'
   sign : '서명하기'
   remember_email : '이메일 기억하기'
 

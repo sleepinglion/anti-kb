@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-12">
     <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
+      <%= render :partial => 'layouts/notice', :locals=>{:notice=>notice,:alert=>alert} %>
       <article class="card">
         <div class="card-header">
           <h3>필수입력 사항</h3>
@@ -32,7 +33,7 @@
           <div class="form-group">
             <%= f.label :photo %>
             <% if resource.photo? %>
-              <%= image_tag(resource.photo.small_thumb) %>
+              <%= image_tag resource.photo.small_thumb.url %>
             <% end %>
             <%= f.file_field :photo %>
             <%= f.hidden_field :photo_cache %>
