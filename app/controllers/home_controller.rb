@@ -29,9 +29,11 @@ class HomeController < ApplicationController
   end
 
   def kbsmind
+    @title='KB 임직원의 마음'
+    @meta_description='일하기 짜증나고 횡령할꺼 찾아야되는데 거지새끼들이 자꾸 대출해달라고 오네?'
+
     respond_to do |format|
       format.html { render layout: layout}
-      format.json { render json: @faqContent  }
     end
   end
 

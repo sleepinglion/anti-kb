@@ -41,6 +41,7 @@ SitemapGenerator::Sitemap.create do
   end
 
   add faqs_path, :changefreq => 'monthly'
+  add kbsmind_path, :changefreq => 'monthly'
 
   Faq.find_each do |faq|
     add faq_path(faq), :lastmod => faq.updated_at

@@ -317,6 +317,8 @@ header nav .dropdown-menu li {
   padding: 3px 20px
 }
 
+#mobile_menu {display:none}
+
 #top_menu {
   position: absolute;
   top: 20px;
@@ -984,6 +986,7 @@ table td.sl_registered_date {
   }
 
   #top_menu {display:none}
+  #mobile_menu {display:block;position:absolute;top:5px;right:10px;}
 
   header {
     background: none;
@@ -995,11 +998,10 @@ table td.sl_registered_date {
     margin-bottom: 2%;
     font-size: 1.6em
   }
-  header h1 a, header h2 a {
-    float: left;
+  header h1 a {
+    display:inline;
     background: none;
     text-indent: 0;
-    width: 100%;
     font-weight: bold
   }
   header h1 a:hover, header h1 a:hover {

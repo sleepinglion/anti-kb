@@ -7,25 +7,24 @@
                         :description => @meta_description,
                         :keywords => @meta_keywords,
                         :separator => t(:title_separator),
-                        :viewport => 'width=device-width, initial-scale=1, user-scalable=yes',
+                        :viewport => 'width=device-width, initial-scale=1, shrink-to-fit=no',
                         :reverse => true %>
 <%= display_meta_tags og: {
     title: @title,
     description: @meta_description,
-    url: @meta_url,
+    url: t(:site_full_url),
     image: @meta_image
   } %>
 <meta name="author" content="Sleeping-Lion">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="canonical" href="<%= t(:site_full_url) %>">
-<link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="<%= t(:site_full_url) %>feed?format=rss">
+<link rel="alternate" type="application/rss+xml" title="Anti-KB RSS Feed" href="<%= t(:site_full_url) %>/feed?format=rss">
 <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
 <%= favicon_link_tag 'favicon.ico' %>
 <%= csrf_meta_tags %>
-<%= csp_meta_tag %>
-  <!--[if IE]>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <![endif]-->
+<%= csp_meta_tag -%>
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<![endif]-->
 </head>
 <body itemscope itemtype="<%= @page_itemtype %>">
 <%= render :partial => 'layouts/header' %>
