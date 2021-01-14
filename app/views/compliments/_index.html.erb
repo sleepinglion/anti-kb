@@ -4,7 +4,7 @@
 	<% unless @compliments.empty? %>
 	<ul>
 		<% @compliments.each do |compliment| %>
-		<li><%=compliment.user.name %> : <%=link_to compliment.title.truncate(17),compliment %> <span class="date"><%=compliment.created_at.to_date %></span></li>
+		<li><%=compliment.user.name %> : <%=link_to compliment.title.truncate(17),compliment %> <span class="date d-none d-sm-block"><%=get_dt_format compliment.created_at.to_date %></span></li>
 		<% end %>
 	</ul>
 	<% else %>

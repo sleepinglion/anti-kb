@@ -1146,7 +1146,7 @@ table td.sl_registered_date {
     max-width: 500px;
     background:#eee;
     z-index:999;
-    padding:3% 5%;
+    padding:3% 5% 3% 3%;
   }
 
   .table-responsive table {
@@ -1259,7 +1259,7 @@ table td.sl_registered_date {
   /* aside */
 
   aside article {
-    margin: 0 0 30px;
+    margin-bottom: 30px;
     padding: 10px;
     border-radius: 5px
   }
@@ -1288,7 +1288,7 @@ table td.sl_registered_date {
   aside {
     position: absolute;
     top: 30px;
-    left: 30px;
+    left: 15px;
     width: 270px;
     margin: 0
   }
