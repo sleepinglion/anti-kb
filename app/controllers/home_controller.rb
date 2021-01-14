@@ -40,6 +40,7 @@ class HomeController < ApplicationController
   def feed
     @reports = Report.all.where(:enable=>true)
     @compliments = Compliment.all.where(:enable=>true)
+    @users = User.all.where(:enable=>true)
     respond_to do |format|
       format.rss { render :layout => false }
     end
