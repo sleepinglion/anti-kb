@@ -247,7 +247,17 @@ $(document).ready(function() {
             return false;
         }
 
+        if($.trim($("#user_url").val())=='https://' || $.trim($("#user_url").val())=='http://') {
+            $("#user_url").val('');
+        }
+
         return true;
+    });
+
+    $("#user_url").focus(function(){
+        if($.trim($(this).val())=='') {
+            $(this).val('https://');
+        }
     });
 
     $("#mobile_menu").click(function(){
