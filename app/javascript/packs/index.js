@@ -12,6 +12,11 @@ $(document).ready(function() {
         'closeEffect' : 'elastic'
     });
 
+    $('.custom-file-input').on('change', function() {
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });
+
     function vote_click(){
         if($(this).find('span.already-vote').length) {
             alert('이미 투표하셨습니다.');
