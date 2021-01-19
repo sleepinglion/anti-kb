@@ -1,18 +1,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby '2.7.2'
+#ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -26,14 +26,14 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'bootstrap', '~> 4.5.3'
 gem 'sprockets', '~> 3.7.2'
 gem 'devise'
 gem 'cancancan'
 gem 'kaminari'
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'sitemap_generator'
 gem 'meta-tags'
@@ -47,8 +47,6 @@ gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable'
-gem 'email_validator'
-gem 'unf'
 gem 'omniauth-oauth2'
 gem 'omniauth'
 gem 'omniauth-facebook'

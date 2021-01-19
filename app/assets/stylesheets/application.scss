@@ -49,7 +49,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   background: #eee
 }
 
@@ -237,10 +236,6 @@ footer {
 .login-box {
   margin-left: auto;
   margin-right: auto
-}
-
-#special-page {
-  background: #eee
 }
 
 #login-page {
@@ -980,10 +975,6 @@ table td.sl_registered_date {
 }
 
 @media all and (max-width: 768px) {
-  html, body {
-    background: #ccc
-  }
-
   #top_menu {display:none}
   #mobile_menu {display:block;position:absolute;top:5px;right:10px;}
 
@@ -1283,7 +1274,8 @@ table td.sl_registered_date {
 
 @media all and (min-width: 1200px) {
   html, body {
-    font-size: 16px
+    font-size: 16px;
+    height: 100%;
   }
   aside {
     position: absolute;
@@ -1295,9 +1287,6 @@ table td.sl_registered_date {
 
   .sub_main {
     padding-bottom: 50px
-  }
-  .adsbygoogle {
-    height: 100px
   }
   .modal-dialog {
     width: 750px
@@ -1311,9 +1300,6 @@ table td.sl_registered_date {
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
-  .adsbygoogle {
-    height: 110px
-  }
 }
 
 @media (min-width: 1500px) {
@@ -1328,8 +1314,5 @@ table td.sl_registered_date {
   }
   .jumbotron {
     text-align: center
-  }
-  .adsbygoogle {
-    height: 140px
   }
 }
