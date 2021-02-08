@@ -97,8 +97,8 @@ group :production do
   gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'rails-letsencrypt'
 
-  gem 'mini_racer', platforms: :ruby
-  gem 'execjs'
+  #gem 'mini_racer', platforms: :ruby
+  #gem 'execjs'
 
   # Redis Cache
   gem 'redis-rails'

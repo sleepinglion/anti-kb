@@ -46,13 +46,13 @@ class ImproveController < ApplicationController
   def create
     @improve = Improve.new(improve_params)
 
-    respond_to do |format|
-      if Rails.env.production?
-        result=verify_recaptcha(:model => @improve, :message => "Oh! It's error with reCAPTCHA!") && @improve.save
-      else
-        result=@improve.save
-      end
+    if Rails.env.production?
+      result=verify_recaptcha(:model => @improve, :message => "Oh! It's error with reCAPTCHA!") && @improve.save
+    else
+      result=@improve.save
+    end
 
+    respond_to do |format|
       if result
         format.html { redirect_to @improve, :notice=> @controller_name +t(:message_success_create)}
         format.json { render :json => @improve, :status => :created, :location => @guest_book }

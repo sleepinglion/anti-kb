@@ -118,6 +118,6 @@ class ReportsController < BoardController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:id, :report_category_id, :title, report_content_attributes: [:id,:content]).merge(user_id: current_user.id)
+      params.require(:report).permit(:report_category_id, :title, report_content_attributes: [:content]).merge(user_id: current_user.id)
     end
 end

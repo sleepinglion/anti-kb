@@ -107,6 +107,6 @@ class ComplimentsController < BoardController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compliment_params
-      params.require(:compliment).permit(:id, :compliment_category_id, :bank_id, :title, compliment_content_attributes: [:id,:content]).merge(user_id: current_user.id)
+      params.require(:compliment).permit(:compliment_category_id, :bank_id, :title, compliment_content_attributes: [:content]).merge(user_id: current_user.id)
     end
 end
