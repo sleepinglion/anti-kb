@@ -48,7 +48,7 @@ gem 'acts-as-taggable-on'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable'
 gem 'omniauth-oauth2'
-gem 'omniauth'
+gem 'omniauth',">= 2.0.0"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 #gem 'omniauth-gplus'

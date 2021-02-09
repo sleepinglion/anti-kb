@@ -553,7 +553,7 @@ DEPENDENCIES
   mini_magick
   mysql2
   nokogiri (>= 1.11.0.rc4)
-  omniauth
+  omniauth (>= 2.0.0)
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-kakao
