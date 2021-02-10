@@ -43,7 +43,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[4.2]
       t.boolean  :admin, :null=>false, :default => false
 
       # Uncomment below if timestamps were not included in your original model.
-      t.timestamps
+      t.timestamps null: false
     end
 
     add_index :users, :email,                :unique => true

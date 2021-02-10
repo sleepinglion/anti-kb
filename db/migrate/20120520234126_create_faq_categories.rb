@@ -4,7 +4,7 @@ class CreateFaqCategories < ActiveRecord::Migration[4.2]
       t.string :title,:null=>false
       t.integer :faqs_count, null: false, default: 0
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

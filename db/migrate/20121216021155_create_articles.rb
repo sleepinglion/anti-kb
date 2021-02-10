@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration[4.2]
       t.string :url, :null=>false
       t.text :description, :null=>false
       t.boolean :enable, :null=>false, :default=>true      
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

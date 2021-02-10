@@ -8,7 +8,7 @@ class CreateCompliments < ActiveRecord::Migration[4.2]
       t.integer :default_view_count, :null=>false, :default=>0      
       t.integer :compliment_comment_count, :null=>false ,:default=>0
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :compliment_contents do |t|

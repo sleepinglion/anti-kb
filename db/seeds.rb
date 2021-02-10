@@ -78,29 +78,29 @@ ReportCategory.create!(:id=>4,:title=>'비리,횡령')
 ReportCategory.create!(:id=>5,:title=>'횡포')
 ReportCategory.create!(:id=>6,:title=>'기타')
 
-Report.create!(:id=>1,:user_id=>1,:report_category_id=>1,:title=>'진짜 이놈들은 고객을 뭘로 보는건지?',:default_view_count=>156,:created_at=>'2016-08-02 18:49:49',:updated_at=>'2016-08-02 18:49:49')
-ReportContent.create!(:id=>1,:content=>'짜증 가득한 표정보면 정말 주먹이 우네요
+Report.create!(:id=>1,:user_id=>1,:report_category_id=>1,:title=>'진짜 이놈들은 고객을 뭘로 보는건지?',:default_view_count=>156,:created_at=>'2016-08-02 18:49:49',:updated_at=>'2016-08-02 18:49:49',
+report_content_attributes: {content: '짜증 가득한 표정보면 정말 주먹이 우네요
 그냥 얼굴 때리고 싶은거 참느냐고 혼났어요
-인내심을 길러주는 우리의 살인은행')
+인내심을 길러주는 우리의 살인은행'})
 
-Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ',:default_view_count=>158,:created_at=>'2016-08-04 18:51:23',:updated_at=>'2016-08-04 18:51:23')
-ReportContent.create!(:id=>2,:content=>'연거푸 사고치더니 살인은행 홈페이지에 사과문 또 떳네요
+Report.create!(:id=>2,:user_id=>1,:report_category_id=>6,:title=>'미친놈들 지랄하네 ㅋㅋㅋㅋㅋ',:default_view_count=>158,:created_at=>'2016-08-04 18:51:23',:updated_at=>'2016-08-04 18:51:23',
+report_content_attributes: {content: '연거푸 사고치더니 살인은행 홈페이지에 사과문 또 떳네요
 사과문으로 공지사항 게시판 도배할 기세!! ㅋㅋㅋ
 니들은 개과천선 할 수없어
-그냥 지금 해체가 답이야!!!')
+그냥 지금 해체가 답이야!!!'})
 
-Report.create!(:id=>3,:user_id=>1,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:default_view_count=>159,:created_at=>'2016-10-04 18:51:23',:updated_at=>'2016-10-04 18:51:23')
-ReportContent.create!(:id=>3,:content=>'이전 회사에서 월급통장 농협에서 만들라고 해서 만들러 갔는데
+Report.create!(:id=>3,:user_id=>1,:report_category_id=>6,:title=>'농협도 살인은행 못지않네요',:default_view_count=>159,:created_at=>'2016-10-04 18:51:23',:updated_at=>'2016-10-04 18:51:23',
+report_content_attributes: {content: '이전 회사에서 월급통장 농협에서 만들라고 해서 만들러 갔는데
 이 미친놈들이 고객은 무슨 보이스 피싱 하수인(대포통장 만들러온 사람) 취급하네요?
 보안 개떡같아서 털린것은 지네면서 보안 강화한다고 하는 짓이 이런거... 참 답안나오네
 막상 대포통장 만들러온 놈들 가리지도 못할 개떡같은 질문들과 태도
 고객 기분 더럽게 하는게 보안강화냐??  역시 살인은행처럼 배때지 부른놈들이라 하는짓도 비슷하네요
 그자리에서 폭발시켰어야되는데 참고 통장 만들고 나온 나에게도 화가 나네요, 내가 왜 그랬지??
 그래 고객 기분 더럽게 해서 보안 강화 되었습니까? 이 개같은 NH놈들아!!!!
-국민은행 망하면 안티NH 운동을 시작해야 겠다고 마음먹게 되었습니다.')
+국민은행 망하면 안티NH 운동을 시작해야 겠다고 마음먹게 되었습니다.'})
 
-Report.create!(:id=>4,:user_id=>30,:report_category_id=>6,:title=>'대출 거부,참 화나네요 ',:default_view_count=>159,:created_at=>'2016-12-04 18:51:23',:updated_at=>'2016-12-04 18:51:23')
-ReportContent.create!(:id=>4,:content=>'거의 10년 넘게 국민은행을 주거래 은행으로 사용했습니다.
+Report.create!(:id=>4,:user_id=>30,:report_category_id=>6,:title=>'대출 거부,참 화나네요 ',:default_view_count=>159,:created_at=>'2016-12-04 18:51:23',:updated_at=>'2016-12-04 18:51:23',
+report_content_attributes: {content: '거의 10년 넘게 국민은행을 주거래 은행으로 사용했습니다.
 대출 받을일이 없어서 별 신경은 안 썻지만 거래량도 상당하고 신용도 충분할것이라고 생각했습니다.
 그러던중 돈이 필요한 일이 생겨서 대출을 받으러 갔는데....
 불친절한 기계적인 처리, 그래도 될 것 같이 기다려 보라고 하더니 결론은 거부
@@ -109,25 +109,25 @@ ReportContent.create!(:id=>4,:content=>'거의 10년 넘게 국민은행을 주�
 잠시만 기다리라고 하더니 진짜 잠시 후 "그 동안의 거래가 적어서 전부는 안되고 신청액의 절반 정도는 가능합니다."
 아!! 국민은행의 절반만 썼어도 전부 대출 가능했을 것 같은 느낌이였습니다.
 아무생각없이 국민은행만 썼던 저의 문제였습니다.
-대출 받고 집에 와서 국민은행에 있던  돈 전부 이체하고 통장하고 카드 가위로 갈갈이 찢어 버렸습니다.')
+대출 받고 집에 와서 국민은행에 있던  돈 전부 이체하고 통장하고 카드 가위로 갈갈이 찢어 버렸습니다.'})
 
-Report.create!(:id=>5,:user_id=>31,:report_category_id=>5,:title=>'여권되는건데 왜 개고생시켜??',:default_view_count=>139,:created_at=>'2017-03-04 18:51:23',:updated_at=>'2017-03-04 18:51:23')
-ReportContent.create!(:id=>5,:content=>'날 더운날, 인터넷 뱅킹 비번 한계 이상으로 틀려서 풀려고 국민은행에 갔습니다.
+Report.create!(:id=>5,:user_id=>31,:report_category_id=>5,:title=>'여권되는건데 왜 개고생시켜??',:default_view_count=>139,:created_at=>'2017-03-04 18:51:23',:updated_at=>'2017-03-04 18:51:23',
+report_content_attributes: {content: '날 더운날, 인터넷 뱅킹 비번 한계 이상으로 틀려서 풀려고 국민은행에 갔습니다.
 마침 주민등록증이 없어서 여권을 가지고 갔습니다.
 내 차례가 되자 이야기 하고 처리받으려고 하는데 여권으로 안된다고 하면서 말하는 띠꺼운 표정은 아직도 기억에 남네요.
 여권 왜 안되냐고 하니, 씹듯이 대답안하고 주민등록증이나 등본으로 가져오라고 하네요.
 여권으로 되는 걸로 알고 있는데  진짜 짜증나더라고요.
 도로 집까지 땀 뻘뻘흘리며 와서 인터넷으로 등본띠어서 다시 땀 뻘뻘 흘리며 오니 정말 부들부들 분노가 폭팔하려고 하더라고요.
-던지듯이 등본내고 처리받았는데 생각할수록 열받네요')
+던지듯이 등본내고 처리받았는데 생각할수록 열받네요'})
 
-Report.create!(:id=>6,:user_id=>32,:report_category_id=>5,:title=>'참 어이가 없는 현금서비스 이율',:default_view_count=>139,:created_at=>'2017-04-04 18:51:23',:updated_at=>'2017-04-04 18:51:23')
-ReportContent.create!(:id=>6,:content=>'현금서비스라는게 이자가 비싸고 안 쓸수록 좋은건지는 모두알지만
+Report.create!(:id=>6,:user_id=>32,:report_category_id=>5,:title=>'참 어이가 없는 현금서비스 이율',:default_view_count=>139,:created_at=>'2017-04-04 18:51:23',:updated_at=>'2017-04-04 18:51:23',
+report_content_attributes: {content: '현금서비스라는게 이자가 비싸고 안 쓸수록 좋은건지는 모두알지만
 막상 급전이 필요할때는 울며 겨자먹기로 이용을 하게됩니다.
 제가 최초고 만든게 국민카드이고 그 후 부터 연체없이 꾸준히 잘 사용해왔었습니다.
 그러다가 중간중간 어쩌다 현금서비스를 이용하는데 정말 살떨리는 이율이였습니다. <= 이건 뭐 사채랑 다를것이 없습니다.
 국민카드만 있다보니 현금서비스는 다 이런가 보다 했지요.
 그러다 다른카드 만들어서 보니 신규임에도 이율이 잘하면 거의 반값될 수준!!!
-참 바보도 이런 바보가 없지요??  다른분들은 이렇게 당하지 않았으면 좋겠습니다.')
+참 바보도 이런 바보가 없지요??  다른분들은 이렇게 당하지 않았으면 좋겠습니다.'})
 
 Propose.create!(:id=>1,:user_id=>1,:title=>'ㅎㅎㅎ 뭐 제안안해도 알아서 망할듯 ㅋㅋㅋㅋㅋ',:content=>'이놈들 동시다발적으로 사고 친거 걸렸네요
 요즘은 언론사에 먹일 돈이 딸리나? 예전부터 쭉 있던일인데 이제야 터지네요~~',:created_at=>'2014-08-04 18:51:23',:updated_at=>'2014-08-04 18:51:23')
@@ -199,17 +199,16 @@ ComplimentCategory.create!(:id=>5,:title=>'고객감동')
 ComplimentCategory.create!(:id=>6,:title=>'기타')
 
 
-Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:default_view_count=>137,:created_at=>'2015-08-02 18:49:49',:updated_at=>'2015-08-02 18:49:49')
-ComplimentContent.create!(:id=>1,:content=>'역시 망할 살인자-은행에 대적할 은행은 우리은행이지요~
+Compliment.create!(:id=>1,:user_id=>1,:bank_id=>1,:compliment_category_id=>1,:title=>'우리은행 좋네요',:default_view_count=>137,:created_at=>'2015-08-02 18:49:49',:updated_at=>'2015-08-02 18:49:49',
+compliment_content_attributes: {content: '역시 망할 살인자-은행에 대적할 은행은 우리은행이지요~
 홈페이지 진짜 잘만들었네
-ㅂㅅ같은 살인자 은행놈들은 언제 플래시 버릴려나?')
+ㅂㅅ같은 살인자 은행놈들은 언제 플래시 버릴려나?'})
 
-Compliment.create!(:id=>2,:user_id=>1,:bank_id=>17,:compliment_category_id=>1,:title=>'신한은행도 좋음',:default_view_count=>131,:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10')
-ComplimentContent.create!(:id=>2,:content=>'신한은행에 계좌 만들러 갔을때의 친절함은 감동으로 다가왔습니다.
+Compliment.create!(:id=>2,:user_id=>1,:bank_id=>17,:compliment_category_id=>1,:title=>'신한은행도 좋음',:default_view_count=>131,:created_at=>'2015-09-11 14:33:10',:updated_at=>'2015-09-11 14:33:10',
+compliment_content_attributes: {content: '신한은행에 계좌 만들러 갔을때의 친절함은 감동으로 다가왔습니다.
 KB,NH같은 썩은 공기업,공무원 마인드와는 차원이 다름이 몸소 느껴졌습니다.
 신한은행 인터넷뱅킹 서비스도 역시 썩은은행들과는 차원이 다르네요
-신한은행은 OTP만 만들면 리눅스도 인터넷 뱅킹이 잘 지원됩니다.
-')
+신한은행은 OTP만 만들면 리눅스도 인터넷 뱅킹이 잘 지원됩니다.'})
 
 
 FaqCategory.create!(:id=>1,:title=>'불친절')

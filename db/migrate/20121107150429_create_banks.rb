@@ -5,7 +5,7 @@ class CreateBanks < ActiveRecord::Migration[4.2]
       t.integer :compliments_count, :default=>0, :null=>false
       t.string :photo
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

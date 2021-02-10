@@ -4,7 +4,7 @@ class CreateFaqs < ActiveRecord::Migration[4.2]
       t.references :faq_category,:null=>false
       t.string :title,:null=>false    
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :faq_contents do |t|

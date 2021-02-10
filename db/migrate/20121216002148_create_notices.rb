@@ -5,7 +5,7 @@ class CreateNotices < ActiveRecord::Migration[4.2]
       t.string :title,:limit=>60,:null=>false
       t.integer :default_view_count, :null=>false, :default=>0      
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :notice_contents do |t|

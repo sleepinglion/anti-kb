@@ -7,7 +7,7 @@ class CreateModels < ActiveRecord::Migration[4.2]
       t.text :recommend_description, :null=>false
       t.text :models_comment, :null=>false
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :model_comments do |t|
@@ -15,7 +15,7 @@ class CreateModels < ActiveRecord::Migration[4.2]
       t.references :user,:null=>false
       t.text :content,:null=>false
       t.boolean :enable, :null=>false, :default=>true      
-      t.timestamps
+      t.timestamps null: false
     end
 
     add_index :models, :user_id

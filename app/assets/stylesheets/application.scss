@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'Nanum Gothic';
-  src: local('굴림'), url(asset-path('NanumGothic-Regular.eot?#iefix')) format('embedded-opentype'), url(asset-path('NanumGothic-Regular.woff')) format('woff');
+  src: local('☺'), url(asset-path('NanumGothic-Regular.eot?#iefix')) format('embedded-opentype'), url(asset-path('NanumGothic-Regular.woff')) format('woff');
   font-display: swap;
 }
 
@@ -53,7 +53,7 @@ html, body {
 }
 
 body {
-  font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "굴림", gulim, "돋움", Dotum, Arial, Helvetica, sans-serif;
+  font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif;
   color: #333
 }
 
@@ -800,8 +800,10 @@ footer address {
 }
 
 #main_model .carousel-indicators li {
-  height: 20px
+  border:none;height: 20px
 }
+
+.carousel-indicators .active {background:#999}
 
 #main_model .media {
   margin: 10px 0;

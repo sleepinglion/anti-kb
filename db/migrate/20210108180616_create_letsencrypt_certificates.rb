@@ -15,7 +15,7 @@ class CreateLetsencryptCertificates < ActiveRecord::Migration[4.2]
 
       t.index    :domain
       t.index    :renew_after
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

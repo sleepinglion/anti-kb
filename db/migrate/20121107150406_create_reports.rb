@@ -7,7 +7,7 @@ class CreateReports < ActiveRecord::Migration[4.2]
       t.integer :default_view_count, :null=>false, :default=>0      
       t.integer :report_comments_count, :null=>false, :default=>0
       t.boolean :enable, :null=>false, :default=>true
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :report_contents do |t|

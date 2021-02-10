@@ -6,7 +6,7 @@ class CreateGalleries < ActiveRecord::Migration[4.2]
       t.string :photo,:null=>false
       t.text :content,:null=>false
       t.boolean :enable, :null=>false, :default=>true      
-      t.timestamps
+      t.timestamps null: false
     end
 
     add_index :galleries, :gallery_category_id
