@@ -545,10 +545,6 @@ footer address {
   margin-bottom: 20px
 }
 
-#main_main {
-  padding-bottom: 50px
-}
-
 #main_main a.more {
   position: absolute;
   top: 0px;
@@ -980,6 +976,7 @@ table td.sl_registered_date {
   #top_menu {display:none}
   #mobile_menu {display:block;position:absolute;top:5px;right:10px;}
 
+  .carousel-indicators {display:none}
   header {
     background: none;
     border-bottom: 0;
@@ -1207,7 +1204,8 @@ table td.sl_registered_date {
   #main_main {
     float: right;
     width: 100%;
-    padding-top: 30px
+    padding-top: 30px;
+    padding-bottom: 50px
   }
   #main_main nav {
     margin-bottom: 20px
