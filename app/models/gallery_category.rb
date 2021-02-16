@@ -1,4 +1,4 @@
 class GalleryCategory < ActiveRecord::Base
   validates_presence_of :title
-  has_many :gallery, :dependent=> :destroy
+  has_many :gallery, :dependent => :destroy
 end

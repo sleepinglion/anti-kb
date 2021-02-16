@@ -148,7 +148,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(user_params)
         format.html { redirect_to user_path(@user), :notice => @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
@@ -173,7 +173,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.liked_by current_user
         format.html { redirect_to user_path(@user), :notice => t(:message_success_recommend)}
-        format.json { render :json => {'vote_up'=>@user.cached_votes_up}}
+        format.json { render :json => {vote_up: @user.cached_votes_up}}
       else
         format.html { render :action => "index" }
         format.json { render :json => @user.errors, :status => :unprocessable_entity }
@@ -202,10 +202,10 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:title,:create_at)
+    params.require(:user).permit(:title,:create_at,:updated_at)
   end
 
   def comment_params
-    params.require(:comment).permit(:comment).merge(user_id: current_user.id)
+    params.require(:comment).permit(:comment).merge(user_id: current_user)
   end
 end

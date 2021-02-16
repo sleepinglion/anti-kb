@@ -1,6 +1,6 @@
 <% breadcrumb :proposes %>
 <div id="propose_main" class="sub_main row">
-	<div id="index_main">
+	<div id="index_main" class="col-12">
 		<% unless @proposes.empty? %>
 		<% @proposes.each do |propose| %>
 		<article class="content_list" itemscope itemprop="article" itemtype="http://schema.org/Article">
@@ -12,7 +12,7 @@
 		<div><%=t(:no_data) %></div>
 		<% end %>
 	</div>
-	<div id="sl_bottom_menu">
+  <div class="col-12">
 		<%= link_to t(:link_new),new_propose_path %>
 		<%= paginate @proposes %>
 	</div>

@@ -1,6 +1,6 @@
 class Report < ActiveRecord::Base
   acts_as_votable
-  acts_as_commentable  
+  acts_as_commentable
   is_impressionable
   validates_presence_of :title
   belongs_to :user, counter_cache: true

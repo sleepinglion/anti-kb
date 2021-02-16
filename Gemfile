@@ -45,7 +45,7 @@ gem "nokogiri", ">= 1.11.0.rc4"
 
 gem 'impressionist'
 gem 'acts-as-taggable-on'
-gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_votable'
 gem 'acts_as_commentable'
 gem 'omniauth-oauth2'
 gem 'omniauth', "~> 1.9.1"

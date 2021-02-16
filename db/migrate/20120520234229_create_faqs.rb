@@ -1,9 +1,9 @@
 class CreateFaqs < ActiveRecord::Migration[4.2]
   def change
     create_table :faqs do |t|
-      t.references :faq_category,:null=>false
-      t.string :title,:null=>false    
-      t.boolean :enable, :null=>false, :default=>true
+      t.references :faq_category, null: false
+      t.string :title, null: false, limit: 60
+      t.boolean :enable, null: false, default: true
       t.timestamps null: false
     end
 

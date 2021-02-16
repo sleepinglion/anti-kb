@@ -3,13 +3,12 @@ class Users::PasswordsController < Devise::PasswordsController
 
   def initialize(*params)
     super(*params)
-    @controller_name=t(:login)
-    @script='login'
-  end  
+    @controller_name = t(:login)
+  end
 
-    protected
+  protected
 
-    def after_sending_reset_password_instructions_path_for(_resource_name)
-        root_path
-    end
+  def after_sending_reset_password_instructions_path_for(_resource_name)
+    root_path
+  end
 end

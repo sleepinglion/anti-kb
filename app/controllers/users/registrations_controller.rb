@@ -3,8 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def initialize(*params)
     super(*params)
-    @controller_name=t('activerecord.models.user')
-    @script='application'
+    @controller_name = t('activerecord.models.user')
   end
 
   def index
@@ -25,20 +24,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
- # GET /resource/sign_up
-#  def new
-#    resource = build_resource({})
-#    respond_with resource
-#  end
+  # GET /resource/sign_up
+  #  def new
+  #    resource = build_resource({})
+  #    respond_with resource
+  #  end
 
   # POST /resource
   def create
     build_resource(resource_params)
 
     if Rails.env.production?
-      result=verify_recaptcha(:model => resource) && resource.save
+      result = verify_recaptcha(:model => resource) && resource.save
     else
-      result=resource.save
+      result = resource.save
     end
 
     if result
@@ -57,7 +56,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-   def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(resource)
     after_sign_in_path_for(resource)
   end
 
