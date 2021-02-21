@@ -23,20 +23,16 @@ class NoticesController < ApplicationController
   def new
     @notice = Notice.new
     @notice.build_notice_content
-
-    @script="notices/new"
   end
 
   # GET /notices/1/edit
   def edit
-    @script="notices/new"
   end
 
   # POST /notices
   # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
-    @notice.user_id=current_user.id
 
     respond_to do |format|
       if @notice.save
@@ -81,6 +77,6 @@ class NoticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content])
+      params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content]).merge(user_id: current_user.id)
     end
 end
