@@ -53,7 +53,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-gplus'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-kakao', git: "https://github.com/DevStarSJ/omniauth-kakao"
+gem 'omniauth-kakao'
 #gem 'twitter'
 #gem 'fb_graph2'
 

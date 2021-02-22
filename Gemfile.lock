@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/DevStarSJ/omniauth-kakao
-  revision: 07b807f5db74899bea6c4f935d2e1248645b9667
-  specs:
-    omniauth-kakao (0.2.0)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.7.0)
-
-GIT
   remote: https://github.com/redis-store/redis-store.git
   revision: 3acfa95f4eb6260c714fdb00a3d84be8eedc13b2
   specs:
@@ -314,6 +306,9 @@ GEM
       omniauth-oauth2 (>= 1.6)
     omniauth-gplus (2.0.1)
       omniauth-oauth2 (~> 1.1)
+    omniauth-kakao (0.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.2.0)
       oauth
       omniauth (>= 1.0, < 3)
@@ -511,7 +506,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-gplus
-  omniauth-kakao!
+  omniauth-kakao
   omniauth-oauth2
   omniauth-twitter
   puma (~> 5.0)
