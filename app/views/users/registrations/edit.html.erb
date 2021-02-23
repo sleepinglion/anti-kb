@@ -71,7 +71,7 @@
 <% end %>
 <article>
 	<h3>회원탈퇴</h3>
-	<p><%=t(:site_url) %>이 마음에 안드나요? <%= link_to '회원탈퇴', registration_path(resource_name), :confirm => t(:delete_user_cascade_confirm), :method => :delete, :class=>'red' %>.</p>
+	<p><%=t(:site_url) %>이 마음에 안드나요? <%= link_to '회원탈퇴',delete_confirm_user_path, :class=>'red' %>.</p>
 </article>
 <%= link_to t(:link_back), :back %>
 </div>

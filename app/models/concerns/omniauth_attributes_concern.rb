@@ -24,10 +24,10 @@ module OmniauthAttributesConcern
     end
 
     def kakao params
-      (params['kakao_account']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['kakao_account']['email'].blank?
+      (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
       attributes = {
-        email: params['kakao_account']['email'],
-        name: params['kakao_account']['profile']['nickname'],
+        email: params['info']['email'],
+        name: params['info']['nickname'],
         password: Devise.friendly_token,
         description: '망해라'
       }

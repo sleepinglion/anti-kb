@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   impressionist
   load_and_authorize_resource  except: [:index, :show, :create, :new_comment]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment, :delete_confirm]
 
   def initialize(*params)
     super(*params)
@@ -158,13 +158,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def delete_confirm
+  end
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_path}
+      format.html {}
       format.json { head :no_content }
     end
   end
@@ -197,7 +200,7 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

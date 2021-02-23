@@ -37,6 +37,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def privacy
+
+  end
+
   def feed
     @reports = Report.all.where(:enable=>true)
     @compliments = Compliment.all.where(:enable=>true)
