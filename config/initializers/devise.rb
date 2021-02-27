@@ -253,6 +253,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], :display => "popup", :scope => 'email', info_fields: 'email,name'
   config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET'], :display => "popup", :scope => 'email'
-  config.omniauth :google_oauth2, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], :display => "popup", scope: 'userinfo.email, userinfo.profile'
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], :display => "popup", scope: 'userinfo.email, userinfo.profile'
   config.omniauth :kakao, ENV['KAKAO_KEY'], ENV['KAKAO_SECRET'], :display => "popup", :redirect_path => "/users/auth/kakao/callback"
 end
