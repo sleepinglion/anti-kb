@@ -52,7 +52,7 @@ gem 'omniauth', "~> 1.9.1"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-kakao'
+gem 'omniauth-kakao',"~>0.2.0"
 #gem 'twitter'
 #gem 'fb_graph2'
 
