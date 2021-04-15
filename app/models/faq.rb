@@ -1,4 +1,4 @@
-class Faq < ActiveRecord::Base
+class Faq < ApplicationRecord
   validates_presence_of :title
   belongs_to :faq_category, :autosave => true
   has_one :faq_content, :foreign_key => :id, :dependent => :destroy, inverse_of: :faq

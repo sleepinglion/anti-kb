@@ -1,5 +1,12 @@
 <% breadcrumb :faqs %>
-<% re=100/@faq_categories.count %>
+<%
+  if @faq_categories.count.zero?
+    re=0
+  else
+    re=100/@faq_categories.count
+  end
+
+%>
 <section id="faq_main">
 	<article>
 		<ol id="faqCategoryList">

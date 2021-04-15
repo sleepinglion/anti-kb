@@ -1,3 +1,3 @@
-class Improve < ActiveRecord::Base
+class Improve < ApplicationRecord
   validates_presence_of :title, :content
 end

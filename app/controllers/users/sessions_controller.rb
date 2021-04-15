@@ -1,9 +1,8 @@
 class Users::SessionsController < Devise::SessionsController
   layout :layout
 
-  def initialize(*params)
-    super(*params)
-    @controller_name = t(:login)
+  def presign
+
   end
 
   def layout

@@ -5,9 +5,10 @@ AntiKb::Application.routes.draw do
     mount LetsEncrypt::Engine => '/.well-known'
   end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
-    get '/users', :to => 'users/registrations#index', :as => :user_root # Rails 3s
-    get '/login', :to => 'users/sessions#new'
+
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' }
+  as :user do
+    get '/users/presign', to: 'users/sessions#presign', as: :user_presign
   end
 
   resources :users do

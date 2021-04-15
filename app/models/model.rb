@@ -1,4 +1,4 @@
-class Model < ActiveRecord::Base
+class Model < ApplicationRecord
   acts_as_votable
   acts_as_commentable
   validates_presence_of :title, :recommend_description, :models_comment

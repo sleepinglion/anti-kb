@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  impressionist
   load_and_authorize_resource  except: [:index, :show, :create, :new_comment]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :create_comment, :new_comment, :delete_confirm]
 
@@ -160,6 +159,8 @@ class UsersController < ApplicationController
 
   def delete_confirm
   end
+
+
 
   # DELETE /users/1
   # DELETE /users/1.json

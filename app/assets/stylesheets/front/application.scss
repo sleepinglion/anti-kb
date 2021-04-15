@@ -972,6 +972,47 @@ table td.sl_registered_date {
   width: 100%
 }
 
+.continue-sns {
+  margin-bottom:30px;
+}
+
+.continue-sns .sns-link,.no-sns-user-link
+{
+  background-color:#fff;
+  display:block;
+  height:90px;
+  margin-bottom:20px;
+  padding:10px;
+  line-height:70px;
+  text-indent:90px;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+}
+
+.continue-sns .sns-link:hover,.no-sns-user-link:hover {
+  border-color:#333;
+  font-weight:bold;
+  text-decoration: none;
+}
+
+.continue-sns .sns-facebook {
+  background-image: asset-url('icon-facebook.png');
+}
+
+.continue-sns .sns-twitter {
+  background-image: asset-url('icon-twitter.png');
+}
+
+.continue-sns .sns-google_oauth2 {
+  background-image: asset-url('icon-google.png');
+}
+
+.continue-sns .sns-kakao {
+  display:none;
+}
+
 @media all and (max-width: 768px) {
   #top_menu {display:none}
   #mobile_menu {display:block;position:absolute;top:5px;right:10px;}

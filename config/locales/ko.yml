@@ -198,7 +198,7 @@ ko:
     - 금요일
     - 토요일
     formats:
-      default: ! '%Y/%m/%d'
+      default: ! '%Y년 %m월 %d일'
       long: ! '%Y년 %m월 %d일 (%a)'
       short: ! '%m/%d'
     month_names:

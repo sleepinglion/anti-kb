@@ -1,4 +1,4 @@
-class Compliment < ActiveRecord::Base
+class Compliment < ApplicationRecord
   acts_as_votable
   acts_as_commentable
   is_impressionable

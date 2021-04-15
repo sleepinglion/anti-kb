@@ -1,11 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   layout :layout
 
-  def initialize(*params)
-    super(*params)
-    @controller_name = t('activerecord.models.user')
-  end
-
   def index
     @users = User.order('id desc').page(params[:page]).per(10)
 
@@ -71,6 +66,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     signed_in_root_path(resource)
   end
+
 
   def layout
     if params[:no_layout].present?

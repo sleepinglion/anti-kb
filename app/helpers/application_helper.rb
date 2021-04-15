@@ -38,6 +38,6 @@ module ApplicationHelper
   end
 
   def get_dt_format(date)
-    return date
+    return I18n.l date.to_date
   end
 end

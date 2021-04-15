@@ -1,4 +1,4 @@
-class Notice < ActiveRecord::Base
+class Notice < ApplicationRecord
   is_impressionable
   validates_presence_of :title
   validates_length_of :title, :minimum => 4, :maximum => 60

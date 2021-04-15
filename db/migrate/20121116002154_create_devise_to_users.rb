@@ -3,8 +3,8 @@ class CreateDeviseToUsers < ActiveRecord::Migration[4.2]
     create_table :users do |t|
 
       ## Database authenticatable
-      t.string :email,              :null => false, :limit=>150
-      t.string :name,               :null => false, :limit=>100
+      t.string :email,              :null => false, :limit=>100
+      t.string :name,               :null => false, :limit=>60
       t.string :description,        :null => false, :limit=>150
       t.string :encrypted_password, :null => false, :limit=>100
       t.string :photo
@@ -38,9 +38,11 @@ class CreateDeviseToUsers < ActiveRecord::Migration[4.2]
       # t.string :authentication_token
       t.integer :reports_count, null: false, default: 0
       t.integer :compliments_count, null: false, default: 0
+      t.string :url, limit: 150
 
       t.boolean  :enable, :null=> false, :default=> true
       t.boolean  :admin, :null=>false, :default => false
+
 
       # Uncomment below if timestamps were not included in your original model.
       t.timestamps null: false
